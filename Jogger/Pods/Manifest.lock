@@ -19,9 +19,11 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Swinject (2.1.0)
 
 DEPENDENCIES:
   - Firebase/Core
+  - Swinject (~> 2.1.0)
 
 SPEC CHECKSUMS:
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
@@ -30,7 +32,8 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
+  Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
 
-PODFILE CHECKSUM: 8291bf9079d095ae398aea347356b1560b279241
+PODFILE CHECKSUM: 52c318dbaa96305a14b1b1c883212efd7f1e2821
 
 COCOAPODS: 1.2.0

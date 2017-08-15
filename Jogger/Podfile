@@ -4,6 +4,7 @@ target 'Jogger' do
   use_frameworks!
 
   pod 'Firebase/Core'
+  pod 'Swinject', '~> 2.1.0'
 
   target 'JoggerTests' do
     inherit! :search_paths

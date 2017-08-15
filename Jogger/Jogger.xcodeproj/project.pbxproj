@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		FF09F61B1F43BDCC00951F9F /* Pod Install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FF09F61C1F43BDCC00951F9F /* Build configuration list for PBXAggregateTarget "Pod Install" */;
+			buildPhases = (
+				FF09F61F1F43BDD100951F9F /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Pod Install";
+			productName = "Pod Install";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		2807EEAD021844D2D2776C27 /* Pods_JoggerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D989AD87B187C525D01D62 /* Pods_JoggerUITests.framework */; };
 		2B93119019264A6CF265CA0B /* Pods_JoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9D6007CDDB8995ECFE3E3E /* Pods_JoggerTests.framework */; };
@@ -61,6 +75,7 @@
 		FF09F6071F42A4EC00951F9F /* JoggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoggerUITests.swift; sourceTree = "<group>"; };
 		FF09F6091F42A4EC00951F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF09F6171F42A56700951F9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF09F61A1F43BD7A00951F9F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +161,7 @@
 				FF09F5F01F42A4EC00951F9F /* LaunchScreen.storyboard */,
 				FF09F5F31F42A4EC00951F9F /* Info.plist */,
 				FF09F6171F42A56700951F9F /* GoogleService-Info.plist */,
+				FF09F61A1F43BD7A00951F9F /* Podfile */,
 			);
 			path = Jogger;
 			sourceTree = "<group>";
@@ -260,6 +276,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = FF09F5E31F42A4EC00951F9F;
 					};
+					FF09F61B1F43BDCC00951F9F = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 538R2KUTXD;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = FF09F5DF1F42A4EC00951F9F /* Build configuration list for PBXProject "Jogger" */;
@@ -278,6 +299,7 @@
 				FF09F5E31F42A4EC00951F9F /* Jogger */,
 				FF09F5F71F42A4EC00951F9F /* JoggerTests */,
 				FF09F6021F42A4EC00951F9F /* JoggerUITests */,
+				FF09F61B1F43BDCC00951F9F /* Pod Install */,
 			);
 		};
 /* End PBXProject section */
@@ -445,6 +467,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		FF09F61F1F43BDD100951F9F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pod install";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -694,6 +729,22 @@
 			};
 			name = Release;
 		};
+		FF09F61D1F43BDCC00951F9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 538R2KUTXD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF09F61E1F43BDCC00951F9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 538R2KUTXD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -713,6 +764,7 @@
 				FF09F60E1F42A4EC00951F9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF09F60F1F42A4EC00951F9F /* Build configuration list for PBXNativeTarget "JoggerTests" */ = {
 			isa = XCConfigurationList;
@@ -721,6 +773,7 @@
 				FF09F6111F42A4EC00951F9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF09F6121F42A4EC00951F9F /* Build configuration list for PBXNativeTarget "JoggerUITests" */ = {
 			isa = XCConfigurationList;
@@ -729,6 +782,16 @@
 				FF09F6141F42A4EC00951F9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF09F61C1F43BDCC00951F9F /* Build configuration list for PBXAggregateTarget "Pod Install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF09F61D1F43BDCC00951F9F /* Debug */,
+				FF09F61E1F43BDCC00951F9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
