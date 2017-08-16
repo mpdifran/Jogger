@@ -479,7 +479,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "pod install";
+			shellScript = "export LANG=en_US.UTF-8\n\npod install";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -35,11 +35,14 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Swinject (2.1.0)
+  - SwinjectAutoregistration (2.1.0):
+    - Swinject (~> 2.1)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Swinject (~> 2.1.0)
+  - SwinjectAutoregistration (= 2.1.0)
 
 SPEC CHECKSUMS:
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
@@ -51,7 +54,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
   Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
+  SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
 
-PODFILE CHECKSUM: 140936a041a8f635a565311984dcf8231a65db55
+PODFILE CHECKSUM: 8bfd00fc23ee5502bcdef1cc1b238f9ec6ecf7d5
 
 COCOAPODS: 1.2.0

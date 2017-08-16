@@ -6,6 +6,7 @@ target 'Jogger' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Swinject', '~> 2.1.0'
+  pod 'SwinjectAutoregistration', '2.1.0'
 
   target 'JoggerTests' do
     inherit! :search_paths
