@@ -29,9 +29,15 @@
 		FF09F5ED1F42A4EC00951F9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF09F5EB1F42A4EC00951F9F /* Main.storyboard */; };
 		FF09F5EF1F42A4EC00951F9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF09F5EE1F42A4EC00951F9F /* Assets.xcassets */; };
 		FF09F5F21F42A4EC00951F9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF09F5F01F42A4EC00951F9F /* LaunchScreen.storyboard */; };
-		FF09F5FD1F42A4EC00951F9F /* JoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F5FC1F42A4EC00951F9F /* JoggerTests.swift */; };
 		FF09F6081F42A4EC00951F9F /* JoggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6071F42A4EC00951F9F /* JoggerUITests.swift */; };
 		FF09F6181F42A56700951F9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF09F6171F42A56700951F9F /* GoogleService-Info.plist */; };
+		FF09F6211F43C09E00951F9F /* MainAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6201F43C09E00951F9F /* MainAssembler.swift */; };
+		FF09F6251F43C13800951F9F /* MDJAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6241F43C13800951F9F /* MDJAuth.swift */; };
+		FF09F6271F43C1C700951F9F /* MDJUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6261F43C1C700951F9F /* MDJUser.swift */; };
+		FF09F6291F43C3C700951F9F /* MDJAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6281F43C3C700951F9F /* MDJAuthenticationManager.swift */; };
+		FF09F62D1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F62C1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift */; };
+		FF09F6311F43CB2100951F9F /* MDJAuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */; };
+		FF09F6341F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6331F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,13 +75,19 @@
 		FF09F5F11F42A4EC00951F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF09F5F31F42A4EC00951F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF09F5F81F42A4EC00951F9F /* JoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF09F5FC1F42A4EC00951F9F /* JoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoggerTests.swift; sourceTree = "<group>"; };
 		FF09F5FE1F42A4EC00951F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF09F6031F42A4EC00951F9F /* JoggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoggerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF09F6071F42A4EC00951F9F /* JoggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoggerUITests.swift; sourceTree = "<group>"; };
 		FF09F6091F42A4EC00951F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF09F6171F42A56700951F9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FF09F61A1F43BD7A00951F9F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		FF09F61A1F43BD7A00951F9F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FF09F6201F43C09E00951F9F /* MainAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAssembler.swift; sourceTree = "<group>"; };
+		FF09F6241F43C13800951F9F /* MDJAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuth.swift; sourceTree = "<group>"; };
+		FF09F6261F43C1C700951F9F /* MDJUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUser.swift; sourceTree = "<group>"; };
+		FF09F6281F43C3C700951F9F /* MDJAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticationManager.swift; sourceTree = "<group>"; };
+		FF09F62C1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticationManagerTests.swift; sourceTree = "<group>"; };
+		FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthMock.swift; sourceTree = "<group>"; };
+		FF09F6331F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticationManagerDelegateMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +166,10 @@
 		FF09F5E61F42A4EC00951F9F /* Jogger */ = {
 			isa = PBXGroup;
 			children = (
+				FF09F6221F43C0FC00951F9F /* Authentication */,
+				FF09F6231F43C11100951F9F /* Firebase */,
 				FF09F5E71F42A4EC00951F9F /* AppDelegate.swift */,
+				FF09F6201F43C09E00951F9F /* MainAssembler.swift */,
 				FF09F5E91F42A4EC00951F9F /* ViewController.swift */,
 				FF09F5EB1F42A4EC00951F9F /* Main.storyboard */,
 				FF09F5EE1F42A4EC00951F9F /* Assets.xcassets */,
@@ -169,7 +184,8 @@
 		FF09F5FB1F42A4EC00951F9F /* JoggerTests */ = {
 			isa = PBXGroup;
 			children = (
-				FF09F5FC1F42A4EC00951F9F /* JoggerTests.swift */,
+				FF09F62A1F43CA9C00951F9F /* Authentication */,
+				FF09F62E1F43CAEC00951F9F /* Firebase */,
 				FF09F5FE1F42A4EC00951F9F /* Info.plist */,
 			);
 			path = JoggerTests;
@@ -182,6 +198,56 @@
 				FF09F6091F42A4EC00951F9F /* Info.plist */,
 			);
 			path = JoggerUITests;
+			sourceTree = "<group>";
+		};
+		FF09F6221F43C0FC00951F9F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F6281F43C3C700951F9F /* MDJAuthenticationManager.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		FF09F6231F43C11100951F9F /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F6241F43C13800951F9F /* MDJAuth.swift */,
+				FF09F6261F43C1C700951F9F /* MDJUser.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		FF09F62A1F43CA9C00951F9F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F6321F43CDD500951F9F /* Mocks */,
+				FF09F62C1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		FF09F62E1F43CAEC00951F9F /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F62F1F43CB0600951F9F /* Mocks */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		FF09F62F1F43CB0600951F9F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		FF09F6321F43CDD500951F9F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F6331F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +333,7 @@
 					FF09F5F71F42A4EC00951F9F = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 538R2KUTXD;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FF09F5E31F42A4EC00951F9F;
 					};
@@ -489,7 +556,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF09F5EA1F42A4EC00951F9F /* ViewController.swift in Sources */,
+				FF09F6251F43C13800951F9F /* MDJAuth.swift in Sources */,
+				FF09F6271F43C1C700951F9F /* MDJUser.swift in Sources */,
+				FF09F6291F43C3C700951F9F /* MDJAuthenticationManager.swift in Sources */,
 				FF09F5E81F42A4EC00951F9F /* AppDelegate.swift in Sources */,
+				FF09F6211F43C09E00951F9F /* MainAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +568,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF09F5FD1F42A4EC00951F9F /* JoggerTests.swift in Sources */,
+				FF09F62D1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift in Sources */,
+				FF09F6341F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift in Sources */,
+				FF09F6311F43CB2100951F9F /* MDJAuthMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,11 +746,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 538R2KUTXD;
 				INFOPLIST_FILE = JoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markdifranco.JoggerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jogger.app/Jogger";
 			};
@@ -689,11 +765,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 538R2KUTXD;
 				INFOPLIST_FILE = JoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markdifranco.JoggerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jogger.app/Jogger";
 			};

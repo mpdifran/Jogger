@@ -14,6 +14,8 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder {
     var window: UIWindow?
+
+    let mainAssembler = MainAssembler()
 }
 
 // MARK: - UIApplicationDelegate Methods
