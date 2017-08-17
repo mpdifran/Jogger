@@ -20,5 +20,6 @@ class MainAssembler {
     init() {
         assembler.apply(assembly: MDJAuthAssembly())
         assembler.apply(assembly: MDJAuthenticationManagerAssembly())
+        assembler.apply(assembly: MDJDatabaseReferenceAssembly())
     }
 }

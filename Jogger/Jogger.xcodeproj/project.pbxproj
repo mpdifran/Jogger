@@ -38,6 +38,7 @@
 		FF09F62D1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F62C1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift */; };
 		FF09F6311F43CB2100951F9F /* MDJAuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */; };
 		FF09F6341F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6331F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift */; };
+		FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		FF09F62C1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticationManagerTests.swift; sourceTree = "<group>"; };
 		FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthMock.swift; sourceTree = "<group>"; };
 		FF09F6331F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticationManagerDelegateMock.swift; sourceTree = "<group>"; };
+		FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDatabaseReference.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			children = (
 				FF09F6241F43C13800951F9F /* MDJAuth.swift */,
 				FF09F6261F43C1C700951F9F /* MDJUser.swift */,
+				FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 			files = (
 				FF09F5EA1F42A4EC00951F9F /* ViewController.swift in Sources */,
 				FF09F6251F43C13800951F9F /* MDJAuth.swift in Sources */,
+				FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */,
 				FF09F6271F43C1C700951F9F /* MDJUser.swift in Sources */,
 				FF09F6291F43C3C700951F9F /* MDJAuthenticationManager.swift in Sources */,
 				FF09F5E81F42A4EC00951F9F /* AppDelegate.swift in Sources */,
