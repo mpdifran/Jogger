@@ -25,7 +25,6 @@
 		2B93119019264A6CF265CA0B /* Pods_JoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9D6007CDDB8995ECFE3E3E /* Pods_JoggerTests.framework */; };
 		4F8E6E61824674CD6B2090D6 /* Pods_Jogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D17B0FAC0F5A52216ED4D292 /* Pods_Jogger.framework */; };
 		FF09F5E81F42A4EC00951F9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F5E71F42A4EC00951F9F /* AppDelegate.swift */; };
-		FF09F5EA1F42A4EC00951F9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F5E91F42A4EC00951F9F /* ViewController.swift */; };
 		FF09F5ED1F42A4EC00951F9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF09F5EB1F42A4EC00951F9F /* Main.storyboard */; };
 		FF09F5EF1F42A4EC00951F9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF09F5EE1F42A4EC00951F9F /* Assets.xcassets */; };
 		FF09F5F21F42A4EC00951F9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF09F5F01F42A4EC00951F9F /* LaunchScreen.storyboard */; };
@@ -44,8 +43,13 @@
 		FFAE97A61F454187009F76FF /* MDJDataSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97A51F454187009F76FF /* MDJDataSnapshot.swift */; };
 		FFAE97A91F4545D5009F76FF /* MDJDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97A81F4545D5009F76FF /* MDJDateFormatter.swift */; };
 		FFAE97AB1F454738009F76FF /* MDJDatabaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97AA1F454738009F76FF /* MDJDatabaseConstants.swift */; };
+		FFAE97AF1F479549009F76FF /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAE97AE1F479549009F76FF /* Authentication.storyboard */; };
+		FFAE97B11F479829009F76FF /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97B01F479829009F76FF /* LogInViewController.swift */; };
+		FFAE97B31F479B26009F76FF /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97B21F479B26009F76FF /* CreateAccountViewController.swift */; };
+		FFAE97BF1F47C1AE009F76FF /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97BE1F47C1AE009F76FF /* RootTabBarController.swift */; };
 		FFAE97D31F47CB4A009F76FF /* MDJUserProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97D21F47CB4A009F76FF /* MDJUserProviderTests.swift */; };
 		FFAE97D51F47CC53009F76FF /* MDJUserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97D41F47CC53009F76FF /* MDJUserMock.swift */; };
+		FFAE97D71F48D0B2009F76FF /* BaseAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97D61F48D0B2009F76FF /* BaseAuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +81,6 @@
 		FCFCFE7B76A264CD318B8268 /* Pods-JoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JoggerTests/Pods-JoggerTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF09F5E41F42A4EC00951F9F /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF09F5E71F42A4EC00951F9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF09F5E91F42A4EC00951F9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF09F5EC1F42A4EC00951F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF09F5EE1F42A4EC00951F9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF09F5F11F42A4EC00951F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,8 +105,13 @@
 		FFAE97A51F454187009F76FF /* MDJDataSnapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDataSnapshot.swift; sourceTree = "<group>"; };
 		FFAE97A81F4545D5009F76FF /* MDJDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDateFormatter.swift; sourceTree = "<group>"; };
 		FFAE97AA1F454738009F76FF /* MDJDatabaseConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDatabaseConstants.swift; sourceTree = "<group>"; };
+		FFAE97AE1F479549009F76FF /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		FFAE97B01F479829009F76FF /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		FFAE97B21F479B26009F76FF /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		FFAE97BE1F47C1AE009F76FF /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		FFAE97D21F47CB4A009F76FF /* MDJUserProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserProviderTests.swift; sourceTree = "<group>"; };
 		FFAE97D41F47CC53009F76FF /* MDJUserMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserMock.swift; sourceTree = "<group>"; };
+		FFAE97D61F48D0B2009F76FF /* BaseAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +190,7 @@
 		FF09F5E61F42A4EC00951F9F /* Jogger */ = {
 			isa = PBXGroup;
 			children = (
+				FFAE97AC1F4794C5009F76FF /* UserInterface */,
 				FFAE97A01F452D30009F76FF /* Model */,
 				FF09F6221F43C0FC00951F9F /* Authentication */,
 				FFAE979D1F452C32009F76FF /* Database */,
@@ -189,10 +198,7 @@
 				FFAE97A71F4545B7009F76FF /* Utilities */,
 				FF09F5E71F42A4EC00951F9F /* AppDelegate.swift */,
 				FF09F6201F43C09E00951F9F /* MainAssembler.swift */,
-				FF09F5E91F42A4EC00951F9F /* ViewController.swift */,
-				FF09F5EB1F42A4EC00951F9F /* Main.storyboard */,
 				FF09F5EE1F42A4EC00951F9F /* Assets.xcassets */,
-				FF09F5F01F42A4EC00951F9F /* LaunchScreen.storyboard */,
 				FF09F5F31F42A4EC00951F9F /* Info.plist */,
 				FF09F6171F42A56700951F9F /* GoogleService-Info.plist */,
 				FF09F61A1F43BD7A00951F9F /* Podfile */,
@@ -296,6 +302,36 @@
 				FFAE97A81F4545D5009F76FF /* MDJDateFormatter.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FFAE97AC1F4794C5009F76FF /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F5F01F42A4EC00951F9F /* LaunchScreen.storyboard */,
+				FF09F5EB1F42A4EC00951F9F /* Main.storyboard */,
+				FFAE97BD1F47C17C009F76FF /* RootTabBarController */,
+				FFAE97AD1F479527009F76FF /* Authentication */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		FFAE97AD1F479527009F76FF /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				FFAE97AE1F479549009F76FF /* Authentication.storyboard */,
+				FFAE97D61F48D0B2009F76FF /* BaseAuthViewController.swift */,
+				FFAE97B01F479829009F76FF /* LogInViewController.swift */,
+				FFAE97B21F479B26009F76FF /* CreateAccountViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		FFAE97BD1F47C17C009F76FF /* RootTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				FFAE97BE1F47C1AE009F76FF /* RootTabBarController.swift */,
+			);
+			path = RootTabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +464,7 @@
 				FF09F6181F42A56700951F9F /* GoogleService-Info.plist in Resources */,
 				FF09F5EF1F42A4EC00951F9F /* Assets.xcassets in Resources */,
 				FF09F5ED1F42A4EC00951F9F /* Main.storyboard in Resources */,
+				FFAE97AF1F479549009F76FF /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,13 +640,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF09F5EA1F42A4EC00951F9F /* ViewController.swift in Sources */,
+				FFAE97B31F479B26009F76FF /* CreateAccountViewController.swift in Sources */,
+				FFAE97BF1F47C1AE009F76FF /* RootTabBarController.swift in Sources */,
 				FF09F6251F43C13800951F9F /* MDJAuth.swift in Sources */,
+				FFAE97D71F48D0B2009F76FF /* BaseAuthViewController.swift in Sources */,
 				FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */,
 				FFAE979F1F452C63009F76FF /* MDJJogsDatabase.swift in Sources */,
 				FF09F6271F43C1C700951F9F /* MDJUser.swift in Sources */,
 				FF09F6291F43C3C700951F9F /* MDJAuthenticationManager.swift in Sources */,
 				FFAE97A91F4545D5009F76FF /* MDJDateFormatter.swift in Sources */,
+				FFAE97B11F479829009F76FF /* LogInViewController.swift in Sources */,
 				FF09F5E81F42A4EC00951F9F /* AppDelegate.swift in Sources */,
 				FFAE97AB1F454738009F76FF /* MDJDatabaseConstants.swift in Sources */,
 				FFAE97A41F453E9B009F76FF /* MDJJogsDatabaseObserver.swift in Sources */,
@@ -660,6 +700,7 @@
 				FF09F5EC1F42A4EC00951F9F /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		FF09F5F01F42A4EC00951F9F /* LaunchScreen.storyboard */ = {
@@ -668,6 +709,7 @@
 				FF09F5F11F42A4EC00951F9F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

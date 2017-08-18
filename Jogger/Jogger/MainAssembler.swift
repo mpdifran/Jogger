@@ -8,6 +8,7 @@
 
 import Foundation
 import Swinject
+import SwinjectStoryboard
 
 // MARK: - MainAssembler
 
@@ -15,11 +16,16 @@ class MainAssembler {
     var resolver: Resolver {
         return assembler.resolver
     }
-    private let assembler = Assembler()
+    private let assembler = Assembler(container: SwinjectStoryboard.defaultContainer)
 
     init() {
+        Container.loggingFunction = nil
+
         assembler.apply(assembly: MDJAuthAssembly())
         assembler.apply(assembly: MDJAuthenticationManagerAssembly())
         assembler.apply(assembly: MDJDatabaseReferenceAssembly())
+        assembler.apply(assembly: LogInViewControllerAssembly())
+        assembler.apply(assembly: RootTabBarControllerAssembly())
+        assembler.apply(assembly: CreateAccountViewControllerAssembly())
     }
 }

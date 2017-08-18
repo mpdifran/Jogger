@@ -46,6 +46,7 @@ class MDJAuthAssembly: Assembly {
 
     func assemble(container: Container) {
         container.register(MDJAuth.self) { _ in
+            FirebaseApp.configure()
             return Auth.auth()
         }
     }
