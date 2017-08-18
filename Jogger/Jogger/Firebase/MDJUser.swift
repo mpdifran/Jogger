@@ -13,6 +13,7 @@ import Firebase
 
 protocol MDJUser: class {
     var refreshToken: String? { get }
+    var uid: String { get }
 
     func getIDToken(completion: FirebaseAuth.AuthTokenCallback?)
 }

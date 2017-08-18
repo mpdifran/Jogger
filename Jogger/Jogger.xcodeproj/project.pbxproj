@@ -39,6 +39,12 @@
 		FF09F6311F43CB2100951F9F /* MDJAuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */; };
 		FF09F6341F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6331F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift */; };
 		FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */; };
+		FFAE979F1F452C63009F76FF /* MDJJogsDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE979E1F452C63009F76FF /* MDJJogsDatabase.swift */; };
+		FFAE97A21F452D5A009F76FF /* Jog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97A11F452D5A009F76FF /* Jog.swift */; };
+		FFAE97A41F453E9B009F76FF /* MDJJogsDatabaseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97A31F453E9B009F76FF /* MDJJogsDatabaseObserver.swift */; };
+		FFAE97A61F454187009F76FF /* MDJDataSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97A51F454187009F76FF /* MDJDataSnapshot.swift */; };
+		FFAE97A91F4545D5009F76FF /* MDJDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97A81F4545D5009F76FF /* MDJDateFormatter.swift */; };
+		FFAE97AB1F454738009F76FF /* MDJDatabaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97AA1F454738009F76FF /* MDJDatabaseConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +96,12 @@
 		FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthMock.swift; sourceTree = "<group>"; };
 		FF09F6331F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticationManagerDelegateMock.swift; sourceTree = "<group>"; };
 		FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDatabaseReference.swift; sourceTree = "<group>"; };
+		FFAE979E1F452C63009F76FF /* MDJJogsDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsDatabase.swift; sourceTree = "<group>"; };
+		FFAE97A11F452D5A009F76FF /* Jog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jog.swift; sourceTree = "<group>"; };
+		FFAE97A31F453E9B009F76FF /* MDJJogsDatabaseObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsDatabaseObserver.swift; sourceTree = "<group>"; };
+		FFAE97A51F454187009F76FF /* MDJDataSnapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDataSnapshot.swift; sourceTree = "<group>"; };
+		FFAE97A81F4545D5009F76FF /* MDJDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDateFormatter.swift; sourceTree = "<group>"; };
+		FFAE97AA1F454738009F76FF /* MDJDatabaseConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDatabaseConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +180,11 @@
 		FF09F5E61F42A4EC00951F9F /* Jogger */ = {
 			isa = PBXGroup;
 			children = (
+				FFAE97A01F452D30009F76FF /* Model */,
 				FF09F6221F43C0FC00951F9F /* Authentication */,
+				FFAE979D1F452C32009F76FF /* Database */,
 				FF09F6231F43C11100951F9F /* Firebase */,
+				FFAE97A71F4545B7009F76FF /* Utilities */,
 				FF09F5E71F42A4EC00951F9F /* AppDelegate.swift */,
 				FF09F6201F43C09E00951F9F /* MainAssembler.swift */,
 				FF09F5E91F42A4EC00951F9F /* ViewController.swift */,
@@ -216,6 +231,7 @@
 				FF09F6241F43C13800951F9F /* MDJAuth.swift */,
 				FF09F6261F43C1C700951F9F /* MDJUser.swift */,
 				FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */,
+				FFAE97A51F454187009F76FF /* MDJDataSnapshot.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -251,6 +267,32 @@
 				FF09F6331F43CDF300951F9F /* MDJAuthenticationManagerDelegateMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		FFAE979D1F452C32009F76FF /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				FFAE97AA1F454738009F76FF /* MDJDatabaseConstants.swift */,
+				FFAE979E1F452C63009F76FF /* MDJJogsDatabase.swift */,
+				FFAE97A31F453E9B009F76FF /* MDJJogsDatabaseObserver.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		FFAE97A01F452D30009F76FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFAE97A11F452D5A009F76FF /* Jog.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFAE97A71F4545B7009F76FF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FFAE97A81F4545D5009F76FF /* MDJDateFormatter.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,10 +603,16 @@
 				FF09F5EA1F42A4EC00951F9F /* ViewController.swift in Sources */,
 				FF09F6251F43C13800951F9F /* MDJAuth.swift in Sources */,
 				FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */,
+				FFAE979F1F452C63009F76FF /* MDJJogsDatabase.swift in Sources */,
 				FF09F6271F43C1C700951F9F /* MDJUser.swift in Sources */,
 				FF09F6291F43C3C700951F9F /* MDJAuthenticationManager.swift in Sources */,
+				FFAE97A91F4545D5009F76FF /* MDJDateFormatter.swift in Sources */,
 				FF09F5E81F42A4EC00951F9F /* AppDelegate.swift in Sources */,
+				FFAE97AB1F454738009F76FF /* MDJDatabaseConstants.swift in Sources */,
+				FFAE97A41F453E9B009F76FF /* MDJJogsDatabaseObserver.swift in Sources */,
+				FFAE97A61F454187009F76FF /* MDJDataSnapshot.swift in Sources */,
 				FF09F6211F43C09E00951F9F /* MainAssembler.swift in Sources */,
+				FFAE97A21F452D5A009F76FF /* Jog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
