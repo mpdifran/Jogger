@@ -42,6 +42,8 @@ PODS:
   - Swinject (2.1.0)
   - SwinjectAutoregistration (2.1.0):
     - Swinject (~> 2.1)
+  - SwinjectStoryboard (1.1.1):
+    - Swinject (~> 2.0)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -49,6 +51,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Swinject (~> 2.1.0)
   - SwinjectAutoregistration (= 2.1.0)
+  - SwinjectStoryboard (= 1.1.1)
 
 SPEC CHECKSUMS:
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
@@ -62,7 +65,8 @@ SPEC CHECKSUMS:
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
   Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
   SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
+  SwinjectStoryboard: 4c71c25f312322844d39ee06f0f523db7b9b10a3
 
-PODFILE CHECKSUM: 43d3e6707c02593d6593eecc0348b473df14032c
+PODFILE CHECKSUM: 0b4bc749c27497e1a195bafee90ee43b2845205e
 
 COCOAPODS: 1.2.0
