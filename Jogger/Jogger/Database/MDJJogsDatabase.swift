@@ -7,11 +7,16 @@
 //
 
 import Foundation
+import Swinject
+import SwinjectAutoregistration
 
 // MARK: - MDJJogsDatabase
 
 protocol MDJJogsDatabase: class {
 
+    /// Record a jog for the currently authenticated user.
+    ///
+    /// - returns: `true` if the jog was recorded, `false` otherwise.
     func record(jog: Jog) -> Bool
 }
 
@@ -53,5 +58,14 @@ private extension MDJDefaultJogsDatabase {
         return [MDJDatabaseConstants.Key.date : dateFormatter.string(from: jog.date),
                 MDJDatabaseConstants.Key.distance : jog.distance,
                 MDJDatabaseConstants.Key.time : jog.time]
+    }
+}
+
+// MARK: - MDJJogsDatabaseAssembly
+
+class MDJJogsDatabaseAssembly: Assembly {
+
+    func assemble(container: Container) {
+        container.autoregister(MDJJogsDatabase.self, initializer: MDJDefaultJogsDatabase.init).inObjectScope(.weak)
     }
 }

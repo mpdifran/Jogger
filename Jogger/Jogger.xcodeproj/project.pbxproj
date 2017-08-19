@@ -58,6 +58,7 @@
 		FFAE97F01F48F3A4009F76FF /* MDJFirebaseConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97EF1F48F3A4009F76FF /* MDJFirebaseConfigurer.swift */; };
 		FFAE97F21F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97F11F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift */; };
 		FFAE97F41F48F5C2009F76FF /* MDJFirebaseAppMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97F31F48F5C2009F76FF /* MDJFirebaseAppMock.swift */; };
+		FFAE97EC1F48F1F0009F76FF /* CreateJogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97EB1F48F1F0009F76FF /* CreateJogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		FFAE97EF1F48F3A4009F76FF /* MDJFirebaseConfigurer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseConfigurer.swift; sourceTree = "<group>"; };
 		FFAE97F11F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseConfigurerTests.swift; sourceTree = "<group>"; };
 		FFAE97F31F48F5C2009F76FF /* MDJFirebaseAppMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseAppMock.swift; sourceTree = "<group>"; };
+		FFAE97EB1F48F1F0009F76FF /* CreateJogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +364,7 @@
 				FFAE97DB1F48D953009F76FF /* Jogs.storyboard */,
 				FFAE97D91F48D926009F76FF /* JogListViewController.swift */,
 				FFAE97DD1F48DA77009F76FF /* JogTableViewCell.swift */,
+				FFAE97EB1F48F1F0009F76FF /* CreateJogViewController.swift */,
 			);
 			path = Jogs;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 				FFAE97AB1F454738009F76FF /* MDJDatabaseConstants.swift in Sources */,
 				FFAE97A41F453E9B009F76FF /* MDJJogsDatabaseObserver.swift in Sources */,
 				FFAE97F01F48F3A4009F76FF /* MDJFirebaseConfigurer.swift in Sources */,
+				FFAE97EC1F48F1F0009F76FF /* CreateJogViewController.swift in Sources */,
 				FFAE97DA1F48D926009F76FF /* JogListViewController.swift in Sources */,
 				FFAE97A61F454187009F76FF /* MDJDataSnapshot.swift in Sources */,
 				FF09F6211F43C09E00951F9F /* MainAssembler.swift in Sources */,

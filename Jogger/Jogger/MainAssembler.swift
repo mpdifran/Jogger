@@ -30,5 +30,8 @@ class MainAssembler {
         assembler.apply(assembly: JogListViewControllerAssembly())
         assembler.apply(assembly: MDJFirebaseAppAssembly())
         assembler.apply(assembly: MDJFirebaseConfigurerAssembly())
+        assembler.apply(assembly: CreateJogViewControllerAssembly())
+        assembler.apply(assembly: MDJJogsDatabaseAssembly())
+        assembler.apply(assembly: MDJJogsDatabaseObserverAssembly())
     }
 }

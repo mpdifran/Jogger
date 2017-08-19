@@ -26,7 +26,7 @@ extension JogListViewController {
         super.viewDidLoad()
 
         dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .medium
+        dateFormatter.timeStyle = .short
 
         setupNotifications()
     }
@@ -45,9 +45,12 @@ extension JogListViewController {
 
         let jog = jogsObserver.jogs[indexPath.row]
 
+        let hours = computeHours(from: jog.time)
+        let minutes = computeMinutes(from: jog.time)
+
         cell.dateLabel.text = dateFormatter.string(from: jog.date)
-        cell.timeLabel.text = "\(jog.time)"
-        cell.distanceLabel.text = "\(jog.distance) km"
+        cell.timeLabel.text = String(format: "%.0f hours, %.0f minutes", hours, minutes)
+        cell.distanceLabel.text = String(format: "%.0f km", jog.distance)
 
         return cell
     }
@@ -62,6 +65,15 @@ private extension JogListViewController {
                                                queue: .main) { [weak self] (_) in
                                                 self?.tableView.reloadData()
         }
+    }
+
+    func computeHours(from timeInterval: TimeInterval) -> TimeInterval {
+        return floor(timeInterval / 3600)
+    }
+
+    func computeMinutes(from timeInterval: TimeInterval) -> TimeInterval {
+        let remainingTime = timeInterval.truncatingRemainder(dividingBy: 3600)
+        return floor(remainingTime / 60)
     }
 }
 

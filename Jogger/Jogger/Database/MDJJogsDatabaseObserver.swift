@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Swinject
+import SwinjectAutoregistration
 
 // MARK: - Notifications
 
@@ -30,6 +32,7 @@ class MDJDefaultJogsDatabaseObserver {
         }
     }
 
+    fileprivate let userProvider: MDJUserProvider
     fileprivate let databaseReference: MDJDatabaseReference
     fileprivate var handle: UInt?
 
@@ -37,17 +40,13 @@ class MDJDefaultJogsDatabaseObserver {
 
     init(databaseReference: MDJDatabaseReference, userProvider: MDJUserProvider) {
         self.databaseReference = databaseReference
+        self.userProvider = userProvider
 
-        if let user = userProvider.user {
-            let path = MDJDatabaseConstants.Path.jogs(for: user)
-            handle = databaseReference.child(path).observe(.value, with: parse(_:))
-        }
+        setupNotifications()
     }
 
     deinit {
-        if let handle = handle {
-            databaseReference.removeObserver(withHandle: handle)
-        }
+        tearDownObserver()
     }
 }
 
@@ -58,6 +57,29 @@ extension MDJDefaultJogsDatabaseObserver: MDJJogsDatabaseObserver { }
 // MARK: Private Methods
 
 private extension MDJDefaultJogsDatabaseObserver {
+
+    func setupNotifications() {
+        NotificationCenter.default.addObserver(forName: .MDJUserProviderUserUpdated, object: userProvider,
+                                               queue: .main) { [weak self] (_) in
+                                                self?.setupObserver()
+        }
+    }
+
+    func setupObserver() {
+        tearDownObserver()
+
+        if let user = userProvider.user {
+            let path = MDJDatabaseConstants.Path.jogs(for: user)
+            handle = databaseReference.child(path).observe(.value, with: parse(_:))
+        }
+    }
+
+    func tearDownObserver() {
+        if let handle = handle {
+            databaseReference.removeObserver(withHandle: handle)
+        }
+        handle = nil
+    }
 
     func parse(_ snapshot: MDJDataSnapshot) {
         var jogs = [Jog]()
@@ -82,5 +104,15 @@ private extension MDJDefaultJogsDatabaseObserver {
             let date = dateFormatter.date(from: dateString) else { return nil }
 
         return Jog(date: date, distance: distance, time: time)
+    }
+}
+
+// MARK: - MDJJogsDatabaseObserverAssembly
+
+class MDJJogsDatabaseObserverAssembly: Assembly {
+
+    func assemble(container: Container) {
+        container.autoregister(MDJJogsDatabaseObserver.self, initializer: MDJDefaultJogsDatabaseObserver.init)
+            .inObjectScope(.weak)
     }
 }

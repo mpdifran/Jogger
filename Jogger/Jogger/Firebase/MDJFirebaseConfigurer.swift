@@ -47,5 +47,6 @@ class MDJFirebaseConfigurerAssembly: Assembly {
 
     func assemble(container: Container) {
         container.autoregister(MDJFirebaseConfigurer.self, initializer: MDJDefaultFirebaseConfigurer.init)
+            .inObjectScope(.container)
     }
 }
