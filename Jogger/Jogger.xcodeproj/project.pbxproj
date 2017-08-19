@@ -50,6 +50,10 @@
 		FFAE97D31F47CB4A009F76FF /* MDJUserProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97D21F47CB4A009F76FF /* MDJUserProviderTests.swift */; };
 		FFAE97D51F47CC53009F76FF /* MDJUserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97D41F47CC53009F76FF /* MDJUserMock.swift */; };
 		FFAE97D71F48D0B2009F76FF /* BaseAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97D61F48D0B2009F76FF /* BaseAuthViewController.swift */; };
+		FFAE97DA1F48D926009F76FF /* JogListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97D91F48D926009F76FF /* JogListViewController.swift */; };
+		FFAE97DC1F48D954009F76FF /* Jogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAE97DB1F48D953009F76FF /* Jogs.storyboard */; };
+		FFAE97DE1F48DA77009F76FF /* JogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97DD1F48DA77009F76FF /* JogTableViewCell.swift */; };
+		FFAE97E11F48DB0B009F76FF /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97E01F48DB0B009F76FF /* UITableView+Dequeue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +116,10 @@
 		FFAE97D21F47CB4A009F76FF /* MDJUserProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserProviderTests.swift; sourceTree = "<group>"; };
 		FFAE97D41F47CC53009F76FF /* MDJUserMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserMock.swift; sourceTree = "<group>"; };
 		FFAE97D61F48D0B2009F76FF /* BaseAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAuthViewController.swift; sourceTree = "<group>"; };
+		FFAE97D91F48D926009F76FF /* JogListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogListViewController.swift; sourceTree = "<group>"; };
+		FFAE97DB1F48D953009F76FF /* Jogs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Jogs.storyboard; sourceTree = "<group>"; };
+		FFAE97DD1F48DA77009F76FF /* JogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogTableViewCell.swift; sourceTree = "<group>"; };
+		FFAE97E01F48DB0B009F76FF /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +319,8 @@
 				FF09F5EB1F42A4EC00951F9F /* Main.storyboard */,
 				FFAE97BD1F47C17C009F76FF /* RootTabBarController */,
 				FFAE97AD1F479527009F76FF /* Authentication */,
+				FFAE97D81F48D900009F76FF /* Jogs */,
+				FFAE97DF1F48DAED009F76FF /* Extensions */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -332,6 +342,24 @@
 				FFAE97BE1F47C1AE009F76FF /* RootTabBarController.swift */,
 			);
 			path = RootTabBarController;
+			sourceTree = "<group>";
+		};
+		FFAE97D81F48D900009F76FF /* Jogs */ = {
+			isa = PBXGroup;
+			children = (
+				FFAE97DB1F48D953009F76FF /* Jogs.storyboard */,
+				FFAE97D91F48D926009F76FF /* JogListViewController.swift */,
+				FFAE97DD1F48DA77009F76FF /* JogTableViewCell.swift */,
+			);
+			path = Jogs;
+			sourceTree = "<group>";
+		};
+		FFAE97DF1F48DAED009F76FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FFAE97E01F48DB0B009F76FF /* UITableView+Dequeue.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,6 +491,7 @@
 				FF09F5F21F42A4EC00951F9F /* LaunchScreen.storyboard in Resources */,
 				FF09F6181F42A56700951F9F /* GoogleService-Info.plist in Resources */,
 				FF09F5EF1F42A4EC00951F9F /* Assets.xcassets in Resources */,
+				FFAE97DC1F48D954009F76FF /* Jogs.storyboard in Resources */,
 				FF09F5ED1F42A4EC00951F9F /* Main.storyboard in Resources */,
 				FFAE97AF1F479549009F76FF /* Authentication.storyboard in Resources */,
 			);
@@ -642,6 +671,8 @@
 			files = (
 				FFAE97B31F479B26009F76FF /* CreateAccountViewController.swift in Sources */,
 				FFAE97BF1F47C1AE009F76FF /* RootTabBarController.swift in Sources */,
+				FFAE97E11F48DB0B009F76FF /* UITableView+Dequeue.swift in Sources */,
+				FFAE97DE1F48DA77009F76FF /* JogTableViewCell.swift in Sources */,
 				FF09F6251F43C13800951F9F /* MDJAuth.swift in Sources */,
 				FFAE97D71F48D0B2009F76FF /* BaseAuthViewController.swift in Sources */,
 				FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */,
@@ -653,6 +684,7 @@
 				FF09F5E81F42A4EC00951F9F /* AppDelegate.swift in Sources */,
 				FFAE97AB1F454738009F76FF /* MDJDatabaseConstants.swift in Sources */,
 				FFAE97A41F453E9B009F76FF /* MDJJogsDatabaseObserver.swift in Sources */,
+				FFAE97DA1F48D926009F76FF /* JogListViewController.swift in Sources */,
 				FFAE97A61F454187009F76FF /* MDJDataSnapshot.swift in Sources */,
 				FF09F6211F43C09E00951F9F /* MainAssembler.swift in Sources */,
 				FFAE97A21F452D5A009F76FF /* Jog.swift in Sources */,

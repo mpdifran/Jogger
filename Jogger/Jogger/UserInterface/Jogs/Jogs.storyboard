@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nSq-3R-nnB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Jogs-->
+        <scene sceneID="VU7-bh-KWh">
+            <objects>
+                <tableViewController id="jRt-FI-A22" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="amx-Ls-9X8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JogTableViewCell" id="4YO-is-FOz" customClass="JogTableViewCell" customModule="Jogger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4YO-is-FOz" id="5Kp-p5-Vf4">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat, Aug 19, 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b14-G1-rLQ">
+                                            <rect key="frame" x="8" y="8" width="142" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 hour, 43 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-Fg-q5J">
+                                            <rect key="frame" x="8" y="40" width="108" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OT-lF-nb1">
+                                            <rect key="frame" x="300.5" y="20" width="66.5" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="N4N-Fg-q5J" firstAttribute="leading" secondItem="5Kp-p5-Vf4" secondAttribute="leadingMargin" id="Fhi-ks-wgS"/>
+                                        <constraint firstItem="5OT-lF-nb1" firstAttribute="trailing" secondItem="5Kp-p5-Vf4" secondAttribute="trailingMargin" id="Hfo-F8-qAI"/>
+                                        <constraint firstItem="b14-G1-rLQ" firstAttribute="top" secondItem="5Kp-p5-Vf4" secondAttribute="topMargin" id="U5Q-6U-zEe"/>
+                                        <constraint firstItem="5OT-lF-nb1" firstAttribute="centerY" secondItem="5Kp-p5-Vf4" secondAttribute="centerY" id="UAL-hT-VoK"/>
+                                        <constraint firstItem="b14-G1-rLQ" firstAttribute="leading" secondItem="5Kp-p5-Vf4" secondAttribute="leadingMargin" id="pr2-je-q0J"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="N4N-Fg-q5J" secondAttribute="bottom" id="xDC-C6-SdZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="b14-G1-rLQ" id="7Yg-aA-nd8"/>
+                                    <outlet property="distanceLabel" destination="5OT-lF-nb1" id="fSN-og-P7N"/>
+                                    <outlet property="timeLabel" destination="N4N-Fg-q5J" id="278-fm-H3E"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jRt-FI-A22" id="yk4-xe-jqX"/>
+                            <outlet property="delegate" destination="jRt-FI-A22" id="laG-wx-UEy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Jogs" id="2wQ-bi-ved"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJU-TJ-qzV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="302"/>
+        </scene>
+        <!--Jogs-->
+        <scene sceneID="Nry-vR-H0q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nSq-3R-nnB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Jogs" id="Dan-gq-SIi"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tcc-qy-iff">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jRt-FI-A22" kind="relationship" relationship="rootViewController" id="ACA-fA-a0M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lcr-GQ-xdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-47.200000000000003" y="301.79910044977515"/>
+        </scene>
+    </scenes>
+</document>

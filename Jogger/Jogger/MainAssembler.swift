@@ -27,5 +27,6 @@ class MainAssembler {
         assembler.apply(assembly: LogInViewControllerAssembly())
         assembler.apply(assembly: RootTabBarControllerAssembly())
         assembler.apply(assembly: CreateAccountViewControllerAssembly())
+        assembler.apply(assembly: JogListViewControllerAssembly())
     }
 }
