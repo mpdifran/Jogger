@@ -13,8 +13,7 @@ import SwinjectAutoregistration
 // MARK: - Notifications
 
 extension Notification.Name {
-    static let MDJAuthenticationManagerUserUpdated =
-        Notification.Name("Notification.Name.MDJAuthenticationManagerUserUpdated")
+    static let MDJUserProviderUserUpdated = Notification.Name("Notification.Name.MDJUserProviderUserUpdated")
 }
 
 // MARK: - MDJUserProvider
@@ -23,33 +22,22 @@ protocol MDJUserProvider: class {
     var user: MDJUser? { get }
 }
 
-// MARK: - MDJAuthenticationManagerDelegate
-
-protocol MDJAuthenticationManagerDelegate: class {
-
-    func encountered(error: Error, in manager: MDJAuthenticationManager)
-}
-
 // MARK: - MDJAuthenticationManager
 
 protocol MDJAuthenticationManager: class {
-    var delegate: MDJAuthenticationManagerDelegate? { get set }
+    func createUser(withEmail email: String, password: String, completion: @escaping (Error?) -> Void)
 
-    func createUser(withEmail email: String, password: String)
+    func signIn(withEmail email: String, password: String, completion: @escaping (Error?) -> Void)
 
-    func signIn(withEmail email: String, password: String)
-
-    func signOut()
+    func signOut() -> Error?
 }
 
 // MARK: - MDJDefaultAuthenticationManager
 
 class MDJDefaultAuthenticationManager {
-    weak var delegate: MDJAuthenticationManagerDelegate?
-
     var user: MDJUser? {
         didSet {
-            NotificationCenter.default.post(name: .MDJAuthenticationManagerUserUpdated, object: self)
+            NotificationCenter.default.post(name: .MDJUserProviderUserUpdated, object: self)
         }
     }
 
@@ -68,33 +56,29 @@ extension MDJDefaultAuthenticationManager: MDJUserProvider { }
 
 extension MDJDefaultAuthenticationManager: MDJAuthenticationManager {
 
-    func createUser(withEmail email: String, password: String) {
-        auth.createUser(withEmail: email, password: password, completion: handleAuthCallback(user:error:))
+    func createUser(withEmail email: String, password: String, completion: @escaping (Error?) -> Void) {
+        auth.createUser(withEmail: email, password: password) { [weak self] (user, error) in
+            self?.user = user
+
+            completion(error)
+        }
     }
 
-    func signIn(withEmail email: String, password: String) {
-        auth.signIn(withEmail: email, password: password, completion: handleAuthCallback(user:error:))
+    func signIn(withEmail email: String, password: String, completion: @escaping (Error?) -> Void) {
+        auth.signIn(withEmail: email, password: password) { [weak self] (user, error) in
+            self?.user = user
+
+            completion(error)
+        }
     }
 
-    func signOut() {
+    func signOut() -> Error? {
         do {
             try auth.signOut()
         } catch {
-            delegate?.encountered(error: error, in: self)
+            return error
         }
-    }
-}
-
-// MARK: - Private Methods
-
-private extension MDJDefaultAuthenticationManager {
-
-    func handleAuthCallback(user: MDJUser?, error: Error?) {
-        self.user = user
-
-        if let error = error {
-            delegate?.encountered(error: error, in: self)
-        }
+        return nil
     }
 }
 

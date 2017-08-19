@@ -13,7 +13,6 @@ class MDJAuthenticationManagerTests: XCTestCase {
     var sut: MDJAuthenticationManager!
 
     var authMock: MDJAuthMock!
-    var delegateMock: MDJAuthenticationManagerDelegateMock!
 
     let testEmail = "mark@test.com"
     let testPassword = "password"
@@ -24,10 +23,8 @@ class MDJAuthenticationManagerTests: XCTestCase {
         super.setUp()
 
         authMock = MDJAuthMock()
-        delegateMock = MDJAuthenticationManagerDelegateMock()
 
         sut = MDJDefaultAuthenticationManager(auth: authMock)
-        sut.delegate = delegateMock
     }
 
     // MARK: - Test Methods
@@ -35,7 +32,7 @@ class MDJAuthenticationManagerTests: XCTestCase {
     func test_createUser_passesCredentialsToAuth() {
         // Arrange
         // Act
-        sut.createUser(withEmail: testEmail, password: testPassword)
+        sut.createUser(withEmail: testEmail, password: testPassword) { (_) in }
 
         // Assert
         XCTAssertEqual(testEmail, authMock.lastEmail)
@@ -43,22 +40,26 @@ class MDJAuthenticationManagerTests: XCTestCase {
         XCTAssertTrue(authMock.didCreateUser)
     }
 
-    func test_createUser_encountersError_delegateIsInformed() {
+    func test_createUser_encountersError_errorPassedToCompletion() {
         // Arrange
+        let exp = expectation(description: "\(#function)")
         let expectedError = NSError(domain: "com.test", code: 1, userInfo: nil)
-        sut.createUser(withEmail: testEmail, password: testPassword)
+        sut.createUser(withEmail: testEmail, password: testPassword) { (error) in
+            XCTAssertEqual(expectedError, error as NSError?)
+            exp.fulfill()
+        }
 
         // Act
         authMock.lastCompletion?(nil, expectedError)
 
         // Assert
-        XCTAssertEqual(expectedError, delegateMock.lastError as NSError?)
+        waitForExpectations(timeout: 0, handler: nil)
     }
 
     func test_signIn_passesCredentialsToAuth() {
         // Arrange
         // Act
-        sut.signIn(withEmail: testEmail, password: testPassword)
+        sut.signIn(withEmail: testEmail, password: testPassword) { (_) in }
 
         // Assert
         XCTAssertEqual(testEmail, authMock.lastEmail)
@@ -68,20 +69,24 @@ class MDJAuthenticationManagerTests: XCTestCase {
 
     func test_signIn_encountersError_delegateIsInformed() {
         // Arrange
+        let exp = expectation(description: "\(#function)")
         let expectedError = NSError(domain: "com.test", code: 1, userInfo: nil)
-        sut.signIn(withEmail: testEmail, password: testPassword)
+        sut.signIn(withEmail: testEmail, password: testPassword) { (error) in
+            XCTAssertEqual(expectedError, error as NSError?)
+            exp.fulfill()
+        }
 
         // Act
         authMock.lastCompletion?(nil, expectedError)
 
         // Assert
-        XCTAssertEqual(expectedError, delegateMock.lastError as NSError?)
+        waitForExpectations(timeout: 0, handler: nil)
     }
 
     func test_signOut_callsSignOutOnAuth() {
         // Arrange
         // Act
-        sut.signOut()
+        let _ = sut.signOut()
 
         // Assert
         XCTAssertTrue(authMock.didSignOut)
@@ -93,9 +98,9 @@ class MDJAuthenticationManagerTests: XCTestCase {
         authMock.errorToThrow = expectedError
 
         // Act
-        sut.signOut()
+        let result = sut.signOut()
 
         // Assert
-        XCTAssertEqual(expectedError, delegateMock.lastError as NSError?)
+        XCTAssertEqual(expectedError, result as NSError?)
     }
 }

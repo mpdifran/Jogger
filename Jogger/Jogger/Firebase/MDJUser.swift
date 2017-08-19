@@ -9,13 +9,15 @@
 import Foundation
 import Firebase
 
+typealias AuthTokenCallback = FirebaseAuth.AuthTokenCallback
+
 // MARK: - MDJUser
 
 protocol MDJUser: class {
     var refreshToken: String? { get }
     var uid: String { get }
 
-    func getIDToken(completion: FirebaseAuth.AuthTokenCallback?)
+    func getIDToken(completion: AuthTokenCallback?)
 }
 
 // MARK: - User Extension
