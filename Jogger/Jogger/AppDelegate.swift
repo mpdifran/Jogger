@@ -27,8 +27,6 @@ extension AppDelegate: UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setupWindow()
 
-        //FirebaseApp.configure()
-
         return true
     }
 }

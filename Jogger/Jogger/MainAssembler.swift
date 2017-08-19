@@ -28,5 +28,7 @@ class MainAssembler {
         assembler.apply(assembly: RootTabBarControllerAssembly())
         assembler.apply(assembly: CreateAccountViewControllerAssembly())
         assembler.apply(assembly: JogListViewControllerAssembly())
+        assembler.apply(assembly: MDJFirebaseAppAssembly())
+        assembler.apply(assembly: MDJFirebaseConfigurerAssembly())
     }
 }

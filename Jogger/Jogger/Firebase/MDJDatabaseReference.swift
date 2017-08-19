@@ -49,7 +49,9 @@ extension DatabaseReference: MDJDatabaseReference {
 class MDJDatabaseReferenceAssembly: Assembly {
 
     func assemble(container: Container) {
-        container.register(MDJDatabaseReference.self, factory: { _ in
+        container.register(MDJDatabaseReference.self, factory: { r in
+            let configurer = r.resolve(MDJFirebaseConfigurer.self)!
+            configurer.configure()
             return Database.database().reference()
         }).inObjectScope(.container)
     }

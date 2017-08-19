@@ -45,8 +45,9 @@ extension Auth: MDJAuth {
 class MDJAuthAssembly: Assembly {
 
     func assemble(container: Container) {
-        container.register(MDJAuth.self) { _ in
-            FirebaseApp.configure()
+        container.register(MDJAuth.self) { r in
+            let configurer = r.resolve(MDJFirebaseConfigurer.self)!
+            configurer.configure()
             return Auth.auth()
         }
     }
