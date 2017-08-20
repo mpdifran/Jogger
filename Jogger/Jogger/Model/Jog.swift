@@ -16,6 +16,10 @@ class Jog {
     let distance: Double
     let time: TimeInterval
 
+    var averageSpeed: Double {
+        return distance / time * 3600
+    }
+
     init(date: Date, distance: Double, time: TimeInterval) {
         self.date = date
         self.distance = distance

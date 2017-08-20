@@ -54,11 +54,12 @@
 		FFAE97DC1F48D954009F76FF /* Jogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAE97DB1F48D953009F76FF /* Jogs.storyboard */; };
 		FFAE97DE1F48DA77009F76FF /* JogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97DD1F48DA77009F76FF /* JogTableViewCell.swift */; };
 		FFAE97E11F48DB0B009F76FF /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97E01F48DB0B009F76FF /* UITableView+Dequeue.swift */; };
+		FFAE97EC1F48F1F0009F76FF /* CreateJogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97EB1F48F1F0009F76FF /* CreateJogViewController.swift */; };
 		FFAE97EE1F48F2D9009F76FF /* MDJFirebaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97ED1F48F2D9009F76FF /* MDJFirebaseApp.swift */; };
 		FFAE97F01F48F3A4009F76FF /* MDJFirebaseConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97EF1F48F3A4009F76FF /* MDJFirebaseConfigurer.swift */; };
 		FFAE97F21F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97F11F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift */; };
 		FFAE97F41F48F5C2009F76FF /* MDJFirebaseAppMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97F31F48F5C2009F76FF /* MDJFirebaseAppMock.swift */; };
-		FFAE97EC1F48F1F0009F76FF /* CreateJogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97EB1F48F1F0009F76FF /* CreateJogViewController.swift */; };
+		FFAE98001F492A24009F76FF /* JogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97FF1F492A24009F76FF /* JogTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,11 +126,12 @@
 		FFAE97DB1F48D953009F76FF /* Jogs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Jogs.storyboard; sourceTree = "<group>"; };
 		FFAE97DD1F48DA77009F76FF /* JogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogTableViewCell.swift; sourceTree = "<group>"; };
 		FFAE97E01F48DB0B009F76FF /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
+		FFAE97EB1F48F1F0009F76FF /* CreateJogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJogViewController.swift; sourceTree = "<group>"; };
 		FFAE97ED1F48F2D9009F76FF /* MDJFirebaseApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseApp.swift; sourceTree = "<group>"; };
 		FFAE97EF1F48F3A4009F76FF /* MDJFirebaseConfigurer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseConfigurer.swift; sourceTree = "<group>"; };
 		FFAE97F11F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseConfigurerTests.swift; sourceTree = "<group>"; };
 		FFAE97F31F48F5C2009F76FF /* MDJFirebaseAppMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseAppMock.swift; sourceTree = "<group>"; };
-		FFAE97EB1F48F1F0009F76FF /* CreateJogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJogViewController.swift; sourceTree = "<group>"; };
+		FFAE97FF1F492A24009F76FF /* JogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 		FF09F5FB1F42A4EC00951F9F /* JoggerTests */ = {
 			isa = PBXGroup;
 			children = (
+				FFAE97FE1F492A04009F76FF /* Model */,
 				FF09F62A1F43CA9C00951F9F /* Authentication */,
 				FF09F62E1F43CAEC00951F9F /* Firebase */,
 				FF09F5FE1F42A4EC00951F9F /* Info.plist */,
@@ -375,6 +378,14 @@
 				FFAE97E01F48DB0B009F76FF /* UITableView+Dequeue.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FFAE97FE1F492A04009F76FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFAE97FF1F492A24009F76FF /* JogTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -715,6 +726,7 @@
 			files = (
 				FFAE97D51F47CC53009F76FF /* MDJUserMock.swift in Sources */,
 				FFAE97F21F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift in Sources */,
+				FFAE98001F492A24009F76FF /* JogTests.swift in Sources */,
 				FFAE97F41F48F5C2009F76FF /* MDJFirebaseAppMock.swift in Sources */,
 				FF09F62D1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift in Sources */,
 				FF09F6311F43CB2100951F9F /* MDJAuthMock.swift in Sources */,

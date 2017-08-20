@@ -52,6 +52,7 @@ extension JogListViewController {
         cell.dateLabel.text = dateFormatter.string(from: jog.date)
         cell.timeLabel.text = String(format: "%.0f hours, %.0f minutes", hours, minutes)
         cell.distanceLabel.text = String(format: "%.0f km", jog.distance)
+        cell.averageSpeedLabel.text = String(format: "avg %.2f km/h", jog.averageSpeed)
 
         return cell
     }
