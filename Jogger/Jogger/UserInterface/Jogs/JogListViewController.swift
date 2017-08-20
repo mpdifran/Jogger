@@ -13,6 +13,11 @@ import SwinjectStoryboard
 // MARK: - JogListViewController
 
 class JogListViewController: UITableViewController {
+
+    fileprivate struct Segue {
+        static let editJog = "JogEditSegue"
+    }
+
     fileprivate var jogsObserver: MDJJogsFilterableDatabaseObserver!
     fileprivate var jogsDatabase: MDJJogsDatabase!
 
@@ -31,6 +36,22 @@ extension JogListViewController {
 
         setupNotifications()
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+
+        switch identifier {
+        case Segue.editJog:
+            guard let editViewController = segue.destination as? CreateEditJogViewController else { return }
+
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let jog = jogsObserver.jogs[indexPath.row]
+                editViewController.jog = jog
+            }
+        default:
+            break
+        }
+    }
 }
 
 // MARK: UITableViewDataSource Methods
@@ -46,11 +67,8 @@ extension JogListViewController {
 
         let jog = jogsObserver.jogs[indexPath.row]
 
-        let hours = computeHours(from: jog.time)
-        let minutes = computeMinutes(from: jog.time)
-
         cell.dateLabel.text = dateFormatter.string(from: jog.date)
-        cell.timeLabel.text = String(format: "%.0f hours, %.0f minutes", hours, minutes)
+        cell.timeLabel.text = String(format: "%.0f hours, %.0f minutes", jog.hours, jog.minutes)
         cell.distanceLabel.text = String(format: "%.0f km", jog.distance)
         cell.averageSpeedLabel.text = String(format: "avg %.2f km/h", jog.averageSpeed)
 
@@ -83,15 +101,6 @@ private extension JogListViewController {
                                                queue: .main) { [weak self] (_) in
                                                 self?.tableView.reloadData()
         }
-    }
-
-    func computeHours(from timeInterval: TimeInterval) -> TimeInterval {
-        return floor(timeInterval / 3600)
-    }
-
-    func computeMinutes(from timeInterval: TimeInterval) -> TimeInterval {
-        let remainingTime = timeInterval.truncatingRemainder(dividingBy: 3600)
-        return floor(remainingTime / 60)
     }
 }
 

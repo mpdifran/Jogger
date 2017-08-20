@@ -14,10 +14,10 @@ import SwinjectAutoregistration
 
 protocol MDJJogsDatabase: class {
 
-    /// Record a jog for the currently authenticated user.
+    /// Creates a new jog in the database, or updates the jog if it already exists.
     ///
     /// - returns: `true` if the jog was recorded, `false` otherwise.
-    func record(jog: Jog) -> Bool
+    func createOrUpdate(jog: Jog) -> Bool
 
     /// Deletes a jog from the database. 
     ///
@@ -46,14 +46,18 @@ class MDJDefaultJogsDatabase {
 
 extension MDJDefaultJogsDatabase: MDJJogsDatabase {
 
-    func record(jog: Jog) -> Bool {
+    func createOrUpdate(jog: Jog) -> Bool {
         guard let user = userProvider.user else { return false }
 
         let jogData = createDictionaryRepresentation(for: jog)
 
         let path = MDJDatabaseConstants.Path.jogs(for: user)
-        databaseReference.child(path).childByAutoId().setValue(jogData)
 
+        if let identifier = jog.identifier {
+            databaseReference.child(path).child(identifier).setValue(jogData)
+        } else {
+            databaseReference.child(path).childByAutoId().setValue(jogData)
+        }
         return true
     }
 

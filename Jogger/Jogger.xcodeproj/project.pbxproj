@@ -54,7 +54,7 @@
 		FFAE97DC1F48D954009F76FF /* Jogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAE97DB1F48D953009F76FF /* Jogs.storyboard */; };
 		FFAE97DE1F48DA77009F76FF /* JogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97DD1F48DA77009F76FF /* JogTableViewCell.swift */; };
 		FFAE97E11F48DB0B009F76FF /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97E01F48DB0B009F76FF /* UITableView+Dequeue.swift */; };
-		FFAE97EC1F48F1F0009F76FF /* CreateJogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97EB1F48F1F0009F76FF /* CreateJogViewController.swift */; };
+		FFAE97EC1F48F1F0009F76FF /* CreateEditJogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97EB1F48F1F0009F76FF /* CreateEditJogViewController.swift */; };
 		FFAE97EE1F48F2D9009F76FF /* MDJFirebaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97ED1F48F2D9009F76FF /* MDJFirebaseApp.swift */; };
 		FFAE97F01F48F3A4009F76FF /* MDJFirebaseConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97EF1F48F3A4009F76FF /* MDJFirebaseConfigurer.swift */; };
 		FFAE97F21F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97F11F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift */; };
@@ -128,7 +128,7 @@
 		FFAE97DB1F48D953009F76FF /* Jogs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Jogs.storyboard; sourceTree = "<group>"; };
 		FFAE97DD1F48DA77009F76FF /* JogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogTableViewCell.swift; sourceTree = "<group>"; };
 		FFAE97E01F48DB0B009F76FF /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
-		FFAE97EB1F48F1F0009F76FF /* CreateJogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJogViewController.swift; sourceTree = "<group>"; };
+		FFAE97EB1F48F1F0009F76FF /* CreateEditJogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEditJogViewController.swift; sourceTree = "<group>"; };
 		FFAE97ED1F48F2D9009F76FF /* MDJFirebaseApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseApp.swift; sourceTree = "<group>"; };
 		FFAE97EF1F48F3A4009F76FF /* MDJFirebaseConfigurer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseConfigurer.swift; sourceTree = "<group>"; };
 		FFAE97F11F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseConfigurerTests.swift; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 				FFAE97DB1F48D953009F76FF /* Jogs.storyboard */,
 				FFAE97D91F48D926009F76FF /* JogListViewController.swift */,
 				FFAE97DD1F48DA77009F76FF /* JogTableViewCell.swift */,
-				FFAE97EB1F48F1F0009F76FF /* CreateJogViewController.swift */,
+				FFAE97EB1F48F1F0009F76FF /* CreateEditJogViewController.swift */,
 				FFAE98051F493B7F009F76FF /* JogFilterViewController.swift */,
 			);
 			path = Jogs;
@@ -720,7 +720,7 @@
 				FFAE97AB1F454738009F76FF /* MDJDatabaseConstants.swift in Sources */,
 				FFAE97A41F453E9B009F76FF /* MDJJogsDatabaseObserver.swift in Sources */,
 				FFAE97F01F48F3A4009F76FF /* MDJFirebaseConfigurer.swift in Sources */,
-				FFAE97EC1F48F1F0009F76FF /* CreateJogViewController.swift in Sources */,
+				FFAE97EC1F48F1F0009F76FF /* CreateEditJogViewController.swift in Sources */,
 				FFAE97DA1F48D926009F76FF /* JogListViewController.swift in Sources */,
 				FFAE97A61F454187009F76FF /* MDJDataSnapshot.swift in Sources */,
 				FF09F6211F43C09E00951F9F /* MainAssembler.swift in Sources */,

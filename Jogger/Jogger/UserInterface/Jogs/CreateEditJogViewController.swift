@@ -1,5 +1,5 @@
 //
-//  CreateJogViewController.swift
+//  CreateEditJogViewController.swift
 //  Jogger
 //
 //  Created by Mark DiFranco on 2017-08-19.
@@ -10,9 +10,18 @@ import UIKit
 import Swinject
 import SwinjectStoryboard
 
-// MARK: - CreateJogViewController
+// MARK: - CreateEditJogViewController
 
-class CreateJogViewController: UITableViewController {
+class CreateEditJogViewController: UITableViewController {
+    var jog = Jog() {
+        didSet {
+            createButton.title = "Update"
+            navigationItem.leftBarButtonItem = nil
+
+            title = "Edit Jog"
+        }
+    }
+
     fileprivate var jogsDatabase: MDJJogsDatabase!
     fileprivate let dateFormatter = DateFormatter()
 
@@ -30,11 +39,12 @@ class CreateJogViewController: UITableViewController {
     @IBOutlet weak var hoursTextField: UITextField!
     @IBOutlet weak var minutesTextField: UITextField!
     @IBOutlet weak var distanceTextField: UITextField!
+    @IBOutlet weak var createButton: UIBarButtonItem!
 }
 
 // MARK: View Lifecycle Methods
 
-extension CreateJogViewController {
+extension CreateEditJogViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +52,18 @@ extension CreateJogViewController {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
 
+        datePicker.setDate(jog.date, animated: false)
+        hoursTextField.text = String(format: "%.0f", jog.hours)
+        minutesTextField.text = String(format: "%.0f", jog.minutes)
+        distanceTextField.text = String(format: "%.0f", jog.distance)
+
         datePickerDidChange(datePicker)
     }
 }
 
 // MARK: UITextFieldDelegate Methods
 
-extension CreateJogViewController: UITextFieldDelegate {
+extension CreateEditJogViewController: UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
@@ -64,7 +79,7 @@ extension CreateJogViewController: UITextFieldDelegate {
 
 // MARK: IBAction Methods
 
-extension CreateJogViewController {
+extension CreateEditJogViewController {
 
     @IBAction func datePickerDidChange(_ sender: UIDatePicker) {
         dateLabel.text = dateFormatter.string(from: sender.date)
@@ -75,10 +90,16 @@ extension CreateJogViewController {
     }
 
     @IBAction func didTapCreate(_ sender: Any) {
-        let jog = Jog(date: datePicker.date, distance: distance, time: time)
+        jog.date = datePicker.date
+        jog.distance = distance
+        jog.time = time
 
-        if jogsDatabase.record(jog: jog) {
-            presentingViewController?.dismiss(animated: true, completion: nil)
+        if jogsDatabase.createOrUpdate(jog: jog) {
+            if let presentingViewController = presentingViewController {
+                presentingViewController.dismiss(animated: true, completion: nil)
+            } else {
+                navigationController?.popViewController(animated: true)
+            }
         } else {
             let alertController = UIAlertController(title: "Uh oh", message: "We were unable to save your jog.",
                                                     preferredStyle: .alert)
@@ -89,12 +110,12 @@ extension CreateJogViewController {
     }
 }
 
-// MARK: - CreateJogViewControllerAssembly
+// MARK: - CreateEditJogViewControllerAssembly
 
-class CreateJogViewControllerAssembly: Assembly {
+class CreateEditJogViewControllerAssembly: Assembly {
 
     func assemble(container: Container) {
-        container.storyboardInitCompleted(CreateJogViewController.self) { (r, c) in
+        container.storyboardInitCompleted(CreateEditJogViewController.self) { (r, c) in
             c.jogsDatabase = r.resolve(MDJJogsDatabase.self)!
         }
     }

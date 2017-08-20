@@ -12,13 +12,23 @@ import Foundation
 
 class Jog {
     var identifier: String?
-    let date: Date
-    let distance: Double
-    let time: TimeInterval
+    var date = Date()
+    var distance: Double = 0
+    var time: TimeInterval = 0
+
+    var hours: TimeInterval {
+        return floor(time / 3600)
+    }
+    var minutes: TimeInterval {
+        let remainingTime = time.truncatingRemainder(dividingBy: 3600)
+        return floor(remainingTime / 60)
+    }
 
     var averageSpeed: Double {
         return distance / time * 3600
     }
+
+    init() { }
 
     init(date: Date, distance: Double, time: TimeInterval) {
         self.date = date

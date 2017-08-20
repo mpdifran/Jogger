@@ -14,16 +14,16 @@
         <scene sceneID="VU7-bh-KWh">
             <objects>
                 <tableViewController id="jRt-FI-A22" customClass="JogListViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="amx-Ls-9X8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="amx-Ls-9X8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JogTableViewCell" id="4YO-is-FOz" customClass="JogTableViewCell" customModule="Jogger" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="JogTableViewCell" id="4YO-is-FOz" customClass="JogTableViewCell" customModule="Jogger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4YO-is-FOz" id="5Kp-p5-Vf4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat, Aug 19, 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b14-G1-rLQ">
@@ -39,7 +39,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="251" text="avg 12 km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJm-hi-fH4">
-                                            <rect key="frame" x="275" y="34" width="92" height="21"/>
+                                            <rect key="frame" x="242" y="34" width="92" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -70,6 +70,7 @@
                                     <outlet property="dateLabel" destination="b14-G1-rLQ" id="7Yg-aA-nd8"/>
                                     <outlet property="distanceLabel" destination="5OT-lF-nb1" id="fSN-og-P7N"/>
                                     <outlet property="timeLabel" destination="N4N-Fg-q5J" id="278-fm-H3E"/>
+                                    <segue destination="otR-CO-mSl" kind="show" identifier="JogEditSegue" id="x8J-SZ-vAj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -107,21 +108,21 @@
                             <tableViewSection headerTitle="From" id="pgm-fX-F4N">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="KDd-R0-4SE" detailTextLabel="Vrs-dH-AYC" style="IBUITableViewCellStyleValue1" id="i76-38-YuV">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i76-38-YuV" id="epL-We-l51">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KDd-R0-4SE">
-                                                    <rect key="frame" x="15" y="12" width="36" height="21"/>
+                                                    <rect key="frame" x="16" y="12" width="36" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="None" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vrs-dH-AYC">
-                                                    <rect key="frame" x="269" y="12" width="91" height="21"/>
+                                                    <rect key="frame" x="319" y="12" width="41" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,7 +132,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="216" id="ZrM-a7-ljx">
-                                        <rect key="frame" x="0.0" y="99.5" width="375" height="216"/>
+                                        <rect key="frame" x="0.0" y="100" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZrM-a7-ljx" id="hD4-wY-GVp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
@@ -156,7 +157,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1dS-Yp-mYZ">
-                                        <rect key="frame" x="0.0" y="315.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="316" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1dS-Yp-mYZ" id="VL5-g9-p52">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -183,14 +184,14 @@
                             <tableViewSection headerTitle="To" id="EYj-sp-mvM">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="RrI-SV-LBn" detailTextLabel="WUS-dT-4CH" style="IBUITableViewCellStyleValue1" id="3Ug-wt-0nr">
-                                        <rect key="frame" x="0.0" y="415.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="416" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Ug-wt-0nr" id="pap-yY-Km1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RrI-SV-LBn">
-                                                    <rect key="frame" x="15" y="12" width="36" height="20.5"/>
+                                                    <rect key="frame" x="16" y="12" width="36" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -207,7 +208,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="216" id="5A4-wd-T8i">
-                                        <rect key="frame" x="0.0" y="459.5" width="375" height="216"/>
+                                        <rect key="frame" x="0.0" y="460" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5A4-wd-T8i" id="Hok-Xr-NmM">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
@@ -232,7 +233,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9ar-X7-A2f">
-                                        <rect key="frame" x="0.0" y="675.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="676" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ar-X7-A2f" id="4jk-BY-j06">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -283,7 +284,7 @@
         <!--New Jog-->
         <scene sceneID="IM8-Lo-ZCe">
             <objects>
-                <tableViewController id="otR-CO-mSl" customClass="CreateJogViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="otR-CO-mSl" customClass="CreateEditJogViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="yl1-o5-sLz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,6 +469,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="createButton" destination="51a-M2-OKe" id="2Ep-X6-MYG"/>
                         <outlet property="dateLabel" destination="kt9-en-YjF" id="RX3-de-wy4"/>
                         <outlet property="datePicker" destination="dxU-kh-p1N" id="TRp-yQ-ai8"/>
                         <outlet property="distanceTextField" destination="DUt-3S-bDU" id="K3p-BE-VsO"/>
@@ -536,4 +538,7 @@
             <point key="canvasLocation" x="705" y="1009"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="x8J-SZ-vAj"/>
+    </inferredMetricsTieBreakers>
 </document>
