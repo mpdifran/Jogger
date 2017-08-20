@@ -52,10 +52,13 @@ extension CreateJogViewController: UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
-        let nsString = textField.text as NSString?
-        let newString = nsString?.replacingCharacters(in: range, with: string) ?? ""
+        return (Double(string) != nil || string.isEmpty)
+    }
 
-        return (Double(string) != nil || string.isEmpty) && !newString.isEmpty
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text?.isEmpty ?? true {
+            textField.text = "0"
+        }
     }
 }
 
