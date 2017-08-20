@@ -13,7 +13,7 @@ import SwinjectStoryboard
 // MARK: - JogListViewController
 
 class JogListViewController: UITableViewController {
-    fileprivate var jogsObserver: MDJJogsDatabaseObserver!
+    fileprivate var jogsObserver: MDJJogsFilterableDatabaseObserver!
     fileprivate var jogsDatabase: MDJJogsDatabase!
 
     fileprivate let dateFormatter = DateFormatter()
@@ -79,7 +79,7 @@ extension JogListViewController {
 private extension JogListViewController {
 
     func setupNotifications() {
-        NotificationCenter.default.addObserver(forName: .MDJJogsDatabaseObserverJogsUpdated, object: jogsObserver,
+        NotificationCenter.default.addObserver(forName: .MDJJogsFilterableDatabaseObserverJogsUpdated, object: jogsObserver,
                                                queue: .main) { [weak self] (_) in
                                                 self?.tableView.reloadData()
         }
@@ -101,7 +101,7 @@ class JogListViewControllerAssembly: Assembly {
 
     func assemble(container: Container) {
         container.storyboardInitCompleted(JogListViewController.self) { (r, c) in
-            c.jogsObserver = r.resolve(MDJJogsDatabaseObserver.self)!
+            c.jogsObserver = r.resolve(MDJJogsFilterableDatabaseObserver.self)!
             c.jogsDatabase = r.resolve(MDJJogsDatabase.self)!
         }
     }

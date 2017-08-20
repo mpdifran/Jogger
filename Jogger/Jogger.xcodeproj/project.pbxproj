@@ -60,6 +60,8 @@
 		FFAE97F21F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97F11F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift */; };
 		FFAE97F41F48F5C2009F76FF /* MDJFirebaseAppMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97F31F48F5C2009F76FF /* MDJFirebaseAppMock.swift */; };
 		FFAE98001F492A24009F76FF /* JogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97FF1F492A24009F76FF /* JogTests.swift */; };
+		FFAE98041F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE98031F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift */; };
+		FFAE98061F493B7F009F76FF /* JogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE98051F493B7F009F76FF /* JogFilterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		FFAE97F11F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseConfigurerTests.swift; sourceTree = "<group>"; };
 		FFAE97F31F48F5C2009F76FF /* MDJFirebaseAppMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJFirebaseAppMock.swift; sourceTree = "<group>"; };
 		FFAE97FF1F492A24009F76FF /* JogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogTests.swift; sourceTree = "<group>"; };
+		FFAE98031F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsFilterableDatabaseObserver.swift; sourceTree = "<group>"; };
+		FFAE98051F493B7F009F76FF /* JogFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogFilterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +313,7 @@
 				FFAE97AA1F454738009F76FF /* MDJDatabaseConstants.swift */,
 				FFAE979E1F452C63009F76FF /* MDJJogsDatabase.swift */,
 				FFAE97A31F453E9B009F76FF /* MDJJogsDatabaseObserver.swift */,
+				FFAE98031F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 				FFAE97D91F48D926009F76FF /* JogListViewController.swift */,
 				FFAE97DD1F48DA77009F76FF /* JogTableViewCell.swift */,
 				FFAE97EB1F48F1F0009F76FF /* CreateJogViewController.swift */,
+				FFAE98051F493B7F009F76FF /* JogFilterViewController.swift */,
 			);
 			path = Jogs;
 			sourceTree = "<group>";
@@ -705,8 +711,10 @@
 				FFAE979F1F452C63009F76FF /* MDJJogsDatabase.swift in Sources */,
 				FF09F6271F43C1C700951F9F /* MDJUser.swift in Sources */,
 				FF09F6291F43C3C700951F9F /* MDJAuthenticationManager.swift in Sources */,
+				FFAE98041F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift in Sources */,
 				FFAE97A91F4545D5009F76FF /* MDJDateFormatter.swift in Sources */,
 				FFAE97EE1F48F2D9009F76FF /* MDJFirebaseApp.swift in Sources */,
+				FFAE98061F493B7F009F76FF /* JogFilterViewController.swift in Sources */,
 				FFAE97B11F479829009F76FF /* LogInViewController.swift in Sources */,
 				FF09F5E81F42A4EC00951F9F /* AppDelegate.swift in Sources */,
 				FFAE97AB1F454738009F76FF /* MDJDatabaseConstants.swift in Sources */,
