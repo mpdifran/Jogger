@@ -11,6 +11,7 @@ import Foundation
 // MARK: - Jog
 
 class Jog {
+    var identifier: String?
     let date: Date
     let distance: Double
     let time: TimeInterval

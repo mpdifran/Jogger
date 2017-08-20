@@ -23,6 +23,14 @@ protocol MDJJogsDatabaseObserver: class {
     var jogs: [Jog] { get }
 }
 
+// MARK: - MDJJogsDatabaseObserverListModifier
+
+protocol MDJJogsDatabaseObserverListModifier: class {
+
+    /// Removes the specified jog from the list.
+    func remove(jog: Jog)
+}
+
 // MARK: - MDJDefaultJogsDatabaseObserver
 
 class MDJDefaultJogsDatabaseObserver {
@@ -53,6 +61,15 @@ class MDJDefaultJogsDatabaseObserver {
 // MARK: MDJJogsDatabaseObserver Methods
 
 extension MDJDefaultJogsDatabaseObserver: MDJJogsDatabaseObserver { }
+
+// MARK: MDJJogsDatabaseObserverListModifier Methods
+
+extension MDJDefaultJogsDatabaseObserver: MDJJogsDatabaseObserverListModifier {
+
+    func remove(jog: Jog) {
+        jogs = jogs.filter({ $0 !== jog })
+    }
+}
 
 // MARK: Private Methods
 
@@ -88,11 +105,13 @@ private extension MDJDefaultJogsDatabaseObserver {
             self.jogs = jogs
         }
 
-        guard let jogsDictionary = snapshot.value as? [AnyHashable : [AnyHashable : Any]] else { return }
+        guard let jogsDictionary = snapshot.value as? [String : [AnyHashable : Any]] else { return }
 
-        for jogDictionary in jogsDictionary.values {
+        for jogIdentifier in jogsDictionary.keys {
+            guard let jogDictionary = jogsDictionary[jogIdentifier] else { continue }
             guard let jog = createJog(from: jogDictionary) else { continue }
 
+            jog.identifier = jogIdentifier
             jogs.append(jog)
         }
     }
@@ -112,7 +131,13 @@ private extension MDJDefaultJogsDatabaseObserver {
 class MDJJogsDatabaseObserverAssembly: Assembly {
 
     func assemble(container: Container) {
-        container.autoregister(MDJJogsDatabaseObserver.self, initializer: MDJDefaultJogsDatabaseObserver.init)
+        container.autoregister(MDJDefaultJogsDatabaseObserver.self, initializer: MDJDefaultJogsDatabaseObserver.init)
             .inObjectScope(.weak)
+        container.register(MDJJogsDatabaseObserver.self, factory: { r in
+            return r.resolve(MDJDefaultJogsDatabaseObserver.self)!
+        }).inObjectScope(.weak)
+        container.register(MDJJogsDatabaseObserverListModifier.self, factory: { r in
+            return r.resolve(MDJDefaultJogsDatabaseObserver.self)!
+        }).inObjectScope(.weak)
     }
 }

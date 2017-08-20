@@ -18,18 +18,26 @@ protocol MDJJogsDatabase: class {
     ///
     /// - returns: `true` if the jog was recorded, `false` otherwise.
     func record(jog: Jog) -> Bool
+
+    /// Deletes a jog from the database. 
+    ///
+    /// - returns: `true` if the jog is no longer in the database, `false` otherwise.
+    func delete(jog: Jog) -> Bool
 }
 
 // MARK: - MDJDefaultJogsDatabase
 
 class MDJDefaultJogsDatabase {
     fileprivate let databaseReference: MDJDatabaseReference
+    fileprivate let jogsListModifier: MDJJogsDatabaseObserverListModifier
     fileprivate let userProvider: MDJUserProvider
 
     fileprivate let dateFormatter = MDJDateFormatter()
 
-    init(databaseReference: MDJDatabaseReference, userProvider: MDJUserProvider) {
+    init(databaseReference: MDJDatabaseReference, jogsListModifier: MDJJogsDatabaseObserverListModifier,
+         userProvider: MDJUserProvider) {
         self.databaseReference = databaseReference
+        self.jogsListModifier = jogsListModifier
         self.userProvider = userProvider
     }
 }
@@ -45,6 +53,18 @@ extension MDJDefaultJogsDatabase: MDJJogsDatabase {
 
         let path = MDJDatabaseConstants.Path.jogs(for: user)
         databaseReference.child(path).childByAutoId().setValue(jogData)
+
+        return true
+    }
+
+    func delete(jog: Jog) -> Bool {
+        guard let user = userProvider.user else { return false }
+        guard let identifier = jog.identifier else { return true }
+
+        jogsListModifier.remove(jog: jog)
+
+        let path = MDJDatabaseConstants.Path.jogs(for: user)
+        databaseReference.child(path).child(identifier).removeValue()
 
         return true
     }

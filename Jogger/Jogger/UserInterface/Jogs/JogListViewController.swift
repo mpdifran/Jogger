@@ -14,6 +14,7 @@ import SwinjectStoryboard
 
 class JogListViewController: UITableViewController {
     fileprivate var jogsObserver: MDJJogsDatabaseObserver!
+    fileprivate var jogsDatabase: MDJJogsDatabase!
 
     fileprivate let dateFormatter = DateFormatter()
 }
@@ -54,6 +55,22 @@ extension JogListViewController {
 
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            let jog = jogsObserver.jogs[indexPath.row]
+
+            let _ = jogsDatabase.delete(jog: jog)
+        default:
+            break
+        }
+    }
 }
 
 // MARK: Private Methods
@@ -84,6 +101,7 @@ class JogListViewControllerAssembly: Assembly {
     func assemble(container: Container) {
         container.storyboardInitCompleted(JogListViewController.self) { (r, c) in
             c.jogsObserver = r.resolve(MDJJogsDatabaseObserver.self)!
+            c.jogsDatabase = r.resolve(MDJJogsDatabase.self)!
         }
     }
 }
