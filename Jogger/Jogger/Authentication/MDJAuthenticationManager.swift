@@ -16,16 +16,23 @@ extension Notification.Name {
     static let MDJUserProviderUserUpdated = Notification.Name("Notification.Name.MDJUserProviderUserUpdated")
 }
 
+// MARK: - MDJAuthenticationError
+
+enum MDJAuthenticationError: Error {
+    case userDeleted
+}
+
 // MARK: - MDJUserProvider
 
 protocol MDJUserProvider: class {
-    var user: MDJUser? { get }
+    var user: MDJAuthenticatedUser? { get }
 }
 
 // MARK: - MDJAuthenticationManager
 
 protocol MDJAuthenticationManager: class {
-    func createUser(withEmail email: String, password: String, completion: @escaping (Error?) -> Void)
+    func createUser(withEmail email: String, password: String, role: MDJUserRole,
+                    completion: @escaping (Error?) -> Void)
 
     func signIn(withEmail email: String, password: String, completion: @escaping (Error?) -> Void)
 
@@ -35,16 +42,18 @@ protocol MDJAuthenticationManager: class {
 // MARK: - MDJDefaultAuthenticationManager
 
 class MDJDefaultAuthenticationManager {
-    var user: MDJUser? {
+    var user: MDJAuthenticatedUser? {
         didSet {
             NotificationCenter.default.post(name: .MDJUserProviderUserUpdated, object: self)
         }
     }
 
     fileprivate let auth: MDJAuth
+    fileprivate let userDatabase: MDJUserDatabase
 
-    init(auth: MDJAuth) {
+    init(auth: MDJAuth, userDatabase: MDJUserDatabase) {
         self.auth = auth
+        self.userDatabase = userDatabase
     }
 }
 
@@ -56,9 +65,13 @@ extension MDJDefaultAuthenticationManager: MDJUserProvider { }
 
 extension MDJDefaultAuthenticationManager: MDJAuthenticationManager {
 
-    func createUser(withEmail email: String, password: String, completion: @escaping (Error?) -> Void) {
+    func createUser(withEmail email: String, password: String, role: MDJUserRole,
+                    completion: @escaping (Error?) -> Void) {
         auth.createUser(withEmail: email, password: password) { [weak self] (user, error) in
-            self?.user = user
+            guard let user = user else { self?.user = nil; return }
+            guard let authenticatedUser = self?.userDatabase.register(user: user, with: role) else { return }
+
+            self?.user = authenticatedUser
 
             completion(error)
         }
@@ -66,9 +79,17 @@ extension MDJDefaultAuthenticationManager: MDJAuthenticationManager {
 
     func signIn(withEmail email: String, password: String, completion: @escaping (Error?) -> Void) {
         auth.signIn(withEmail: email, password: password) { [weak self] (user, error) in
-            self?.user = user
+            guard let user = user else { self?.user = nil; return }
 
-            completion(error)
+            self?.userDatabase.fetchAuthenticatedUser(for: user) { (authenticatedUser) in
+                self?.user = authenticatedUser
+
+                if authenticatedUser == nil {
+                    completion(MDJAuthenticationError.userDeleted)
+                } else {
+                    completion(error)
+                }
+            }
         }
     }
 

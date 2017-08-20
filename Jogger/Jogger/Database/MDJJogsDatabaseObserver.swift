@@ -86,7 +86,7 @@ private extension MDJDefaultJogsDatabaseObserver {
         tearDownObserver()
 
         if let user = userProvider.user {
-            let path = MDJDatabaseConstants.Path.jogs(for: user)
+            let path = MDJDatabaseConstants.Path.jogs(forUserID: user.uid)
             handle = databaseReference.child(path).observe(.value, with: parse(_:))
         }
     }

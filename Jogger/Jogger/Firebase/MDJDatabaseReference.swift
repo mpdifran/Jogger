@@ -22,6 +22,7 @@ protocol MDJDatabaseReference: class {
     func removeValue()
 
     func observe(_ eventType: MDJDataEventType, with block: @escaping (MDJDataSnapshot) -> Void) -> UInt
+    func observeSingleEvent(of eventType: DataEventType, with block: @escaping (MDJDataSnapshot) -> Swift.Void)
     func removeObserver(withHandle handle: UInt)
 }
 
@@ -39,6 +40,12 @@ extension DatabaseReference: MDJDatabaseReference {
 
     func observe(_ eventType: MDJDataEventType, with block: @escaping (MDJDataSnapshot) -> Void) -> UInt {
         return observe(eventType) { (snapshot: DataSnapshot) in
+            block(snapshot)
+        }
+    }
+
+    func observeSingleEvent(of eventType: DataEventType, with block: @escaping (MDJDataSnapshot) -> Void) {
+        return observeSingleEvent(of: eventType) { (snapshot: DataSnapshot) in
             block(snapshot)
         }
     }

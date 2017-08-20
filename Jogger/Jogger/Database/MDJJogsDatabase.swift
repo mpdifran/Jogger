@@ -51,7 +51,7 @@ extension MDJDefaultJogsDatabase: MDJJogsDatabase {
 
         let jogData = createDictionaryRepresentation(for: jog)
 
-        let path = MDJDatabaseConstants.Path.jogs(for: user)
+        let path = MDJDatabaseConstants.Path.jogs(forUserID: user.uid)
 
         if let identifier = jog.identifier {
             databaseReference.child(path).child(identifier).setValue(jogData)
@@ -67,7 +67,7 @@ extension MDJDefaultJogsDatabase: MDJJogsDatabase {
 
         jogsListModifier.remove(jog: jog)
 
-        let path = MDJDatabaseConstants.Path.jogs(for: user)
+        let path = MDJDatabaseConstants.Path.jogs(forUserID: user.uid)
         databaseReference.child(path).child(identifier).removeValue()
 
         return true

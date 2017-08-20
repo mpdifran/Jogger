@@ -20,6 +20,7 @@ class CreateAccountViewController: BaseAuthViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var verifyPasswordTextField: UITextField!
+    @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
 }
 
 // MARK: View Lifecycle Methods
@@ -41,9 +42,12 @@ extension CreateAccountViewController {
         guard let email = emailTextField.text, !email.isEmpty else { handle(.missingEmail); return false }
         guard let password = passwordTextField.text, !password.isEmpty else { handle(.missingPassword); return false }
         guard let verifiedPassword = verifyPasswordTextField.text, !password.isEmpty else { handle(.missingPassword); return false }
+
         guard verifiedPassword == password else { handle(.passwordsDoNotMatch); return false }
 
-        authManager.createUser(withEmail: email, password: password) { (error) in
+        guard let role = MDJUserRole(rawValue: roleSegmentedControl.selectedSegmentIndex) else { return false }
+
+        authManager.createUser(withEmail: email, password: password, role: role) { (error) in
             completion(error)
         }
         return true

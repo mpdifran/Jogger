@@ -36,6 +36,8 @@
 		FF09F6291F43C3C700951F9F /* MDJAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6281F43C3C700951F9F /* MDJAuthenticationManager.swift */; };
 		FF09F62D1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F62C1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift */; };
 		FF09F6311F43CB2100951F9F /* MDJAuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */; };
+		FF9F18371F4A26AB00238F9D /* MDJUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */; };
+		FF9F18391F4A2B2100238F9D /* MDJAuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */; };
 		FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */; };
 		FFAE979F1F452C63009F76FF /* MDJJogsDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE979E1F452C63009F76FF /* MDJJogsDatabase.swift */; };
 		FFAE97A21F452D5A009F76FF /* Jog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97A11F452D5A009F76FF /* Jog.swift */; };
@@ -110,6 +112,8 @@
 		FF09F6281F43C3C700951F9F /* MDJAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticationManager.swift; sourceTree = "<group>"; };
 		FF09F62C1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticationManagerTests.swift; sourceTree = "<group>"; };
 		FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthMock.swift; sourceTree = "<group>"; };
+		FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserDatabase.swift; sourceTree = "<group>"; };
+		FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticatedUser.swift; sourceTree = "<group>"; };
 		FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDatabaseReference.swift; sourceTree = "<group>"; };
 		FFAE979E1F452C63009F76FF /* MDJJogsDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsDatabase.swift; sourceTree = "<group>"; };
 		FFAE97A11F452D5A009F76FF /* Jog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jog.swift; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				FF09F6281F43C3C700951F9F /* MDJAuthenticationManager.swift */,
+				FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				FFAE979E1F452C63009F76FF /* MDJJogsDatabase.swift */,
 				FFAE97A31F453E9B009F76FF /* MDJJogsDatabaseObserver.swift */,
 				FFAE98031F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift */,
+				FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -717,6 +723,7 @@
 				FFAE98061F493B7F009F76FF /* JogFilterViewController.swift in Sources */,
 				FFAE97B11F479829009F76FF /* LogInViewController.swift in Sources */,
 				FF09F5E81F42A4EC00951F9F /* AppDelegate.swift in Sources */,
+				FF9F18391F4A2B2100238F9D /* MDJAuthenticatedUser.swift in Sources */,
 				FFAE97AB1F454738009F76FF /* MDJDatabaseConstants.swift in Sources */,
 				FFAE97A41F453E9B009F76FF /* MDJJogsDatabaseObserver.swift in Sources */,
 				FFAE97F01F48F3A4009F76FF /* MDJFirebaseConfigurer.swift in Sources */,
@@ -725,6 +732,7 @@
 				FFAE97A61F454187009F76FF /* MDJDataSnapshot.swift in Sources */,
 				FF09F6211F43C09E00951F9F /* MainAssembler.swift in Sources */,
 				FFAE97A21F452D5A009F76FF /* Jog.swift in Sources */,
+				FF9F18371F4A26AB00238F9D /* MDJUserDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

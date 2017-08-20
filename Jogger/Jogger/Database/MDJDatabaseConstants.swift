@@ -16,14 +16,19 @@ struct MDJDatabaseConstants {
         static let date = "date"
         static let time = "time"
         static let distance = "distance"
+        static let email = "email"
+        static let role = "role"
 
         private init() { }
     }
 
     struct Path {
 
-        static func jogs(for user: MDJUser) -> String {
-            return "jogs/\(user.uid)"
+        static func jogs(forUserID userID: String) -> String {
+            return "jogs/\(userID)"
+        }
+        static func user(forUserID userID: String) -> String {
+            return "users/\(userID)"
         }
 
         private init() { }
