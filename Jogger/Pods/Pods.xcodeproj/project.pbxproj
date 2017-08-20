@@ -7,101 +7,101 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00F64DAF407655FB4F5E16CFE76AE4C4 /* SwinjectStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6DF74F219907AC9E3FA56AE8B4ADB /* SwinjectStoryboard.swift */; };
 		0259D1157227482552A1996220CC0780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9CC3D8199C1626E20A65A102F40C1 /* Foundation.framework */; };
+		05ADC8D3AEA9C13E8A9AE6BC43B7CCE7 /* GTMNSDictionary+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 788F662F6152D8C143909B1230AB1405 /* GTMNSDictionary+URLArguments.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		05B1F02560378D28FEBD4E8F6D293216 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9CC3D8199C1626E20A65A102F40C1 /* Foundation.framework */; };
 		05D17DCB09C72C87E247CEA9C4E879A8 /* _SwinjectStoryboardBase.h in Headers */ = {isa = PBXBuildFile; fileRef = A0ADE38E11940C0538229BAA30269CF8 /* _SwinjectStoryboardBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07340F15BACBA601736DBB2ABF1ABC35 /* GTMSessionFetcherLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = A80849B52EB3E97366078E6B0CBD55D8 /* GTMSessionFetcherLogging.m */; };
 		0749EC40D3519957D43A1040F9662F71 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5CD5A95A3A771F9AE8EDC8A9BF29DF0 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A4A8A049BB809758C4A00B4B9ADB73A /* SynchronizedResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D72CBCA401A7975F21E7CB2735C489 /* SynchronizedResolver.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0EC6344A026B4DA81486AB02C02686FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9CC3D8199C1626E20A65A102F40C1 /* Foundation.framework */; };
-		10E93F8E3AB007CDFB51854093229B24 /* TypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670878E1341F4CD5CA102732E3604AF /* TypeParser.swift */; };
+		0FB796108ABE5E8B5DFCE781F4189413 /* UnavailableItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBA6DE57D22E4472275A4EB885E0B5 /* UnavailableItems.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		11F0D0CB930604B4DAAE93FEA3904826 /* GTMNSDictionary+URLArguments.h in Headers */ = {isa = PBXBuildFile; fileRef = 039C447AA82BB6A9159962C6CB67FCFD /* GTMNSDictionary+URLArguments.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16F250F00180C03EFBF8FFAC096274A8 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAE146252750AB724A6189A486F38F /* Type.swift */; };
-		185A49610C9C29448F4F919360C1D75C /* Container.Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC641BDF427DB0D3A1C22675BB655A /* Container.Logging.swift */; };
-		1938826E96396DB2D5E581DFBD09A077 /* SwinjectAutoregistration-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C306776B997E7DD40D2FFCD8DE490D56 /* SwinjectAutoregistration-dummy.m */; };
-		1B8F51A4017F50115ABBC1166E097E8C /* Container.Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF90982BB10356C1242CA496DFB3B4 /* Container.Arguments.swift */; };
+		13D64EAC6BC3FBA6E6F0A4566A412833 /* SwinjectAutoregistration-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C306776B997E7DD40D2FFCD8DE490D56 /* SwinjectAutoregistration-dummy.m */; };
+		156FFB6D092A5F45DC06D94AC9D7C03F /* DebugHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4492DC18ACDBA102AB300EB8C77DA3 /* DebugHelper.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1B527771BF8E74BB49EC76F073FB9DED /* InstanceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1A472AC17FB5F0FE5DFE9ACFB5C98 /* InstanceStorage.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1B7D363108D836E25D0283F0716956AE /* Swinject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9591EECBDBBC6B9972824CE6AFDD593 /* Swinject-dummy.m */; };
 		1B9552A64EF4E3974166F46C6261C57A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9CC3D8199C1626E20A65A102F40C1 /* Foundation.framework */; };
 		1B9992895398E946CE8ECF2370D086E3 /* SwinjectStoryboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 403A47B28952CE7D51F0808A22593247 /* SwinjectStoryboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BB1EBE1D6506B98F0962BBA0794A750 /* AutoRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2B307C7BEF6FAA31277E44A9E1B35 /* AutoRegistration.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1E7AECCCA5E2CAC1F4DE07A63ABC2A3E /* Pods-Jogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC8968F1B516C4D65FECF09FC278D907 /* Pods-Jogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1ED67707C258751E7888DAC2AB3D8501 /* GTMSessionFetcherLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C2B0C717526DEB4B017AFF8A1B4E74D /* GTMSessionFetcherLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		204705B69D8165D1782E8AEA4D89E5C0 /* RegistrationNameAssociatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526AC9C141A214C94B86AECA2D8398F4 /* RegistrationNameAssociatable.swift */; };
-		20B4EFE77F5EF0890AB0B65B73159DE2 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470E95BB08F50E572DF6939C34FBD86D /* Assembly.swift */; };
+		2856E1AD2E65EF1B2757B6862806AC14 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F0162BDAB0D15907F649120B86C57 /* Resolver.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		29FEADDF2086FDEA7D5BA87DD23B08C6 /* pb_decode.h in Headers */ = {isa = PBXBuildFile; fileRef = E380D375FF89759CB53D7A3534C9EF7D /* pb_decode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2AAD72ADE94518653E700D516456B00A /* InjectionVerifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A2F1A4C2768440AFAF1F617BB1CDE /* InjectionVerifiable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2ADC7DA21C46226E78ECA3A35CA50AED /* SwinjectStoryboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A099D4F49C0A77D93185B3D28286CC66 /* SwinjectStoryboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2EFC826FB30ECD27C98CE7F3707E9012 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA5EE3A6055C0CFB329183D4549F949 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2E9D3D0D9FF2B94293539ACC42041EBE /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA5EE3A6055C0CFB329183D4549F949 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		32CD824B97DAFE2F9EAAD424649860A9 /* FunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC383192F3A13B59BC39688BFC703C92 /* FunctionType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		32CF9BB4493C89CB01FFADD6DB754927 /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A06BE2DD62FBE621F36381B20D54127A /* GoogleToolboxForMac-dummy.m */; };
-		37E8641E1255F3F0E3293213D14C235B /* AutoRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2B307C7BEF6FAA31277E44A9E1B35 /* AutoRegistration.swift */; };
+		3798D1004E36E3C069C9EE00526D0345 /* GTMNSString+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CABB85EAAB8D2C3FCD6ECC5AF19DE /* GTMNSString+URLArguments.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		392F2CF142BAA751AC1BB61D8B757D98 /* pb.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E76EF5FB6F5E76351CC873C1A9A8468 /* pb.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A50F5C8ECED9627F2EBD97F61BD376D /* pb_common.c in Sources */ = {isa = PBXBuildFile; fileRef = FDADAE36554B9EE804EB344640262A0E /* pb_common.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc -fno-objc-arc"; }; };
-		3B637537088395316A1BC1F9E3674B72 /* ObjectScope.Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D05235E707105D2A69292A1FA54511 /* ObjectScope.Standard.swift */; };
+		3EC97D8EA1DE1DFF8A33C3762513D604 /* ResolutionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ABB20885C3626940775B8FF4519F57 /* ResolutionError.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		449383613005B07845F8EF14B3D16AFB /* SwinjectStoryboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934154AB5DE5C3F68EF05C0CCAFA25CF /* SwinjectStoryboardProtocol.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		468DFD90B6C4DA2F7CFA0C1C89F1B615 /* nanopb-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471ED2B9433BD9E4DA88C25C332C886 /* nanopb-dummy.m */; };
-		4A5187D7858D882EBD6439DDC78BDC61 /* CheckResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8914563CD086F963BE37B78AA3B6B497 /* CheckResolved.swift */; };
 		4F2AB5BFF7D9DE66B8B242ACE69AE0D9 /* GTMDebugThreadValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EDFD814F9ED5950F94FD868E3F7046 /* GTMDebugThreadValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		52D3DE31D25DBD684F7C016A5421A7CB /* ObjectScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622B15D5130B87A4111AA2655A327A12 /* ObjectScope.swift */; };
-		54F580BF4588159D6A61F21D15591805 /* pb_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A4F1300756E9D2041C8496DCA33C2D1 /* pb_decode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc"; }; };
-		55D8D5D912CFD2F3584E4553C2EAD734 /* pb_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = 1674276025C86533D74041D1D414564A /* pb_encode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc"; }; };
+		4FF45924EAD755097E02A69E8ED59995 /* GTMSessionFetcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAFC7A68A2082F1495B83B6A6E1555B /* GTMSessionFetcherService.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		51C276CC757E20047A747D42DECC732A /* GTMSessionFetcher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 280BDCB2D3B5D31EE566800EA8C376BE /* GTMSessionFetcher-dummy.m */; };
 		56D824E2412E61F7CAE2FACD05A44747 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E68F98398128E62A83484E88D9321C0 /* Swinject.framework */; };
-		5B92D1D5ECFEBA99F4C67864E1397A6D /* GTMNSString+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CABB85EAAB8D2C3FCD6ECC5AF19DE /* GTMNSString+URLArguments.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		61C5352DC267A9D47A9782DDC40563E4 /* InstanceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1A472AC17FB5F0FE5DFE9ACFB5C98 /* InstanceStorage.swift */; };
 		629AB593326E8A9B0F70B50E9056BCA6 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E68F98398128E62A83484E88D9321C0 /* Swinject.framework */; };
-		64F31B70A6E5E6963518A01C285B435F /* GTMSessionFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9539A29AB444DBD4C921B7D7D4628B /* GTMSessionFetcher.m */; };
 		68689C1A03F6FFAC884BBDE990FD8985 /* Pods-JoggerUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A0FCFA0A955CE417E2ED475759012 /* Pods-JoggerUITests-dummy.m */; };
-		68C35CEE87CA8F4327512D51AC24F041 /* Storyboard+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DBB1AE0DD8663ABB83A01A444BE1B1 /* Storyboard+Swizzling.swift */; };
+		6898B9EBDC67DAB6F04E17EDEB179A1E /* GTMSessionUploadFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A929C7DC056BA40791D060DCF9519D6 /* GTMSessionUploadFetcher.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		68CCE0DBE4AB79F142E613EFF82932BF /* SwinjectAutoregistration-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 111A6D7CFD649CA0D51926E02461F86B /* SwinjectAutoregistration-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		694A5C796873136DD4D7CE56564F2A6B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAE146252750AB724A6189A486F38F /* Type.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		69696701B4F2361E425051816DF3171A /* Swinject-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF16F4DB4FE4BDAA52F228BCBE3F3EA /* Swinject-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A1BCEA4D7BC9FFCFB0C37A56CF6F4FC /* ResolutionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ABB20885C3626940775B8FF4519F57 /* ResolutionError.swift */; };
-		6CFE78C86F1581916BF4D4DDDB25B064 /* SynchronizedResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D72CBCA401A7975F21E7CB2735C489 /* SynchronizedResolver.swift */; };
-		6EA6DFC4473A9B2DB6B8A42EA986BA5B /* GTMSessionFetcher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 280BDCB2D3B5D31EE566800EA8C376BE /* GTMSessionFetcher-dummy.m */; };
-		6F1768594B441FEB8BA92F0F28AD92AC /* SynchronizedResolver.Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164022FF17EB0FA4235BCE05D2BBBF98 /* SynchronizedResolver.Arguments.swift */; };
+		6BC87F039D61EDFB443C071FDB2CEADF /* _SwinjectStoryboardBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CF306E1BDF73C0C59A63A12A184E89DF /* _SwinjectStoryboardBase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6C7069053B49165053F4CA4E8BA2670D /* ServiceEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0F5F022BAC83BD3F64FBFCD9FD0674 /* ServiceEntry.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		743FBE1294C47506CD357D06DFD36170 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583263D44A65C488F317E2D44CB69635 /* Assembler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		766DA54A55BE9A2379A6B93A68427BD8 /* ViewController+Swinject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913EB09CF0EFFAB154FEC0A99A66E6A3 /* ViewController+Swinject.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		76EEE535B957137EA76521D3031B8383 /* Container+SwinjectStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D24522D5ED506369B3277F158C3A651 /* Container+SwinjectStoryboard.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		77CBA4399FD5DB3178BFA72AEB82C327 /* RegistrationNameAssociatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526AC9C141A214C94B86AECA2D8398F4 /* RegistrationNameAssociatable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		78DC3A12F244E0EC981443D34CD5A8AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9CC3D8199C1626E20A65A102F40C1 /* Foundation.framework */; };
-		7A64596EC3569C435CBE04F5511A7100 /* ServiceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E110F4D242D690CE6BFCFBF698B45265 /* ServiceKey.swift */; };
 		7AE2598F6B1E18B6622EAA70394986E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9CC3D8199C1626E20A65A102F40C1 /* Foundation.framework */; };
-		7CD2808CC478FAC07C379F1C29C78B5C /* UnavailableItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF7CD51C5653907AEB283CBC96CAF4 /* UnavailableItems.swift */; };
 		7E31CBB237BE78096E1B4EF8E36AC457 /* Pods-Jogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB72EDA982C23E662E8939D2E95C548 /* Pods-Jogger-dummy.m */; };
 		806BAA4E00218D70995697C4400BE7A0 /* pb_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 35D73F3C8726661E4D54C9DF3EAA5056 /* pb_common.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8177EEF7F06E6C74DEDF5586F404D426 /* Container+SwinjectStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D24522D5ED506369B3277F158C3A651 /* Container+SwinjectStoryboard.swift */; };
 		8852FD9AFC242520924D98BE9C4E2477 /* GTMSessionFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 189C708FF0438F285C286D40B48F2D07 /* GTMSessionFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		88EA09E15E8080BF64A90B76415CD84E /* Swinject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9591EECBDBBC6B9972824CE6AFDD593 /* Swinject-dummy.m */; };
+		8A33EA14EC3AE3D26B94B35130B52145 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CB8D23103C61AF9E72A396704B666 /* Box.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8B213D856C598AA81D1F56727B4A4746 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F121F0E232FEDE4A5F2C5CBA3B188C75 /* Container.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8C5308AE6691CB835587686775C9C387 /* SwinjectStoryboard+StoryboardReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374D0B988B8688B713E23DB7EAACAED /* SwinjectStoryboard+StoryboardReference.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8E8B3F4A74A0592A965CCC37DF2E01D6 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B017956E01B35D0CCD4C2EAAAF4DD5F /* Resolver.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8F3650B9759A91D6867163F5CED62F72 /* TypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670878E1341F4CD5CA102732E3604AF /* TypeParser.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9024F4774BD8DDE03700B223CF7F8164 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9CC3D8199C1626E20A65A102F40C1 /* Foundation.framework */; };
-		928DE23B5278B1FE30E89C2349DA52BD /* SwinjectStoryboard+StoryboardReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374D0B988B8688B713E23DB7EAACAED /* SwinjectStoryboard+StoryboardReference.swift */; };
-		95C69447F517DB81437EDE0003486963 /* GTMSessionFetcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAFC7A68A2082F1495B83B6A6E1555B /* GTMSessionFetcherService.m */; };
-		98DAF05D2895BB697436AFC8716BEF69 /* InjectionVerifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A2F1A4C2768440AFAF1F617BB1CDE /* InjectionVerifiable.swift */; };
+		906C484289C852CF1269D2C1943A71E2 /* GTMSessionFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9539A29AB444DBD4C921B7D7D4628B /* GTMSessionFetcher.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		90B329187CF6447DF93899711DA99EF6 /* ObjectScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622B15D5130B87A4111AA2655A327A12 /* ObjectScope.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		963723DB1E8AB73475FF3945AA639A2B /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470E95BB08F50E572DF6939C34FBD86D /* Assembly.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9855FC893C7C746AB2759E8E22661FEE /* ObjectScope.Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D05235E707105D2A69292A1FA54511 /* ObjectScope.Standard.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9B13A89E1F561F789BDB5D083C72A184 /* CheckResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8914563CD086F963BE37B78AA3B6B497 /* CheckResolved.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9DA28C3544749A7DB9AB129BEC773550 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8574922009A69A3BE386F74095E6DCFE /* Security.framework */; };
-		A168DB7D2DBE93B96C131510D0400BA9 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F38D347725B1176BF5FB03D2D9430E /* Operators.swift */; };
-		A366D309E2D553EF5EE4414C04088EE2 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F0162BDAB0D15907F649120B86C57 /* Resolver.swift */; };
-		A49D30B222F8C969D9A0F3D5A3AEA28A /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B324C027E37D2CDD78A90B324D73975 /* SpinLock.swift */; };
+		A154377844877C99CB6AE226353D2ED3 /* pb_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A4F1300756E9D2041C8496DCA33C2D1 /* pb_decode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A5BA819AE9CA559C66A043F263725BF6 /* pb_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = 1674276025C86533D74041D1D414564A /* pb_encode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A6D22464A2287DC64F09131BD97BEB44 /* Pods-JoggerTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E70E1F7547EA79D1BA1714F2813D7B4 /* Pods-JoggerTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABC60D3E889FC31D395674E88E834681 /* SwinjectAutoregistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B249B550555B41BFCC6F8825677526D /* SwinjectAutoregistration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD35F258B0A058F9271E89D8D57891E0 /* SwinjectStoryboardOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EA3E593A16F200EF853BD6B65763A3 /* SwinjectStoryboardOption.swift */; };
-		AF62132F9F8D97AF83CE1EC344C49754 /* ViewController+Swinject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913EB09CF0EFFAB154FEC0A99A66E6A3 /* ViewController+Swinject.swift */; };
 		B05C496A6F67CE9F60DC711F402AB20A /* GTMDebugSelectorValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = D72F568167EF0D7A85460E3B4CD981A1 /* GTMDebugSelectorValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B10EE4B713E8DBA3576A5C69CDBB50EE /* SynchronizedResolver.Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164022FF17EB0FA4235BCE05D2BBBF98 /* SynchronizedResolver.Arguments.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B7B8DDE06F6601E64D9762FAB5EA046D /* Container.Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF90982BB10356C1242CA496DFB3B4 /* Container.Arguments.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B823FCB7C22E3829CABA784FF5D8324C /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B324C027E37D2CDD78A90B324D73975 /* SpinLock.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B9A04CBBF007CB8AAF75D61C5EF4D81F /* GTMMethodCheck.h in Headers */ = {isa = PBXBuildFile; fileRef = A90C1BB82165A4385B8A56E9815E9C60 /* GTMMethodCheck.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BC5ABA65FCF42279A382FEBEA39BCE0B /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583263D44A65C488F317E2D44CB69635 /* Assembler.swift */; };
-		C1D8B2A5ED6BBF445AB09CD3707347EF /* SwinjectStoryboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA8B8B54E36F7D74BFB2726570C96E0 /* SwinjectStoryboard-dummy.m */; };
+		B9DDB948F862255FE0482CB8CEF5B253 /* Container.Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC641BDF427DB0D3A1C22675BB655A /* Container.Logging.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BFCF3896F7DC0C315BFF367F07E84793 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F38D347725B1176BF5FB03D2D9430E /* Operators.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C34E24520624B382515A0F58185E6926 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 86037CAC3561B557E7F0CB229E5AED16 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4A1A63A4C67D9828DF94807BC2C3002 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9CC3D8199C1626E20A65A102F40C1 /* Foundation.framework */; };
-		C6B2A8B1D14731B967AF9308DCD03831 /* SwinjectStoryboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934154AB5DE5C3F68EF05C0CCAFA25CF /* SwinjectStoryboardProtocol.swift */; };
+		CC328037E14256FE889F1ACF32CF7094 /* _Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187F851EE676DF3C2E05F193C3A5314 /* _Resolver.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CF1D02F774A1293DD45868345030B04E /* SwinjectStoryboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA8B8B54E36F7D74BFB2726570C96E0 /* SwinjectStoryboard-dummy.m */; };
 		D087A31B0602DE6F296BF9AAC154C2C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9CC3D8199C1626E20A65A102F40C1 /* Foundation.framework */; };
-		D10E8BE432B330C12FF3DE3E6E778D44 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B017956E01B35D0CCD4C2EAAAF4DD5F /* Resolver.swift */; };
 		D28734EDC84B2A7FBC4D5DCF95177BF8 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BCCF8EFC0187A3233FBBFB35722EE4A /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D307869730F3F8B71AADFB5EADEA8602 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F121F0E232FEDE4A5F2C5CBA3B188C75 /* Container.swift */; };
 		D3F381B45ADFDDE51CA31F1E141236CA /* GTMSessionFetcher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AD3544CC532DF725260E481DA8359643 /* GTMSessionFetcher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA0C408F80FF5D11181D07AB98A39709 /* Storyboard+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DBB1AE0DD8663ABB83A01A444BE1B1 /* Storyboard+Swizzling.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DA2F5A299DC9A8ECC5F73A66172E64BC /* GTMNSString+URLArguments.h in Headers */ = {isa = PBXBuildFile; fileRef = 23590F241E4FB66313451E329FD3D3C0 /* GTMNSString+URLArguments.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DEA75ED65EC46303DEBC08C8683FCB36 /* Pods-JoggerUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EB57D97EA9DD01447B641A00CFA3E52 /* Pods-JoggerUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF9559C3822E3C6119BE43E4EDFD7EEE /* GTMSessionFetcherService.h in Headers */ = {isa = PBXBuildFile; fileRef = 8377A478C0D2D30619C8CD31F7E3AD55 /* GTMSessionFetcherService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E181395E73163EB702FCE9A21403D67B /* pb_encode.h in Headers */ = {isa = PBXBuildFile; fileRef = 89A6D9256748D846D64D3253595FE4EA /* pb_encode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1A823E2C790D37793A5869A7FE3C296 /* Pods-JoggerTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDD83949B668EFF998C9C04150B89EC /* Pods-JoggerTests-dummy.m */; };
-		E1F0E34EF27A042136B130F0F96065F9 /* _Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187F851EE676DF3C2E05F193C3A5314 /* _Resolver.swift */; };
-		E7D23D2F163A34BEC60FD54BCCC22C76 /* GTMNSDictionary+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 788F662F6152D8C143909B1230AB1405 /* GTMNSDictionary+URLArguments.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E846BCFEBF5C3D1B748A81F179EB2E63 /* FunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC383192F3A13B59BC39688BFC703C92 /* FunctionType.swift */; };
-		F0226AE106D66F6911FE390AF73D52E0 /* _SwinjectStoryboardBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CF306E1BDF73C0C59A63A12A184E89DF /* _SwinjectStoryboardBase.m */; };
-		F0946C4253D06514656B02DB750D3C3A /* ServiceEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0F5F022BAC83BD3F64FBFCD9FD0674 /* ServiceEntry.swift */; };
+		E30749F77D033C479DF46133A7F0DFB0 /* SwinjectStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6DF74F219907AC9E3FA56AE8B4ADB /* SwinjectStoryboard.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F09EDD53B94234F5F8DAC4DCD5CD969E /* GTMSessionUploadFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = B1205B0DF8FE5037DA46A612D7D64F13 /* GTMSessionUploadFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F430E369A0B1D01A1BC5C4D8F73A0DEC /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CB8D23103C61AF9E72A396704B666 /* Box.swift */; };
-		F4E294C07EE32FFCDCF7FF4D71D850BD /* GTMSessionUploadFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A929C7DC056BA40791D060DCF9519D6 /* GTMSessionUploadFetcher.m */; };
-		F9BE922C11E2223242383796E44A06C4 /* DebugHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4492DC18ACDBA102AB300EB8C77DA3 /* DebugHelper.swift */; };
+		F1670E8CE4C40D9ED46A5B6BD8ACEDAA /* GTMSessionFetcherLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = A80849B52EB3E97366078E6B0CBD55D8 /* GTMSessionFetcherLogging.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F8FE61C92BF10D87E3602CB758DE6C79 /* SwinjectStoryboardOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EA3E593A16F200EF853BD6B65763A3 /* SwinjectStoryboardOption.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F9D92BA503505CB48EF4ECF0DDF57686 /* nanopb-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B66B6DDE8B49048F1DF279CD0DD59B6A /* nanopb-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE17580FCF90B29F78107E55C5DF1324 /* UnavailableItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBA6DE57D22E4472275A4EB885E0B5 /* UnavailableItems.swift */; };
+		FA715626F8599ED796A001916EC32551 /* ServiceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E110F4D242D690CE6BFCFBF698B45265 /* ServiceKey.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FB1390484044C4FC22977C566BAFA5B8 /* UnavailableItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF7CD51C5653907AEB283CBC96CAF4 /* UnavailableItems.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FE8C558F84E146975426CDD42A582FD8 /* pb_common.c in Sources */ = {isa = PBXBuildFile; fileRef = FDADAE36554B9EE804EB344640262A0E /* pb_common.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FF5320DF8204EC5CCA3FF9CF6C748C5E /* Swinject.h in Headers */ = {isa = PBXBuildFile; fileRef = CCD7407A4B712C69E384C49D3AD41098 /* Swinject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -1038,7 +1038,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60ACD401E3C72917F6A2CFABDA78861E /* Build configuration list for PBXNativeTarget "SwinjectAutoregistration" */;
 			buildPhases = (
-				369482A68F5CFFC260B6D730177FB9D0 /* Sources */,
+				247D0662DE16C82CED07CE07279C1EB7 /* Sources */,
 				E1D5C0ABAD2C16771E9184C0EF345569 /* Frameworks */,
 				E52FFF58EB7E97A1BF6EBD99C178DE3B /* Headers */,
 			);
@@ -1096,7 +1096,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD72F19DA2F1198B8B56DC14E098D563 /* Build configuration list for PBXNativeTarget "Swinject" */;
 			buildPhases = (
-				46ED8587569DFA610DAABC5C6AA5F079 /* Sources */,
+				1743708FB017576E4A224FB8F828613E /* Sources */,
 				8FAA90BD8F5544BA36AAA9EC5554A3BB /* Frameworks */,
 				17AF56E0A402A7476D3630672F040D6D /* Headers */,
 			);
@@ -1133,7 +1133,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7CC8559AB6F51830204F1A9CE54BF3E /* Build configuration list for PBXNativeTarget "GTMSessionFetcher" */;
 			buildPhases = (
-				C5A309EC5A80A27DBD420C5176E2122A /* Sources */,
+				23328CEB11D0D595B21254F37A8B876B /* Sources */,
 				6AE88E96161DE195EAAF0A3B6375EA50 /* Frameworks */,
 				82D993B88C10479096F17ADDEAB85D94 /* Headers */,
 			);
@@ -1150,7 +1150,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C25C6B503F3757179DAEA3EE5F20F124 /* Build configuration list for PBXNativeTarget "SwinjectStoryboard" */;
 			buildPhases = (
-				CBCA3ADAA20DE97DE722C742D67B8BD1 /* Sources */,
+				5115E782206090D78E065F93E9EF1A13 /* Sources */,
 				A19C02FD1C071811217D0D1674D36F4A /* Frameworks */,
 				9AB9F1C2269E8AB7D4F3ED7A25478BC1 /* Headers */,
 			);
@@ -1224,14 +1224,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1743708FB017576E4A224FB8F828613E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC328037E14256FE889F1ACF32CF7094 /* _Resolver.swift in Sources */,
+				743FBE1294C47506CD357D06DFD36170 /* Assembler.swift in Sources */,
+				963723DB1E8AB73475FF3945AA639A2B /* Assembly.swift in Sources */,
+				B7B8DDE06F6601E64D9762FAB5EA046D /* Container.Arguments.swift in Sources */,
+				B9DDB948F862255FE0482CB8CEF5B253 /* Container.Logging.swift in Sources */,
+				8B213D856C598AA81D1F56727B4A4746 /* Container.swift in Sources */,
+				156FFB6D092A5F45DC06D94AC9D7C03F /* DebugHelper.swift in Sources */,
+				32CD824B97DAFE2F9EAAD424649860A9 /* FunctionType.swift in Sources */,
+				1B527771BF8E74BB49EC76F073FB9DED /* InstanceStorage.swift in Sources */,
+				9855FC893C7C746AB2759E8E22661FEE /* ObjectScope.Standard.swift in Sources */,
+				90B329187CF6447DF93899711DA99EF6 /* ObjectScope.swift in Sources */,
+				2856E1AD2E65EF1B2757B6862806AC14 /* Resolver.swift in Sources */,
+				6C7069053B49165053F4CA4E8BA2670D /* ServiceEntry.swift in Sources */,
+				FA715626F8599ED796A001916EC32551 /* ServiceKey.swift in Sources */,
+				B823FCB7C22E3829CABA784FF5D8324C /* SpinLock.swift in Sources */,
+				1B7D363108D836E25D0283F0716956AE /* Swinject-dummy.m in Sources */,
+				B10EE4B713E8DBA3576A5C69CDBB50EE /* SynchronizedResolver.Arguments.swift in Sources */,
+				0A4A8A049BB809758C4A00B4B9ADB73A /* SynchronizedResolver.swift in Sources */,
+				FB1390484044C4FC22977C566BAFA5B8 /* UnavailableItems.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		222F0DC2D2D238CAB82346DE258E5472 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				32CF9BB4493C89CB01FFADD6DB754927 /* GoogleToolboxForMac-dummy.m in Sources */,
-				2EFC826FB30ECD27C98CE7F3707E9012 /* GTMNSData+zlib.m in Sources */,
-				E7D23D2F163A34BEC60FD54BCCC22C76 /* GTMNSDictionary+URLArguments.m in Sources */,
-				5B92D1D5ECFEBA99F4C67864E1397A6D /* GTMNSString+URLArguments.m in Sources */,
+				2E9D3D0D9FF2B94293539ACC42041EBE /* GTMNSData+zlib.m in Sources */,
+				05ADC8D3AEA9C13E8A9AE6BC43B7CCE7 /* GTMNSDictionary+URLArguments.m in Sources */,
+				3798D1004E36E3C069C9EE00526D0345 /* GTMNSString+URLArguments.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23328CEB11D0D595B21254F37A8B876B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51C276CC757E20047A747D42DECC732A /* GTMSessionFetcher-dummy.m in Sources */,
+				906C484289C852CF1269D2C1943A71E2 /* GTMSessionFetcher.m in Sources */,
+				F1670E8CE4C40D9ED46A5B6BD8ACEDAA /* GTMSessionFetcherLogging.m in Sources */,
+				4FF45924EAD755097E02A69E8ED59995 /* GTMSessionFetcherService.m in Sources */,
+				6898B9EBDC67DAB6F04E17EDEB179A1E /* GTMSessionUploadFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1240,24 +1278,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				468DFD90B6C4DA2F7CFA0C1C89F1B615 /* nanopb-dummy.m in Sources */,
-				3A50F5C8ECED9627F2EBD97F61BD376D /* pb_common.c in Sources */,
-				54F580BF4588159D6A61F21D15591805 /* pb_decode.c in Sources */,
-				55D8D5D912CFD2F3584E4553C2EAD734 /* pb_encode.c in Sources */,
+				FE8C558F84E146975426CDD42A582FD8 /* pb_common.c in Sources */,
+				A154377844877C99CB6AE226353D2ED3 /* pb_decode.c in Sources */,
+				A5BA819AE9CA559C66A043F263725BF6 /* pb_encode.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		369482A68F5CFFC260B6D730177FB9D0 /* Sources */ = {
+		247D0662DE16C82CED07CE07279C1EB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37E8641E1255F3F0E3293213D14C235B /* AutoRegistration.swift in Sources */,
-				4A5187D7858D882EBD6439DDC78BDC61 /* CheckResolved.swift in Sources */,
-				A168DB7D2DBE93B96C131510D0400BA9 /* Operators.swift in Sources */,
-				6A1BCEA4D7BC9FFCFB0C37A56CF6F4FC /* ResolutionError.swift in Sources */,
-				D10E8BE432B330C12FF3DE3E6E778D44 /* Resolver.swift in Sources */,
-				1938826E96396DB2D5E581DFBD09A077 /* SwinjectAutoregistration-dummy.m in Sources */,
-				16F250F00180C03EFBF8FFAC096274A8 /* Type.swift in Sources */,
-				10E93F8E3AB007CDFB51854093229B24 /* TypeParser.swift in Sources */,
+				1BB1EBE1D6506B98F0962BBA0794A750 /* AutoRegistration.swift in Sources */,
+				9B13A89E1F561F789BDB5D083C72A184 /* CheckResolved.swift in Sources */,
+				BFCF3896F7DC0C315BFF367F07E84793 /* Operators.swift in Sources */,
+				3EC97D8EA1DE1DFF8A33C3762513D604 /* ResolutionError.swift in Sources */,
+				8E8B3F4A74A0592A965CCC37DF2E01D6 /* Resolver.swift in Sources */,
+				13D64EAC6BC3FBA6E6F0A4566A412833 /* SwinjectAutoregistration-dummy.m in Sources */,
+				694A5C796873136DD4D7CE56564F2A6B /* Type.swift in Sources */,
+				8F3650B9759A91D6867163F5CED62F72 /* TypeParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1269,29 +1307,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46ED8587569DFA610DAABC5C6AA5F079 /* Sources */ = {
+		5115E782206090D78E065F93E9EF1A13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1F0E34EF27A042136B130F0F96065F9 /* _Resolver.swift in Sources */,
-				BC5ABA65FCF42279A382FEBEA39BCE0B /* Assembler.swift in Sources */,
-				20B4EFE77F5EF0890AB0B65B73159DE2 /* Assembly.swift in Sources */,
-				1B8F51A4017F50115ABBC1166E097E8C /* Container.Arguments.swift in Sources */,
-				185A49610C9C29448F4F919360C1D75C /* Container.Logging.swift in Sources */,
-				D307869730F3F8B71AADFB5EADEA8602 /* Container.swift in Sources */,
-				F9BE922C11E2223242383796E44A06C4 /* DebugHelper.swift in Sources */,
-				E846BCFEBF5C3D1B748A81F179EB2E63 /* FunctionType.swift in Sources */,
-				61C5352DC267A9D47A9782DDC40563E4 /* InstanceStorage.swift in Sources */,
-				3B637537088395316A1BC1F9E3674B72 /* ObjectScope.Standard.swift in Sources */,
-				52D3DE31D25DBD684F7C016A5421A7CB /* ObjectScope.swift in Sources */,
-				A366D309E2D553EF5EE4414C04088EE2 /* Resolver.swift in Sources */,
-				F0946C4253D06514656B02DB750D3C3A /* ServiceEntry.swift in Sources */,
-				7A64596EC3569C435CBE04F5511A7100 /* ServiceKey.swift in Sources */,
-				A49D30B222F8C969D9A0F3D5A3AEA28A /* SpinLock.swift in Sources */,
-				88EA09E15E8080BF64A90B76415CD84E /* Swinject-dummy.m in Sources */,
-				6F1768594B441FEB8BA92F0F28AD92AC /* SynchronizedResolver.Arguments.swift in Sources */,
-				6CFE78C86F1581916BF4D4DDDB25B064 /* SynchronizedResolver.swift in Sources */,
-				7CD2808CC478FAC07C379F1C29C78B5C /* UnavailableItems.swift in Sources */,
+				6BC87F039D61EDFB443C071FDB2CEADF /* _SwinjectStoryboardBase.m in Sources */,
+				8A33EA14EC3AE3D26B94B35130B52145 /* Box.swift in Sources */,
+				76EEE535B957137EA76521D3031B8383 /* Container+SwinjectStoryboard.swift in Sources */,
+				2AAD72ADE94518653E700D516456B00A /* InjectionVerifiable.swift in Sources */,
+				77CBA4399FD5DB3178BFA72AEB82C327 /* RegistrationNameAssociatable.swift in Sources */,
+				DA0C408F80FF5D11181D07AB98A39709 /* Storyboard+Swizzling.swift in Sources */,
+				8C5308AE6691CB835587686775C9C387 /* SwinjectStoryboard+StoryboardReference.swift in Sources */,
+				CF1D02F774A1293DD45868345030B04E /* SwinjectStoryboard-dummy.m in Sources */,
+				E30749F77D033C479DF46133A7F0DFB0 /* SwinjectStoryboard.swift in Sources */,
+				F8FE61C92BF10D87E3602CB758DE6C79 /* SwinjectStoryboardOption.swift in Sources */,
+				449383613005B07845F8EF14B3D16AFB /* SwinjectStoryboardProtocol.swift in Sources */,
+				0FB796108ABE5E8B5DFCE781F4189413 /* UnavailableItems.swift in Sources */,
+				766DA54A55BE9A2379A6B93A68427BD8 /* ViewController+Swinject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1300,38 +1332,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1A823E2C790D37793A5869A7FE3C296 /* Pods-JoggerTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5A309EC5A80A27DBD420C5176E2122A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6EA6DFC4473A9B2DB6B8A42EA986BA5B /* GTMSessionFetcher-dummy.m in Sources */,
-				64F31B70A6E5E6963518A01C285B435F /* GTMSessionFetcher.m in Sources */,
-				07340F15BACBA601736DBB2ABF1ABC35 /* GTMSessionFetcherLogging.m in Sources */,
-				95C69447F517DB81437EDE0003486963 /* GTMSessionFetcherService.m in Sources */,
-				F4E294C07EE32FFCDCF7FF4D71D850BD /* GTMSessionUploadFetcher.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CBCA3ADAA20DE97DE722C742D67B8BD1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0226AE106D66F6911FE390AF73D52E0 /* _SwinjectStoryboardBase.m in Sources */,
-				F430E369A0B1D01A1BC5C4D8F73A0DEC /* Box.swift in Sources */,
-				8177EEF7F06E6C74DEDF5586F404D426 /* Container+SwinjectStoryboard.swift in Sources */,
-				98DAF05D2895BB697436AFC8716BEF69 /* InjectionVerifiable.swift in Sources */,
-				204705B69D8165D1782E8AEA4D89E5C0 /* RegistrationNameAssociatable.swift in Sources */,
-				68C35CEE87CA8F4327512D51AC24F041 /* Storyboard+Swizzling.swift in Sources */,
-				928DE23B5278B1FE30E89C2349DA52BD /* SwinjectStoryboard+StoryboardReference.swift in Sources */,
-				C1D8B2A5ED6BBF445AB09CD3707347EF /* SwinjectStoryboard-dummy.m in Sources */,
-				00F64DAF407655FB4F5E16CFE76AE4C4 /* SwinjectStoryboard.swift in Sources */,
-				AD35F258B0A058F9271E89D8D57891E0 /* SwinjectStoryboardOption.swift in Sources */,
-				C6B2A8B1D14731B967AF9308DCD03831 /* SwinjectStoryboardProtocol.swift in Sources */,
-				FE17580FCF90B29F78107E55C5DF1324 /* UnavailableItems.swift in Sources */,
-				AF62132F9F8D97AF83CE1EC344C49754 /* ViewController+Swinject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
