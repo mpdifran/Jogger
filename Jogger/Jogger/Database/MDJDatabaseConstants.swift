@@ -27,9 +27,10 @@ struct MDJDatabaseConstants {
         static func jogs(forUserID userID: String) -> String {
             return "jogs/\(userID)"
         }
-        static func user(forUserID userID: String) -> String {
-            return "users/\(userID)"
+        static func users(forUserID userID: String) -> String {
+            return "\(users)/\(userID)"
         }
+        static let users = "users"
 
         private init() { }
     }

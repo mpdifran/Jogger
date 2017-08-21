@@ -35,5 +35,6 @@ class MainAssembler {
         assembler.apply(assembly: MDJJogsDatabaseObserverAssembly())
         assembler.apply(assembly: MDJJogsFilterableDatabaseObserverAssembly())
         assembler.apply(assembly: MDJUserDatabaseAssembly())
+        assembler.apply(assembly: MDJDefaultUserDatabaseObserverAssembly())
     }
 }

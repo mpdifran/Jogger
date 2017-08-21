@@ -44,7 +44,7 @@ class MDJDefaultUserDatabase {
 extension MDJDefaultUserDatabase: MDJUserDatabase {
 
     func register(user: MDJUser, with role: MDJUserRole) -> MDJAuthenticatedUser {
-        let path = MDJDatabaseConstants.Path.user(forUserID: user.uid)
+        let path = MDJDatabaseConstants.Path.users(forUserID: user.uid)
 
         let email = userEmail(from: user)
 
@@ -57,7 +57,7 @@ extension MDJDefaultUserDatabase: MDJUserDatabase {
     }
 
     func fetchAuthenticatedUser(for user: MDJUser, completion: @escaping (MDJAuthenticatedUser?) -> Void) {
-        let path = MDJDatabaseConstants.Path.user(forUserID: user.uid)
+        let path = MDJDatabaseConstants.Path.users(forUserID: user.uid)
 
         databaseReference.child(path).child(MDJDatabaseConstants.Key.role).observeSingleEvent(of: .value) { (snapshot) in
             guard let roleRawValue = snapshot.value as? Int,
@@ -69,7 +69,7 @@ extension MDJDefaultUserDatabase: MDJUserDatabase {
     }
 
     func updateUserRole(forUserWithID userID: String, role: MDJUserRole) -> Bool {
-        let path = MDJDatabaseConstants.Path.user(forUserID: userID)
+        let path = MDJDatabaseConstants.Path.users(forUserID: userID)
 
         databaseReference.child(path).child(MDJDatabaseConstants.Key.role).setValue(role.rawValue)
 
