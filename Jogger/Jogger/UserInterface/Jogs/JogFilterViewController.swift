@@ -83,14 +83,3 @@ extension JogFilterViewController {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
-
-// MARK: - JogFilterViewControllerAssembly
-
-class JogFilterViewControllerAssembly: Assembly {
-
-    func assemble(container: Container) {
-        container.storyboardInitCompleted(JogFilterViewController.self) { (r, c) in
-            c.jogFilterObserver = r.resolve(MDJJogsFilterableDatabaseObserver.self)!
-        }
-    }
-}

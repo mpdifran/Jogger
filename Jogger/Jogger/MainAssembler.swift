@@ -34,7 +34,6 @@ class MainAssembler {
         assembler.apply(assembly: MDJJogsDatabaseAssembly())
         assembler.apply(assembly: MDJJogsDatabaseObserverAssembly())
         assembler.apply(assembly: MDJJogsFilterableDatabaseObserverAssembly())
-        assembler.apply(assembly: JogFilterViewControllerAssembly())
         assembler.apply(assembly: MDJUserDatabaseAssembly())
     }
 }

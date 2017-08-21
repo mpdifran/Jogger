@@ -82,12 +82,12 @@
                     <navigationItem key="navigationItem" title="Jogs" id="2wQ-bi-ved">
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="IlO-Jg-v9T">
                             <connections>
-                                <segue destination="3md-vS-n5K" kind="presentation" modalPresentationStyle="formSheet" id="tvu-Yo-SFb"/>
+                                <segue destination="3md-vS-n5K" kind="presentation" identifier="FilterSegue" modalPresentationStyle="formSheet" id="tvu-Yo-SFb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3lq-Fn-ebB">
                             <connections>
-                                <segue destination="iRh-vi-GI1" kind="presentation" modalPresentationStyle="formSheet" id="J2h-IR-snv"/>
+                                <segue destination="iRh-vi-GI1" kind="presentation" identifier="CreateJogSegue" modalPresentationStyle="formSheet" id="J2h-IR-snv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -115,7 +115,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KDd-R0-4SE">
-                                                    <rect key="frame" x="16" y="12" width="36" height="20.5"/>
+                                                    <rect key="frame" x="15" y="12" width="36" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -191,7 +191,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RrI-SV-LBn">
-                                                    <rect key="frame" x="16" y="12" width="36" height="20.5"/>
+                                                    <rect key="frame" x="15" y="12" width="36" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>

@@ -51,6 +51,10 @@ class MDJDefaultJogsFilterableDatabaseObserver {
 
 extension MDJDefaultJogsFilterableDatabaseObserver: MDJJogsFilterableDatabaseObserver {
 
+    func beginObservingJogs(forUserWithUserID userID: String) {
+        jogsObserver.beginObservingJogs(forUserWithUserID: userID)
+    }
+
     func applyFilter(startDate: Date?, endDate: Date?) {
         self.startDate = startDate
         self.endDate = endDate

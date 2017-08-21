@@ -13,13 +13,25 @@ import SwinjectStoryboard
 // MARK: - JogListViewController
 
 class JogListViewController: UITableViewController {
+    var userID: String! {
+        didSet {
+            guard let userID = userID else { return }
+
+            jogsObserver.beginObservingJogs(forUserWithUserID: userID)
+        }
+    }
 
     fileprivate struct Segue {
+        static let createJog = "CreateJogSegue"
         static let editJog = "JogEditSegue"
+        static let filter = "FilterSegue"
+
+        private init() { }
     }
 
     fileprivate var jogsObserver: MDJJogsFilterableDatabaseObserver!
     fileprivate var jogsDatabase: MDJJogsDatabase!
+    fileprivate var userProvider: MDJUserProvider!
 
     fileprivate let dateFormatter = DateFormatter()
 }
@@ -34,6 +46,11 @@ extension JogListViewController {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
 
+        // If we don't have a userID set, default to the signed in user.
+        if userID == nil {
+            userID = userProvider.user?.uid
+        }
+
         setupNotifications()
     }
 
@@ -41,13 +58,24 @@ extension JogListViewController {
         guard let identifier = segue.identifier else { return }
 
         switch identifier {
+        case Segue.createJog:
+            guard let navController = segue.destination as? UINavigationController,
+                let createViewController = navController.topViewController as? CreateEditJogViewController else { return }
+
+            createViewController.userID = userID
         case Segue.editJog:
             guard let editViewController = segue.destination as? CreateEditJogViewController else { return }
 
+            editViewController.userID = userID
             if let indexPath = tableView.indexPathForSelectedRow {
                 let jog = jogsObserver.jogs[indexPath.row]
                 editViewController.jog = jog
             }
+        case Segue.filter:
+            guard let navController = segue.destination as? UINavigationController,
+                let filterViewController = navController.topViewController as? JogFilterViewController else { return }
+
+            filterViewController.jogFilterObserver = jogsObserver
         default:
             break
         }
@@ -85,7 +113,7 @@ extension JogListViewController {
         case .delete:
             let jog = jogsObserver.jogs[indexPath.row]
 
-            let _ = jogsDatabase.delete(jog: jog)
+            let _ = jogsDatabase.delete(jog: jog, forUserID: userID)
         default:
             break
         }
@@ -101,6 +129,14 @@ private extension JogListViewController {
                                                queue: .main) { [weak self] (_) in
                                                 self?.tableView.reloadData()
         }
+        NotificationCenter.default.addObserver(forName: .MDJUserProviderUserUpdated, object: userProvider,
+                                               queue: .main) { [weak self] (_) in
+
+                                                // If we don't have a userID set, default to the signed in user.
+                                                if self?.userID == nil {
+                                                    self?.userID = self?.userProvider.user?.uid
+                                                }
+        }
     }
 }
 
@@ -112,6 +148,7 @@ class JogListViewControllerAssembly: Assembly {
         container.storyboardInitCompleted(JogListViewController.self) { (r, c) in
             c.jogsObserver = r.resolve(MDJJogsFilterableDatabaseObserver.self)!
             c.jogsDatabase = r.resolve(MDJJogsDatabase.self)!
+            c.userProvider = r.resolve(MDJUserProvider.self)!
         }
     }
 }

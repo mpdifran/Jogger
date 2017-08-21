@@ -79,7 +79,11 @@ extension MDJDefaultAuthenticationManager: MDJAuthenticationManager {
 
     func signIn(withEmail email: String, password: String, completion: @escaping (Error?) -> Void) {
         auth.signIn(withEmail: email, password: password) { [weak self] (user, error) in
-            guard let user = user else { self?.user = nil; return }
+            guard let user = user else {
+                self?.user = nil
+                completion(error)
+                return
+            }
 
             self?.userDatabase.fetchAuthenticatedUser(for: user) { (authenticatedUser) in
                 self?.user = authenticatedUser

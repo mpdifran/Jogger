@@ -16,29 +16,28 @@ protocol MDJJogsDatabase: class {
 
     /// Creates a new jog in the database, or updates the jog if it already exists.
     ///
+    /// - parameter jog: The jog to create or update in the database.
+    /// - parameter userID: The user ID of the user to create the jog for.
     /// - returns: `true` if the jog was recorded, `false` otherwise.
-    func createOrUpdate(jog: Jog) -> Bool
+    func createOrUpdate(jog: Jog, forUserID userID: String)
 
     /// Deletes a jog from the database. 
     ///
+    /// - parameter jog: The jog to delete in the database.
+    /// - parameter userID: The user ID of the user to delete the jog from.
     /// - returns: `true` if the jog is no longer in the database, `false` otherwise.
-    func delete(jog: Jog) -> Bool
+    func delete(jog: Jog, forUserID userID: String)
 }
 
 // MARK: - MDJDefaultJogsDatabase
 
 class MDJDefaultJogsDatabase {
     fileprivate let databaseReference: MDJDatabaseReference
-    fileprivate let jogsListModifier: MDJJogsDatabaseObserverListModifier
-    fileprivate let userProvider: MDJUserProvider
 
     fileprivate let dateFormatter = MDJDateFormatter()
 
-    init(databaseReference: MDJDatabaseReference, jogsListModifier: MDJJogsDatabaseObserverListModifier,
-         userProvider: MDJUserProvider) {
+    init(databaseReference: MDJDatabaseReference) {
         self.databaseReference = databaseReference
-        self.jogsListModifier = jogsListModifier
-        self.userProvider = userProvider
     }
 }
 
@@ -46,31 +45,23 @@ class MDJDefaultJogsDatabase {
 
 extension MDJDefaultJogsDatabase: MDJJogsDatabase {
 
-    func createOrUpdate(jog: Jog) -> Bool {
-        guard let user = userProvider.user else { return false }
-
+    func createOrUpdate(jog: Jog, forUserID userID: String) {
         let jogData = createDictionaryRepresentation(for: jog)
 
-        let path = MDJDatabaseConstants.Path.jogs(forUserID: user.uid)
+        let path = MDJDatabaseConstants.Path.jogs(forUserID: userID)
 
         if let identifier = jog.identifier {
             databaseReference.child(path).child(identifier).setValue(jogData)
         } else {
             databaseReference.child(path).childByAutoId().setValue(jogData)
         }
-        return true
     }
 
-    func delete(jog: Jog) -> Bool {
-        guard let user = userProvider.user else { return false }
-        guard let identifier = jog.identifier else { return true }
+    func delete(jog: Jog, forUserID userID: String) {
+        guard let identifier = jog.identifier else { return }
 
-        jogsListModifier.remove(jog: jog)
-
-        let path = MDJDatabaseConstants.Path.jogs(forUserID: user.uid)
+        let path = MDJDatabaseConstants.Path.jogs(forUserID: userID)
         databaseReference.child(path).child(identifier).removeValue()
-
-        return true
     }
 }
 

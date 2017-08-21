@@ -21,14 +21,8 @@ extension Notification.Name {
 
 protocol MDJJogsDatabaseObserver: class {
     var jogs: [Jog] { get }
-}
 
-// MARK: - MDJJogsDatabaseObserverListModifier
-
-protocol MDJJogsDatabaseObserverListModifier: class {
-
-    /// Removes the specified jog from the list.
-    func remove(jog: Jog)
+    func beginObservingJogs(forUserWithUserID userID: String)
 }
 
 // MARK: - MDJDefaultJogsDatabaseObserver
@@ -40,17 +34,13 @@ class MDJDefaultJogsDatabaseObserver {
         }
     }
 
-    fileprivate let userProvider: MDJUserProvider
     fileprivate let databaseReference: MDJDatabaseReference
     fileprivate var handle: UInt?
 
     fileprivate let dateFormatter = MDJDateFormatter()
 
-    init(databaseReference: MDJDatabaseReference, userProvider: MDJUserProvider) {
+    init(databaseReference: MDJDatabaseReference) {
         self.databaseReference = databaseReference
-        self.userProvider = userProvider
-
-        setupNotifications()
     }
 
     deinit {
@@ -60,36 +50,19 @@ class MDJDefaultJogsDatabaseObserver {
 
 // MARK: MDJJogsDatabaseObserver Methods
 
-extension MDJDefaultJogsDatabaseObserver: MDJJogsDatabaseObserver { }
+extension MDJDefaultJogsDatabaseObserver: MDJJogsDatabaseObserver {
 
-// MARK: MDJJogsDatabaseObserverListModifier Methods
+    func beginObservingJogs(forUserWithUserID userID: String) {
+        tearDownObserver()
 
-extension MDJDefaultJogsDatabaseObserver: MDJJogsDatabaseObserverListModifier {
-
-    func remove(jog: Jog) {
-        jogs = jogs.filter({ $0 !== jog })
+        let path = MDJDatabaseConstants.Path.jogs(forUserID: userID)
+        handle = databaseReference.child(path).observe(.value, with: parse(_:))
     }
 }
 
 // MARK: Private Methods
 
 private extension MDJDefaultJogsDatabaseObserver {
-
-    func setupNotifications() {
-        NotificationCenter.default.addObserver(forName: .MDJUserProviderUserUpdated, object: userProvider,
-                                               queue: .main) { [weak self] (_) in
-                                                self?.setupObserver()
-        }
-    }
-
-    func setupObserver() {
-        tearDownObserver()
-
-        if let user = userProvider.user {
-            let path = MDJDatabaseConstants.Path.jogs(forUserID: user.uid)
-            handle = databaseReference.child(path).observe(.value, with: parse(_:))
-        }
-    }
 
     func tearDownObserver() {
         if let handle = handle {
@@ -131,13 +104,6 @@ private extension MDJDefaultJogsDatabaseObserver {
 class MDJJogsDatabaseObserverAssembly: Assembly {
 
     func assemble(container: Container) {
-        container.autoregister(MDJDefaultJogsDatabaseObserver.self, initializer: MDJDefaultJogsDatabaseObserver.init)
-            .inObjectScope(.weak)
-        container.register(MDJJogsDatabaseObserver.self, factory: { r in
-            return r.resolve(MDJDefaultJogsDatabaseObserver.self)!
-        }).inObjectScope(.weak)
-        container.register(MDJJogsDatabaseObserverListModifier.self, factory: { r in
-            return r.resolve(MDJDefaultJogsDatabaseObserver.self)!
-        }).inObjectScope(.weak)
+        container.autoregister(MDJJogsDatabaseObserver.self, initializer: MDJDefaultJogsDatabaseObserver.init)
     }
 }

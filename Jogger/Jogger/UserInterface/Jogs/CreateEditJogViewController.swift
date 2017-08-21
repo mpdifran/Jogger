@@ -13,6 +13,7 @@ import SwinjectStoryboard
 // MARK: - CreateEditJogViewController
 
 class CreateEditJogViewController: UITableViewController {
+    var userID: String!
     var jog = Jog() {
         didSet {
             createButton.title = "Update"
@@ -94,18 +95,12 @@ extension CreateEditJogViewController {
         jog.distance = distance
         jog.time = time
 
-        if jogsDatabase.createOrUpdate(jog: jog) {
-            if let presentingViewController = presentingViewController {
-                presentingViewController.dismiss(animated: true, completion: nil)
-            } else {
-                navigationController?.popViewController(animated: true)
-            }
+        jogsDatabase.createOrUpdate(jog: jog, forUserID: userID)
+
+        if let presentingViewController = presentingViewController {
+            presentingViewController.dismiss(animated: true, completion: nil)
         } else {
-            let alertController = UIAlertController(title: "Uh oh", message: "We were unable to save your jog.",
-                                                    preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alertController.addAction(okAction)
-            present(alertController, animated: true, completion: nil)
+            navigationController?.popViewController(animated: true)
         }
     }
 }
