@@ -16,3 +16,17 @@ class JogTableViewCell: UITableViewCell {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var averageSpeedLabel: UILabel!
 }
+
+// MARK: Cell Lifecycle Methods
+
+extension JogTableViewCell {
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        dateLabel.text = nil
+        timeLabel.text = nil
+        distanceLabel.text = nil
+        averageSpeedLabel.text = nil
+    }
+}
