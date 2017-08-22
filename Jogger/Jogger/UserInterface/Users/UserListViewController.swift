@@ -20,6 +20,7 @@ class UserListViewController: UITableViewController {
     }
 
     fileprivate var usersObserver: MDJUserDatabaseObserver!
+    fileprivate var userProvider: MDJUserProvider!
 }
 
 // MARK: View Lifecycle Methods
@@ -32,6 +33,12 @@ extension UserListViewController {
         setupNotifications()
 
         usersObserver.beginObservingUsers()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        tableView.allowsSelection = userProvider.user?.role == .admin
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -66,6 +73,7 @@ extension UserListViewController {
         cell.emailLabel.text = user.email
         cell.userIdentifierLabel.text = user.userID
         cell.roleLabel.text = user.role.name
+        cell.accessoryType = userProvider.user?.role == .admin ? .disclosureIndicator : .none
 
         return cell
     }
@@ -90,6 +98,7 @@ class UserListViewControllerAssembly: Assembly {
     func assemble(container: Container) {
         container.storyboardInitCompleted(UserListViewController.self) { (r, c) in
             c.usersObserver = r.resolve(MDJUserDatabaseObserver.self)!
+            c.userProvider = r.resolve(MDJUserProvider.self)!
         }
     }
 }

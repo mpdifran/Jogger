@@ -26,5 +26,6 @@ extension UserTableViewCell {
         emailLabel.text = nil
         roleLabel.text = nil
         userIdentifierLabel.text = nil
+        accessoryType = .none
     }
 }
