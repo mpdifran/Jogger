@@ -107,5 +107,6 @@ class MDJJogsDatabaseObserverAssembly: Assembly {
 
     func assemble(container: Container) {
         container.autoregister(MDJJogsDatabaseObserver.self, initializer: MDJDefaultJogsDatabaseObserver.init)
+            .inObjectScope(.transient)
     }
 }

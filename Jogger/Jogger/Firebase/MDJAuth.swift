@@ -45,10 +45,10 @@ extension Auth: MDJAuth {
 class MDJAuthAssembly: Assembly {
 
     func assemble(container: Container) {
-        container.register(MDJAuth.self) { r in
+        container.register(MDJAuth.self, factory: { r in
             let configurer = r.resolve(MDJFirebaseConfigurer.self)!
             configurer.configure()
             return Auth.auth()
-        }
+        }).inObjectScope(.container)
     }
 }

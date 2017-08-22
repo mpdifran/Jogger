@@ -35,8 +35,8 @@ extension MDJFirebaseAppProxy: MDJFirebaseApp {
 class MDJFirebaseAppAssembly: Assembly {
 
     func assemble(container: Container) {
-        container.register(MDJFirebaseApp.self) { _ in
+        container.register(MDJFirebaseApp.self, factory: { _ in
             return MDJFirebaseAppProxy()
-        }
+        }).inObjectScope(.container)
     }
 }

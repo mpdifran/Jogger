@@ -103,5 +103,6 @@ class MDJDefaultUserDatabaseObserverAssembly: Assembly {
 
     func assemble(container: Container) {
         container.autoregister(MDJUserDatabaseObserver.self, initializer: MDJDefaultUserDatabaseObserver.init)
+            .inObjectScope(.transient)
     }
 }

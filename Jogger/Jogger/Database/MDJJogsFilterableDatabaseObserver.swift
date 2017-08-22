@@ -93,6 +93,6 @@ class MDJJogsFilterableDatabaseObserverAssembly: Assembly {
 
     func assemble(container: Container) {
         container.autoregister(MDJJogsFilterableDatabaseObserver.self,
-                               initializer: MDJDefaultJogsFilterableDatabaseObserver.init).inObjectScope(.weak)
+                               initializer: MDJDefaultJogsFilterableDatabaseObserver.init).inObjectScope(.transient)
     }
 }
