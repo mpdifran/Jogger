@@ -26,9 +26,45 @@ class RootTabBarController: UITabBarController {
 
 extension RootTabBarController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupNotifications()
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        showLoginIfNoUserPresent()
+    }
+}
+
+// MARK: Private Methods
+
+private extension RootTabBarController {
+
+    func setupNotifications() {
+        NotificationCenter.default.addObserver(forName: .MDJUserProviderUserUpdated, object: userProvider,
+                                               queue: .main) { [weak self] (_) in
+                                                self?.handleUserUpdate()
+        }
+    }
+
+    func handleUserUpdate() {
+        guard let user = userProvider.user else { showLoginIfNoUserPresent(); return }
+
+        let jogs = UIStoryboard(name: "Jogs", bundle: nil).instantiateInitialViewController()!
+        let users = UIStoryboard(name: "Users", bundle: nil).instantiateInitialViewController()!
+
+        switch user.role {
+        case .default:
+            setViewControllers([jogs], animated: false)
+        case .userManager, .admin:
+            setViewControllers([jogs, users], animated: false)
+        }
+    }
+
+    func showLoginIfNoUserPresent() {
         if userProvider.user == nil {
             performSegue(withIdentifier: SegueIdentifier.authentication, sender: self)
         }

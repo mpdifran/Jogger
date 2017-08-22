@@ -20,33 +20,11 @@
                     </tabBar>
                     <connections>
                         <segue destination="gQd-UG-oi3" kind="presentation" identifier="AuthenticationSegueIdentifier" modalPresentationStyle="formSheet" id="CxM-h0-Js7"/>
-                        <segue destination="v5v-9V-7yF" kind="relationship" relationship="viewControllers" id="Bip-hK-Fqj"/>
-                        <segue destination="hX0-Nu-NyH" kind="relationship" relationship="viewControllers" id="BZF-eh-AiQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04h-cd-cSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="959" y="-186"/>
-        </scene>
-        <!--Jogs-->
-        <scene sceneID="mtq-HL-DKT">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Jogs" id="v5v-9V-7yF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="vKo-J8-iAV"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N9G-v8-XaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1475" y="-187"/>
-        </scene>
-        <!--Users-->
-        <scene sceneID="olh-1e-f7C">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Users" id="hX0-Nu-NyH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uSV-Cc-mog"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OLu-82-IE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1478" y="-148"/>
         </scene>
         <!--Authentication-->
         <scene sceneID="mQm-RT-TUL">
