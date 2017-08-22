@@ -43,6 +43,8 @@ extension JogListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.leftItemsSupplementBackButton = true
+
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
 

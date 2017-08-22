@@ -60,6 +60,7 @@
                                     <outlet property="emailLabel" destination="x7T-lq-0pP" id="L9I-Sm-Z7T"/>
                                     <outlet property="roleLabel" destination="NQ5-Wj-Jhp" id="hg4-1w-Du1"/>
                                     <outlet property="userIdentifierLabel" destination="fSa-FQ-L2g" id="Wux-S2-etV"/>
+                                    <segue destination="V5r-q6-uZ2" kind="show" identifier="JogListSegue" id="8jR-UG-eSR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,6 +75,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jyK-Ej-Rwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="790" y="223"/>
+        </scene>
+        <!--JogListViewController-->
+        <scene sceneID="pqu-zo-rB8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Jogs" referencedIdentifier="JogListViewController" id="V5r-q6-uZ2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kr9-Hj-cMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1367" y="222"/>
         </scene>
         <!--Users-->
         <scene sceneID="Jr5-xh-kRD">

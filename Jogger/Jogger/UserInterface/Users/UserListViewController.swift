@@ -13,6 +13,12 @@ import SwinjectStoryboard
 // MARK: - UserListViewController
 
 class UserListViewController: UITableViewController {
+    fileprivate struct Segue {
+        static let jogList = "JogListSegue"
+
+        private init() { }
+    }
+
     fileprivate var usersObserver: MDJUserDatabaseObserver!
 }
 
@@ -26,6 +32,21 @@ extension UserListViewController {
         setupNotifications()
 
         usersObserver.beginObservingUsers()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+
+        switch identifier {
+        case Segue.jogList:
+            guard let jogListViewController = segue.destination as? JogListViewController else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+
+            let user = usersObserver.users[indexPath.row]
+            jogListViewController.userID = user.userID
+        default:
+            break
+        }
     }
 }
 

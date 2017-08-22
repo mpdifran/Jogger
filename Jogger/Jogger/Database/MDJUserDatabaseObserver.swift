@@ -53,6 +53,8 @@ extension MDJDefaultUserDatabaseObserver: MDJUserDatabaseObserver {
     func beginObservingUsers() {
         tearDownObserver()
 
+        users.removeAll(keepingCapacity: true)
+
         let path = MDJDatabaseConstants.Path.users
         handle = databaseReference.child(path).observe(.value, with: parse(_:))
     }

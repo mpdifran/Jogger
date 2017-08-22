@@ -55,6 +55,8 @@ extension MDJDefaultJogsDatabaseObserver: MDJJogsDatabaseObserver {
     func beginObservingJogs(forUserWithUserID userID: String) {
         tearDownObserver()
 
+        jogs.removeAll(keepingCapacity: true)
+
         let path = MDJDatabaseConstants.Path.jogs(forUserID: userID)
         handle = databaseReference.child(path).observe(.value, with: parse(_:))
     }
