@@ -54,13 +54,14 @@ private extension RootTabBarController {
         guard let user = userProvider.user else { showLoginIfNoUserPresent(); return }
 
         let jogs = UIStoryboard(name: "Jogs", bundle: nil).instantiateInitialViewController()!
+        let reports = UIStoryboard(name: "Reports", bundle: nil).instantiateInitialViewController()!
         let users = UIStoryboard(name: "Users", bundle: nil).instantiateInitialViewController()!
 
         switch user.role {
         case .default:
-            setViewControllers([jogs], animated: false)
+            setViewControllers([jogs, reports], animated: false)
         case .userManager, .admin:
-            setViewControllers([jogs, users], animated: false)
+            setViewControllers([jogs, reports, users], animated: false)
         }
     }
 

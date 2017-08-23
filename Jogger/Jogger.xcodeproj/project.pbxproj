@@ -31,6 +31,9 @@
 		FF02D8941F4A7E8F0049DF17 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D8931F4A7E8E0049DF17 /* UserTableViewCell.swift */; };
 		FF02D8961F4CFE150049DF17 /* MDJJogReportDatabaseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D8951F4CFE150049DF17 /* MDJJogReportDatabaseObserver.swift */; };
 		FF02D8981F4CFE640049DF17 /* JogReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D8971F4CFE640049DF17 /* JogReport.swift */; };
+		FF02D89B1F4D0F1D0049DF17 /* Reports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF02D89A1F4D0F1D0049DF17 /* Reports.storyboard */; };
+		FF02D89D1F4D10640049DF17 /* JogReportListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D89C1F4D10640049DF17 /* JogReportListViewController.swift */; };
+		FF02D89F1F4D14780049DF17 /* JogReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D89E1F4D14780049DF17 /* JogReportTableViewCell.swift */; };
 		FF09F5E81F42A4EC00951F9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F5E71F42A4EC00951F9F /* AppDelegate.swift */; };
 		FF09F5ED1F42A4EC00951F9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF09F5EB1F42A4EC00951F9F /* Main.storyboard */; };
 		FF09F5EF1F42A4EC00951F9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF09F5EE1F42A4EC00951F9F /* Assets.xcassets */; };
@@ -107,6 +110,9 @@
 		FF02D8931F4A7E8E0049DF17 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		FF02D8951F4CFE150049DF17 /* MDJJogReportDatabaseObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogReportDatabaseObserver.swift; sourceTree = "<group>"; };
 		FF02D8971F4CFE640049DF17 /* JogReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogReport.swift; sourceTree = "<group>"; };
+		FF02D89A1F4D0F1D0049DF17 /* Reports.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reports.storyboard; sourceTree = "<group>"; };
+		FF02D89C1F4D10640049DF17 /* JogReportListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogReportListViewController.swift; sourceTree = "<group>"; };
+		FF02D89E1F4D14780049DF17 /* JogReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogReportTableViewCell.swift; sourceTree = "<group>"; };
 		FF09F5E41F42A4EC00951F9F /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF09F5E71F42A4EC00951F9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF09F5EC1F42A4EC00951F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -215,6 +221,16 @@
 				FF02D8931F4A7E8E0049DF17 /* UserTableViewCell.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		FF02D8991F4D0EFB0049DF17 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				FF02D89A1F4D0F1D0049DF17 /* Reports.storyboard */,
+				FF02D89C1F4D10640049DF17 /* JogReportListViewController.swift */,
+				FF02D89E1F4D14780049DF17 /* JogReportTableViewCell.swift */,
+			);
+			path = Reports;
 			sourceTree = "<group>";
 		};
 		FF09F5DB1F42A4EC00951F9F = {
@@ -376,6 +392,7 @@
 				FFAE97BD1F47C17C009F76FF /* RootTabBarController */,
 				FFAE97AD1F479527009F76FF /* Authentication */,
 				FFAE97D81F48D900009F76FF /* Jogs */,
+				FF02D8991F4D0EFB0049DF17 /* Reports */,
 				FF02D88E1F4A7BD30049DF17 /* Users */,
 				FFAE97DF1F48DAED009F76FF /* Extensions */,
 			);
@@ -555,6 +572,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF02D89B1F4D0F1D0049DF17 /* Reports.storyboard in Resources */,
 				FF02D8901F4A7BEE0049DF17 /* Users.storyboard in Resources */,
 				FF09F5F21F42A4EC00951F9F /* LaunchScreen.storyboard in Resources */,
 				FF09F6181F42A56700951F9F /* GoogleService-Info.plist in Resources */,
@@ -761,6 +779,7 @@
 				FFAE97AB1F454738009F76FF /* MDJDatabaseConstants.swift in Sources */,
 				FFAE97A41F453E9B009F76FF /* MDJJogsDatabaseObserver.swift in Sources */,
 				FFAE97F01F48F3A4009F76FF /* MDJFirebaseConfigurer.swift in Sources */,
+				FF02D89F1F4D14780049DF17 /* JogReportTableViewCell.swift in Sources */,
 				FF02D88D1F4A77BE0049DF17 /* JogUser.swift in Sources */,
 				FFAE97EC1F48F1F0009F76FF /* CreateEditJogViewController.swift in Sources */,
 				FF02D88B1F4A777D0049DF17 /* MDJUserDatabaseObserver.swift in Sources */,
@@ -768,6 +787,7 @@
 				FFAE97A61F454187009F76FF /* MDJDataSnapshot.swift in Sources */,
 				FF09F6211F43C09E00951F9F /* MainAssembler.swift in Sources */,
 				FFAE97A21F452D5A009F76FF /* Jog.swift in Sources */,
+				FF02D89D1F4D10640049DF17 /* JogReportListViewController.swift in Sources */,
 				FF9F18371F4A26AB00238F9D /* MDJUserDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

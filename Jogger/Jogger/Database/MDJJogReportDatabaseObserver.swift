@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Swinject
+import SwinjectAutoregistration
 
 // MARK: - Notifications
 
@@ -19,6 +21,8 @@ extension Notification.Name {
 
 protocol MDJJogReportDatabaseObserver: class {
     var jogReports: [JogReport] { get }
+
+    func beginObservingJogReports(forUserWithUserID userID: String)
 }
 
 // MARK: - MDJDefaultJogReportDatabaseObserver
@@ -37,12 +41,19 @@ class MDJDefaultJogReportDatabaseObserver {
 
     init(jogsObserver: MDJJogsDatabaseObserver) {
         self.jogsObserver = jogsObserver
+
+        setupNotifications()
     }
 }
 
 // MARK: MDJJogReportDatabaseObserver Methods
 
-extension MDJDefaultJogReportDatabaseObserver: MDJJogReportDatabaseObserver { }
+extension MDJDefaultJogReportDatabaseObserver: MDJJogReportDatabaseObserver {
+
+    func beginObservingJogReports(forUserWithUserID userID: String) {
+        jogsObserver.beginObservingJogs(forUserWithUserID: userID)
+    }
+}
 
 // MARK: Private Methods
 
@@ -94,11 +105,12 @@ private extension MDJDefaultJogReportDatabaseObserver {
     /// Determines the average speed and total distance covered from the provided list of jogs.
     ///
     /// - parameter jogs: The jogs to determine statistics for.
-    /// - returns: A tuple representing the average speed and total distance covered by the list of jogs.
+    /// - returns: A tuple representing the average speed (in km/h) and total distance (in km) covered by the list of 
+    /// jogs.
     func calculateStatistics(for jogs: [Jog]) -> (averageSpeed: Double, totalDistance: Double) {
         let totalDistance = jogs.reduce(0) { $0 + $1.distance }
         let totalTime = jogs.reduce(0) { $0 + $1.time }
-        let averageSpeed = totalDistance / totalTime
+        let averageSpeed = totalDistance / totalTime * 3600
 
         return (averageSpeed: averageSpeed, totalDistance: totalDistance)
     }
@@ -116,5 +128,14 @@ private extension MDJDefaultJogReportDatabaseObserver {
         startOfWeekComponents.yearForWeekOfYear = components.yearForWeekOfYear
 
         return calendar.date(from: startOfWeekComponents)
+    }
+}
+
+// MARK: - MDJJogReportDatabaseObserverAssembly
+
+class MDJJogReportDatabaseObserverAssembly: Assembly {
+
+    func assemble(container: Container) {
+        container.autoregister(MDJJogReportDatabaseObserver.self, initializer: MDJDefaultJogReportDatabaseObserver.init)
     }
 }
