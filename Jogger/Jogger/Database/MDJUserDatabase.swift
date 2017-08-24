@@ -18,7 +18,9 @@ protocol MDJUserDatabase: class {
 
     func fetchAuthenticatedUser(for user: MDJUser, completion: @escaping (MDJAuthenticatedUser?) -> Void)
 
-    func updateUserRole(forUserWithID userID: String, role: MDJUserRole) -> Bool
+    func updateUserRole(forUserWithID userID: String, role: MDJUserRole)
+
+    func deleteUser(withUserID userID: String)
 }
 
 // MARK: - MDJDefaultUserDatabase
@@ -60,12 +62,20 @@ extension MDJDefaultUserDatabase: MDJUserDatabase {
         }
     }
 
-    func updateUserRole(forUserWithID userID: String, role: MDJUserRole) -> Bool {
+    func updateUserRole(forUserWithID userID: String, role: MDJUserRole) {
         let path = MDJDatabaseConstants.Path.users(forUserID: userID)
 
         databaseReference.child(path).child(MDJDatabaseConstants.Key.role).setValue(role.rawValue)
+    }
 
-        return true
+    func deleteUser(withUserID userID: String) {
+        let userPath = MDJDatabaseConstants.Path.users(forUserID: userID)
+        let jogsPath = MDJDatabaseConstants.Path.jogs(forUserID: userID)
+
+        let values = [userPath : NSNull(),
+                      jogsPath : NSNull()]
+
+        databaseReference.updateChildValues(values)
     }
 }
 

@@ -19,6 +19,7 @@ protocol MDJDatabaseReference: class {
     func child(_ pathString: String) -> MDJDatabaseReference
     func childByAutoId() -> MDJDatabaseReference
     func setValue(_ value: Any?)
+    func updateChildValues(_ values: [AnyHashable : Any])
     func removeValue()
 
     func observe(_ eventType: MDJDataEventType, with block: @escaping (MDJDataSnapshot) -> Void) -> UInt

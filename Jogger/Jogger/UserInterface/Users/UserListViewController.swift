@@ -20,6 +20,7 @@ class UserListViewController: UITableViewController {
     }
 
     fileprivate var usersObserver: MDJUserDatabaseObserver!
+    fileprivate var userDatabase: MDJUserDatabase!
     fileprivate var userProvider: MDJUserProvider!
 }
 
@@ -77,6 +78,26 @@ extension UserListViewController {
 
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        guard let currentUser = userProvider.user else { return true }
+
+        let user = usersObserver.users[indexPath.row]
+
+        return currentUser.uid != user.userID
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            let user = usersObserver.users[indexPath.row]
+
+            userDatabase.deleteUser(withUserID: user.userID)
+        default:
+            break
+        }
+    }
 }
 
 // MARK: Private Methods
@@ -98,6 +119,7 @@ class UserListViewControllerAssembly: Assembly {
     func assemble(container: Container) {
         container.storyboardInitCompleted(UserListViewController.self) { (r, c) in
             c.usersObserver = r.resolve(MDJUserDatabaseObserver.self)!
+            c.userDatabase = r.resolve(MDJUserDatabase.self)!
             c.userProvider = r.resolve(MDJUserProvider.self)!
         }
     }
