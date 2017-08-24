@@ -300,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				FF09F6281F43C3C700951F9F /* MDJAuthenticationManager.swift */,
-				FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -373,6 +372,7 @@
 			children = (
 				FFAE97A11F452D5A009F76FF /* Jog.swift */,
 				FF02D88C1F4A77BE0049DF17 /* JogUser.swift */,
+				FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */,
 				FF02D8971F4CFE640049DF17 /* JogReport.swift */,
 				FF02D8A01F4E67740049DF17 /* MDJUserRole.swift */,
 			);
