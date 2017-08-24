@@ -30,7 +30,7 @@
 		FF02D8921F4A7E3E0049DF17 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D8911F4A7E3E0049DF17 /* UserListViewController.swift */; };
 		FF02D8941F4A7E8F0049DF17 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D8931F4A7E8E0049DF17 /* UserTableViewCell.swift */; };
 		FF02D8961F4CFE150049DF17 /* MDJJogReportDatabaseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D8951F4CFE150049DF17 /* MDJJogReportDatabaseObserver.swift */; };
-		FF02D8981F4CFE640049DF17 /* JogReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D8971F4CFE640049DF17 /* JogReport.swift */; };
+		FF02D8981F4CFE640049DF17 /* MDJJogReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D8971F4CFE640049DF17 /* MDJJogReport.swift */; };
 		FF02D89B1F4D0F1D0049DF17 /* Reports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF02D89A1F4D0F1D0049DF17 /* Reports.storyboard */; };
 		FF02D89D1F4D10640049DF17 /* JogReportListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D89C1F4D10640049DF17 /* JogReportListViewController.swift */; };
 		FF02D89F1F4D14780049DF17 /* JogReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D89E1F4D14780049DF17 /* JogReportTableViewCell.swift */; };
@@ -109,11 +109,11 @@
 		FF02D88F1F4A7BEE0049DF17 /* Users.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
 		FF02D8911F4A7E3E0049DF17 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		FF02D8931F4A7E8E0049DF17 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		FF02D8951F4CFE150049DF17 /* MDJJogReportDatabaseObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogReportDatabaseObserver.swift; sourceTree = "<group>"; };
-		FF02D8971F4CFE640049DF17 /* JogReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogReport.swift; sourceTree = "<group>"; };
+		FF02D8951F4CFE150049DF17 /* MDJJogReportDatabaseObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MDJJogReportDatabaseObserver.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF02D8971F4CFE640049DF17 /* MDJJogReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MDJJogReport.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FF02D89A1F4D0F1D0049DF17 /* Reports.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reports.storyboard; sourceTree = "<group>"; };
-		FF02D89C1F4D10640049DF17 /* JogReportListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogReportListViewController.swift; sourceTree = "<group>"; };
-		FF02D89E1F4D14780049DF17 /* JogReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogReportTableViewCell.swift; sourceTree = "<group>"; };
+		FF02D89C1F4D10640049DF17 /* JogReportListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = JogReportListViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF02D89E1F4D14780049DF17 /* JogReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = JogReportTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FF02D8A01F4E67740049DF17 /* MDJUserRole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserRole.swift; sourceTree = "<group>"; };
 		FF09F5E41F42A4EC00951F9F /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF09F5E71F42A4EC00951F9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		FF09F6091F42A4EC00951F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF09F6171F42A56700951F9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF09F61A1F43BD7A00951F9F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FF09F6201F43C09E00951F9F /* MainAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAssembler.swift; sourceTree = "<group>"; };
+		FF09F6201F43C09E00951F9F /* MainAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MainAssembler.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FF09F6241F43C13800951F9F /* MDJAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuth.swift; sourceTree = "<group>"; };
 		FF09F6261F43C1C700951F9F /* MDJUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUser.swift; sourceTree = "<group>"; };
 		FF09F6281F43C3C700951F9F /* MDJAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticationManager.swift; sourceTree = "<group>"; };
@@ -373,7 +373,7 @@
 				FFAE97A11F452D5A009F76FF /* Jog.swift */,
 				FF02D88C1F4A77BE0049DF17 /* JogUser.swift */,
 				FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */,
-				FF02D8971F4CFE640049DF17 /* JogReport.swift */,
+				FF02D8971F4CFE640049DF17 /* MDJJogReport.swift */,
 				FF02D8A01F4E67740049DF17 /* MDJUserRole.swift */,
 			);
 			path = Model;
@@ -764,7 +764,7 @@
 				FFAE97DE1F48DA77009F76FF /* JogTableViewCell.swift in Sources */,
 				FF02D8941F4A7E8F0049DF17 /* UserTableViewCell.swift in Sources */,
 				FF09F6251F43C13800951F9F /* MDJAuth.swift in Sources */,
-				FF02D8981F4CFE640049DF17 /* JogReport.swift in Sources */,
+				FF02D8981F4CFE640049DF17 /* MDJJogReport.swift in Sources */,
 				FFAE97D71F48D0B2009F76FF /* BaseAuthViewController.swift in Sources */,
 				FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */,
 				FFAE979F1F452C63009F76FF /* MDJJogsDatabase.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  JogReport.swift
+//  MDJJogReport.swift
 //  Jogger
 //
 //  Created by Mark DiFranco on 2017-08-22.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-// MARK: - JogReport
+// MARK: - MDJJogReport
 
-class JogReport {
+class MDJJogReport {
     let date: Date
     let averageSpeed: Double
     let totalDistance: Double

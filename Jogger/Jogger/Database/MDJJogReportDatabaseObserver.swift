@@ -20,7 +20,7 @@ extension Notification.Name {
 // MARK: - MDJJogReportDatabaseObserver
 
 protocol MDJJogReportDatabaseObserver: class {
-    var jogReports: [JogReport] { get }
+    var jogReports: [MDJJogReport] { get }
 
     func beginObservingJogReports(forUserWithUserID userID: String)
 }
@@ -28,7 +28,7 @@ protocol MDJJogReportDatabaseObserver: class {
 // MARK: - MDJDefaultJogReportDatabaseObserver
 
 class MDJDefaultJogReportDatabaseObserver {
-    var jogReports = [JogReport]() {
+    var jogReports = [MDJJogReport]() {
         didSet {
             NotificationCenter.default.post(name: .MDJJogReportDatabaseObserverJogReportsUpdated, object: self)
         }
@@ -71,7 +71,7 @@ private extension MDJDefaultJogReportDatabaseObserver {
     }
 
     func updateReportsList(with jogs: [Jog]) {
-        var reports = [JogReport]()
+        var reports = [MDJJogReport]()
 
         // Create a map of dates (representing the beginning of a week) to a list of jogs occurring in that week.
         let weekMap = jogsObserver.jogs.reduce([:]) { (map, jog) -> [Date : [Jog]] in
@@ -94,7 +94,7 @@ private extension MDJDefaultJogReportDatabaseObserver {
 
             let (averageSpeed, totalDistance) = calculateStatistics(for: jogs)
 
-            reports.append(JogReport(date: weekDate, averageSpeed: averageSpeed, totalDistance: totalDistance))
+            reports.append(MDJJogReport(date: weekDate, averageSpeed: averageSpeed, totalDistance: totalDistance))
         }
 
         DispatchQueue.main.async { [weak self] in
