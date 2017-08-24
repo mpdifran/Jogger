@@ -20,7 +20,7 @@ extension Notification.Name {
 // MARK: - MDJJogsDatabaseObserver
 
 protocol MDJJogsDatabaseObserver: class {
-    var jogs: [Jog] { get }
+    var jogs: [MDJJog] { get }
 
     func beginObservingJogs(forUserWithUserID userID: String)
 }
@@ -28,7 +28,7 @@ protocol MDJJogsDatabaseObserver: class {
 // MARK: - MDJDefaultJogsDatabaseObserver
 
 class MDJDefaultJogsDatabaseObserver {
-    var jogs = [Jog]() {
+    var jogs = [MDJJog]() {
         didSet {
             NotificationCenter.default.post(name: .MDJJogsDatabaseObserverJogsUpdated, object: self)
         }
@@ -74,7 +74,7 @@ private extension MDJDefaultJogsDatabaseObserver {
     }
 
     func parse(_ snapshot: MDJDataSnapshot) {
-        var jogs = [Jog]()
+        var jogs = [MDJJog]()
 
         defer {
             self.jogs = jogs
@@ -91,13 +91,13 @@ private extension MDJDefaultJogsDatabaseObserver {
         }
     }
 
-    func createJog(from dictionary: [AnyHashable : Any]) -> Jog? {
+    func createJog(from dictionary: [AnyHashable : Any]) -> MDJJog? {
         guard let dateString = dictionary[MDJDatabaseConstants.Key.date] as? String,
             let distance = dictionary[MDJDatabaseConstants.Key.distance] as? Double,
             let time = dictionary[MDJDatabaseConstants.Key.time] as? TimeInterval,
             let date = dateFormatter.date(from: dateString) else { return nil }
 
-        return Jog(date: date, distance: distance, time: time)
+        return MDJJog(date: date, distance: distance, time: time)
     }
 }
 

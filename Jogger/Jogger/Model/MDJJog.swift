@@ -1,5 +1,5 @@
 //
-//  Jog.swift
+//  MDJJog.swift
 //  Jogger
 //
 //  Created by Mark DiFranco on 2017-08-16.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-// MARK: - Jog
+// MARK: - MDJJog
 
-class Jog {
+class MDJJog {
     /// The identifier for the jog on the server.
     var identifier: String?
 

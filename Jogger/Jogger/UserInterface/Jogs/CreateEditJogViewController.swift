@@ -14,7 +14,7 @@ import SwinjectStoryboard
 
 class CreateEditJogViewController: UITableViewController {
     var userID: String!
-    var jog = Jog() {
+    var jog = MDJJog() {
         didSet {
             createButton.title = "Update"
             navigationItem.leftBarButtonItem = nil

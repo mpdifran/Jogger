@@ -29,7 +29,7 @@ protocol MDJJogsFilterableDatabaseObserver: MDJJogsDatabaseObserver {
 // MARK: - MDJDefaultJogsFilterableDatabaseObserver
 
 class MDJDefaultJogsFilterableDatabaseObserver {
-    var jogs = [Jog]() {
+    var jogs = [MDJJog]() {
         didSet {
             NotificationCenter.default.post(name: .MDJJogsFilterableDatabaseObserverJogsUpdated, object: self)
         }

@@ -70,11 +70,11 @@ private extension MDJDefaultJogReportDatabaseObserver {
         }
     }
 
-    func updateReportsList(with jogs: [Jog]) {
+    func updateReportsList(with jogs: [MDJJog]) {
         var reports = [MDJJogReport]()
 
         // Create a map of dates (representing the beginning of a week) to a list of jogs occurring in that week.
-        let weekMap = jogsObserver.jogs.reduce([:]) { (map, jog) -> [Date : [Jog]] in
+        let weekMap = jogsObserver.jogs.reduce([:]) { (map, jog) -> [Date : [MDJJog]] in
             guard let weekDate = createBeginningOfWeekDate(from: jog.date) else { return map }
 
             var mutableMap = map
@@ -107,7 +107,7 @@ private extension MDJDefaultJogReportDatabaseObserver {
     /// - parameter jogs: The jogs to determine statistics for.
     /// - returns: A tuple representing the average speed (in km/h) and total distance (in km) covered by the list of 
     /// jogs.
-    func calculateStatistics(for jogs: [Jog]) -> (averageSpeed: Double, totalDistance: Double) {
+    func calculateStatistics(for jogs: [MDJJog]) -> (averageSpeed: Double, totalDistance: Double) {
         let totalDistance = jogs.reduce(0) { $0 + $1.distance }
         let totalTime = jogs.reduce(0) { $0 + $1.time }
         let averageSpeed = totalDistance / totalTime * 3600

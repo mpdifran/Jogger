@@ -19,14 +19,14 @@ protocol MDJJogsDatabase: class {
     /// - parameter jog: The jog to create or update in the database.
     /// - parameter userID: The user ID of the user to create the jog for.
     /// - returns: `true` if the jog was recorded, `false` otherwise.
-    func createOrUpdate(jog: Jog, forUserID userID: String)
+    func createOrUpdate(jog: MDJJog, forUserID userID: String)
 
     /// Deletes a jog from the database. 
     ///
     /// - parameter jog: The jog to delete in the database.
     /// - parameter userID: The user ID of the user to delete the jog from.
     /// - returns: `true` if the jog is no longer in the database, `false` otherwise.
-    func delete(jog: Jog, forUserID userID: String)
+    func delete(jog: MDJJog, forUserID userID: String)
 }
 
 // MARK: - MDJDefaultJogsDatabase
@@ -45,7 +45,7 @@ class MDJDefaultJogsDatabase {
 
 extension MDJDefaultJogsDatabase: MDJJogsDatabase {
 
-    func createOrUpdate(jog: Jog, forUserID userID: String) {
+    func createOrUpdate(jog: MDJJog, forUserID userID: String) {
         let jogData = createDictionaryRepresentation(for: jog)
 
         let path = MDJDatabaseConstants.Path.jogs(forUserID: userID)
@@ -57,7 +57,7 @@ extension MDJDefaultJogsDatabase: MDJJogsDatabase {
         }
     }
 
-    func delete(jog: Jog, forUserID userID: String) {
+    func delete(jog: MDJJog, forUserID userID: String) {
         guard let identifier = jog.identifier else { return }
 
         let path = MDJDatabaseConstants.Path.jogs(forUserID: userID)
@@ -69,7 +69,7 @@ extension MDJDefaultJogsDatabase: MDJJogsDatabase {
 
 private extension MDJDefaultJogsDatabase {
 
-    func createDictionaryRepresentation(for jog: Jog) -> [AnyHashable : Any] {
+    func createDictionaryRepresentation(for jog: MDJJog) -> [AnyHashable : Any] {
         return [MDJDatabaseConstants.Key.date : dateFormatter.string(from: jog.date),
                 MDJDatabaseConstants.Key.distance : jog.distance,
                 MDJDatabaseConstants.Key.time : jog.time]
