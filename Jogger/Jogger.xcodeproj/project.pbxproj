@@ -49,6 +49,7 @@
 		FF09F6311F43CB2100951F9F /* MDJAuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */; };
 		FF438DC41F4E7A8A00C6EC6F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF438DC31F4E7A8A00C6EC6F /* Profile.storyboard */; };
 		FF438DC61F4E7B4000C6EC6F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF438DC51F4E7B4000C6EC6F /* ProfileViewController.swift */; };
+		FF438DC81F4F909900C6EC6F /* MDJUserDeletionDatabaseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF438DC71F4F909900C6EC6F /* MDJUserDeletionDatabaseObserver.swift */; };
 		FF9F18371F4A26AB00238F9D /* MDJUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */; };
 		FF9F18391F4A2B2100238F9D /* MDJAuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */; };
 		FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */; };
@@ -138,6 +139,7 @@
 		FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthMock.swift; sourceTree = "<group>"; };
 		FF438DC31F4E7A8A00C6EC6F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		FF438DC51F4E7B4000C6EC6F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FF438DC71F4F909900C6EC6F /* MDJUserDeletionDatabaseObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserDeletionDatabaseObserver.swift; sourceTree = "<group>"; };
 		FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserDatabase.swift; sourceTree = "<group>"; };
 		FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticatedUser.swift; sourceTree = "<group>"; };
 		FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDatabaseReference.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				FFAE98031F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift */,
 				FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */,
 				FF02D88A1F4A777D0049DF17 /* MDJUserDatabaseObserver.swift */,
+				FF438DC71F4F909900C6EC6F /* MDJUserDeletionDatabaseObserver.swift */,
 				FF02D8951F4CFE150049DF17 /* MDJJogReportDatabaseObserver.swift */,
 			);
 			path = Database;
@@ -791,6 +794,7 @@
 				FFAE98041F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift in Sources */,
 				FFAE97A91F4545D5009F76FF /* MDJDateFormatter.swift in Sources */,
 				FFAE97EE1F48F2D9009F76FF /* MDJFirebaseApp.swift in Sources */,
+				FF438DC81F4F909900C6EC6F /* MDJUserDeletionDatabaseObserver.swift in Sources */,
 				FFAE98061F493B7F009F76FF /* JogFilterViewController.swift in Sources */,
 				FFAE97B11F479829009F76FF /* LogInViewController.swift in Sources */,
 				FF09F5E81F42A4EC00951F9F /* AppDelegate.swift in Sources */,

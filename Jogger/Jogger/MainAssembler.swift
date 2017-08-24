@@ -40,5 +40,6 @@ class MainAssembler {
         assembler.apply(assembly: MDJJogReportDatabaseObserverAssembly())
         assembler.apply(assembly: JogReportListViewControllerAssembly())
         assembler.apply(assembly: ProfileViewControllerAssembly())
+        assembler.apply(assembly: MDJUserDeletionDatabaseObserverAssembly())
     }
 }

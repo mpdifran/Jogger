@@ -45,15 +45,23 @@ class MDJDefaultAuthenticationManager {
     var user: MDJAuthenticatedUser? {
         didSet {
             NotificationCenter.default.post(name: .MDJUserProviderUserUpdated, object: self)
+
+            if let user = user {
+                userDeletionObserver.beginObservingUserDeletion(forUserWithUserID: user.uid, onDeletion: { [weak self] in
+                    self?.user = nil
+                })
+            }
         }
     }
 
     fileprivate let auth: MDJAuth
     fileprivate let userDatabase: MDJUserDatabase
+    fileprivate let userDeletionObserver: MDJUserDeletionDatabaseObserver
 
-    init(auth: MDJAuth, userDatabase: MDJUserDatabase) {
+    init(auth: MDJAuth, userDatabase: MDJUserDatabase, userDeletionObserver: MDJUserDeletionDatabaseObserver) {
         self.auth = auth
         self.userDatabase = userDatabase
+        self.userDeletionObserver = userDeletionObserver
     }
 }
 
