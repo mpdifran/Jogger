@@ -33,7 +33,22 @@ class JogListViewController: UITableViewController {
     fileprivate var jogsDatabase: MDJJogsDatabase!
     fileprivate var userProvider: MDJUserProvider!
 
-    fileprivate let dateFormatter = DateFormatter()
+    fileprivate let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+
+        return dateFormatter
+    }()
+    fileprivate let weekDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+
+        return dateFormatter
+    }()
 }
 
 // MARK: View Lifecycle Methods
@@ -45,15 +60,26 @@ extension JogListViewController {
 
         navigationItem.leftItemsSupplementBackButton = true
 
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .short
-
         // If we don't have a userID set, default to the signed in user.
         if userID == nil {
             userID = userProvider.user?.uid
         }
 
         setupNotifications()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let startDate = jogsObserver.startDate, let endDate = jogsObserver.endDate {
+            navigationItem.prompt = "\(weekDateFormatter.string(from: startDate)) to \(weekDateFormatter.string(from: endDate))"
+        } else if let startDate = jogsObserver.startDate {
+            navigationItem.prompt = "After \(weekDateFormatter.string(from: startDate))"
+        } else if let endDate = jogsObserver.endDate {
+            navigationItem.prompt = "Before \(weekDateFormatter.string(from: endDate))"
+        } else {
+            navigationItem.prompt = nil
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
