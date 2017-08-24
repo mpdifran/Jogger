@@ -25,4 +25,6 @@ enum MDJUserRole: Int {
             return "Admin"
         }
     }
+
+    static let allRoles: [MDJUserRole] = [.default, .userManager, .admin]
 }

@@ -89,14 +89,39 @@ extension UserListViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,
                             forRowAt indexPath: IndexPath) {
-        switch editingStyle {
-        case .delete:
-            let user = usersObserver.users[indexPath.row]
 
-            userDatabase.deleteUser(withUserID: user.userID)
-        default:
-            break
+    }
+
+    override func tableView(_ tableView: UITableView,
+                            editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let user = usersObserver.users[indexPath.row]
+
+        let roleChange = UITableViewRowAction(style: .normal, title: "Update Role") { [weak self] (_, _) in
+
+            let updateRole = { [weak self] (role: MDJUserRole) in
+                self?.userDatabase.updateUserRole(forUserWithID: user.userID, role: role)
+            }
+
+            let alertController = UIAlertController(title: "Update Role for \(user.email)", message: nil,
+                                                    preferredStyle: .actionSheet)
+            for role in MDJUserRole.allRoles {
+                let action = UIAlertAction(title: role.name, style: .default) { (_) in
+                    updateRole(role)
+                }
+                alertController.addAction(action)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+
+            self?.present(alertController, animated: true, completion: nil)
         }
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] (_, indexPath) in
+            guard let user = self?.usersObserver.users[indexPath.row] else { return }
+
+            self?.userDatabase.deleteUser(withUserID: user.userID)
+        }
+
+        return [delete, roleChange]
     }
 }
 
