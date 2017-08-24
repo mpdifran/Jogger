@@ -1,5 +1,5 @@
 //
-//  JogUser.swift
+//  MDJJogUser.swift
 //  Jogger
 //
 //  Created by Mark DiFranco on 2017-08-20.
@@ -9,9 +9,9 @@
 import Foundation
 import FirebaseAuth
 
-// MARK: - JogUser
+// MARK: - MDJJogUser
 
-class JogUser {
+class MDJJogUser {
     let email: String
     let userID: String
     let role: MDJUserRole

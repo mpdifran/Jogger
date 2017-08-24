@@ -20,7 +20,7 @@ extension Notification.Name {
 // MARK: - MDJUserDatabaseObserver
 
 protocol MDJUserDatabaseObserver: class {
-    var users: [JogUser] { get }
+    var users: [MDJJogUser] { get }
 
     func beginObservingUsers()
 }
@@ -28,7 +28,7 @@ protocol MDJUserDatabaseObserver: class {
 // MARK: - MDJDefaultUserDatabaseObserver
 
 class MDJDefaultUserDatabaseObserver {
-    var users = [JogUser]() {
+    var users = [MDJJogUser]() {
         didSet {
             NotificationCenter.default.post(name: .MDJUserDatabaseObserverUsersUpdated, object: self)
         }
@@ -72,7 +72,7 @@ private extension MDJDefaultUserDatabaseObserver {
     }
 
     func parse(_ snapshot: MDJDataSnapshot) {
-        var users = [JogUser]()
+        var users = [MDJJogUser]()
 
         defer {
             self.users = users
@@ -88,12 +88,12 @@ private extension MDJDefaultUserDatabaseObserver {
         }
     }
 
-    func createUser(from dictionary: [AnyHashable : Any], withUserID userID: String) -> JogUser? {
+    func createUser(from dictionary: [AnyHashable : Any], withUserID userID: String) -> MDJJogUser? {
         guard let email = dictionary[MDJDatabaseConstants.Key.email] as? String,
             let roleRawValue = dictionary[MDJDatabaseConstants.Key.role] as? Int,
             let role = MDJUserRole(rawValue: roleRawValue) else { return nil }
 
-        return JogUser(email: email, userID: userID, role: role)
+        return MDJJogUser(email: email, userID: userID, role: role)
     }
 }
 

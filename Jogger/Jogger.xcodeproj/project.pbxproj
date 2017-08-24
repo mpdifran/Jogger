@@ -25,7 +25,7 @@
 		2B93119019264A6CF265CA0B /* Pods_JoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9D6007CDDB8995ECFE3E3E /* Pods_JoggerTests.framework */; };
 		4F8E6E61824674CD6B2090D6 /* Pods_Jogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D17B0FAC0F5A52216ED4D292 /* Pods_Jogger.framework */; };
 		FF02D88B1F4A777D0049DF17 /* MDJUserDatabaseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D88A1F4A777D0049DF17 /* MDJUserDatabaseObserver.swift */; };
-		FF02D88D1F4A77BE0049DF17 /* JogUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D88C1F4A77BE0049DF17 /* JogUser.swift */; };
+		FF02D88D1F4A77BE0049DF17 /* MDJJogUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D88C1F4A77BE0049DF17 /* MDJJogUser.swift */; };
 		FF02D8901F4A7BEE0049DF17 /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF02D88F1F4A7BEE0049DF17 /* Users.storyboard */; };
 		FF02D8921F4A7E3E0049DF17 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D8911F4A7E3E0049DF17 /* UserListViewController.swift */; };
 		FF02D8941F4A7E8F0049DF17 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02D8931F4A7E8E0049DF17 /* UserTableViewCell.swift */; };
@@ -104,8 +104,8 @@
 		E0604B3515C926EE689E388F /* Pods-Jogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jogger/Pods-Jogger.release.xcconfig"; sourceTree = "<group>"; };
 		E9D989AD87B187C525D01D62 /* Pods_JoggerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JoggerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFCFE7B76A264CD318B8268 /* Pods-JoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JoggerTests/Pods-JoggerTests.release.xcconfig"; sourceTree = "<group>"; };
-		FF02D88A1F4A777D0049DF17 /* MDJUserDatabaseObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserDatabaseObserver.swift; sourceTree = "<group>"; };
-		FF02D88C1F4A77BE0049DF17 /* JogUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogUser.swift; sourceTree = "<group>"; };
+		FF02D88A1F4A777D0049DF17 /* MDJUserDatabaseObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MDJUserDatabaseObserver.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF02D88C1F4A77BE0049DF17 /* MDJJogUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MDJJogUser.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FF02D88F1F4A7BEE0049DF17 /* Users.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
 		FF02D8911F4A7E3E0049DF17 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		FF02D8931F4A7E8E0049DF17 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -371,7 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				FFAE97A11F452D5A009F76FF /* Jog.swift */,
-				FF02D88C1F4A77BE0049DF17 /* JogUser.swift */,
+				FF02D88C1F4A77BE0049DF17 /* MDJJogUser.swift */,
 				FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */,
 				FF02D8971F4CFE640049DF17 /* MDJJogReport.swift */,
 				FF02D8A01F4E67740049DF17 /* MDJUserRole.swift */,
@@ -784,7 +784,7 @@
 				FF02D8A11F4E67740049DF17 /* MDJUserRole.swift in Sources */,
 				FFAE97F01F48F3A4009F76FF /* MDJFirebaseConfigurer.swift in Sources */,
 				FF02D89F1F4D14780049DF17 /* JogReportTableViewCell.swift in Sources */,
-				FF02D88D1F4A77BE0049DF17 /* JogUser.swift in Sources */,
+				FF02D88D1F4A77BE0049DF17 /* MDJJogUser.swift in Sources */,
 				FFAE97EC1F48F1F0009F76FF /* CreateEditJogViewController.swift in Sources */,
 				FF02D88B1F4A777D0049DF17 /* MDJUserDatabaseObserver.swift in Sources */,
 				FFAE97DA1F48D926009F76FF /* JogListViewController.swift in Sources */,
