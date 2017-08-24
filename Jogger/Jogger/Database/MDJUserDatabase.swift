@@ -47,17 +47,18 @@ extension MDJDefaultUserDatabase: MDJUserDatabase {
 
         databaseReference.child(path).setValue(userData)
 
-        return MDJAuthenticatedUser(user: user, role: role)
+        return MDJAuthenticatedUser(user: user, role: role, email: email)
     }
 
     func fetchAuthenticatedUser(for user: MDJUser, completion: @escaping (MDJAuthenticatedUser?) -> Void) {
         let path = MDJDatabaseConstants.Path.users(forUserID: user.uid)
+        let email = userEmail(from: user)
 
         databaseReference.child(path).child(MDJDatabaseConstants.Key.role).observeSingleEvent(of: .value) { (snapshot) in
             guard let roleRawValue = snapshot.value as? Int,
                 let role = MDJUserRole(rawValue: roleRawValue) else { completion(nil); return }
 
-            let authenticatedUser = MDJAuthenticatedUser(user: user, role: role)
+            let authenticatedUser = MDJAuthenticatedUser(user: user, role: role, email: email)
             completion(authenticatedUser)
         }
     }

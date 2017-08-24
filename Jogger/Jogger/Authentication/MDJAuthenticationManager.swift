@@ -111,6 +111,7 @@ extension MDJDefaultAuthenticationManager: MDJAuthenticationManager {
         } catch {
             return error
         }
+        user = nil
         return nil
     }
 }

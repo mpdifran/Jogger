@@ -56,17 +56,19 @@ private extension RootTabBarController {
         let jogs = UIStoryboard(name: "Jogs", bundle: nil).instantiateInitialViewController()!
         let reports = UIStoryboard(name: "Reports", bundle: nil).instantiateInitialViewController()!
         let users = UIStoryboard(name: "Users", bundle: nil).instantiateInitialViewController()!
+        let profile = UIStoryboard(name: "Profile", bundle: nil).instantiateInitialViewController()!
 
         switch user.role {
         case .default:
-            setViewControllers([jogs, reports], animated: false)
+            setViewControllers([jogs, reports, profile], animated: false)
         case .userManager, .admin:
-            setViewControllers([jogs, reports, users], animated: false)
+            setViewControllers([jogs, reports, users, profile], animated: false)
         }
     }
 
     func showLoginIfNoUserPresent() {
         if userProvider.user == nil {
+            setViewControllers([], animated: false)
             performSegue(withIdentifier: SegueIdentifier.authentication, sender: self)
         }
     }

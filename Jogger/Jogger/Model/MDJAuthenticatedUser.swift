@@ -17,9 +17,11 @@ class MDJAuthenticatedUser {
 
     let user: MDJUser
     let role: MDJUserRole
+    let email: String
 
-    init(user: MDJUser, role: MDJUserRole) {
+    init(user: MDJUser, role: MDJUserRole, email: String) {
         self.user = user
         self.role = role
+        self.email = email
     }
 }

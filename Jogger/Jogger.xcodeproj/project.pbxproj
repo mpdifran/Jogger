@@ -47,6 +47,8 @@
 		FF09F6291F43C3C700951F9F /* MDJAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6281F43C3C700951F9F /* MDJAuthenticationManager.swift */; };
 		FF09F62D1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F62C1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift */; };
 		FF09F6311F43CB2100951F9F /* MDJAuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */; };
+		FF438DC41F4E7A8A00C6EC6F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF438DC31F4E7A8A00C6EC6F /* Profile.storyboard */; };
+		FF438DC61F4E7B4000C6EC6F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF438DC51F4E7B4000C6EC6F /* ProfileViewController.swift */; };
 		FF9F18371F4A26AB00238F9D /* MDJUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */; };
 		FF9F18391F4A2B2100238F9D /* MDJAuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */; };
 		FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */; };
@@ -134,6 +136,8 @@
 		FF09F6281F43C3C700951F9F /* MDJAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticationManager.swift; sourceTree = "<group>"; };
 		FF09F62C1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticationManagerTests.swift; sourceTree = "<group>"; };
 		FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthMock.swift; sourceTree = "<group>"; };
+		FF438DC31F4E7A8A00C6EC6F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		FF438DC51F4E7B4000C6EC6F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserDatabase.swift; sourceTree = "<group>"; };
 		FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticatedUser.swift; sourceTree = "<group>"; };
 		FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDatabaseReference.swift; sourceTree = "<group>"; };
@@ -353,6 +357,15 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		FF438DC21F4E7A6B00C6EC6F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FF438DC31F4E7A8A00C6EC6F /* Profile.storyboard */,
+				FF438DC51F4E7B4000C6EC6F /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		FFAE979D1F452C32009F76FF /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +410,7 @@
 				FFAE97D81F48D900009F76FF /* Jogs */,
 				FF02D8991F4D0EFB0049DF17 /* Reports */,
 				FF02D88E1F4A7BD30049DF17 /* Users */,
+				FF438DC21F4E7A6B00C6EC6F /* Profile */,
 				FFAE97DF1F48DAED009F76FF /* Extensions */,
 			);
 			path = UserInterface;
@@ -581,6 +595,7 @@
 				FF09F6181F42A56700951F9F /* GoogleService-Info.plist in Resources */,
 				FF09F5EF1F42A4EC00951F9F /* Assets.xcassets in Resources */,
 				FFAE97DC1F48D954009F76FF /* Jogs.storyboard in Resources */,
+				FF438DC41F4E7A8A00C6EC6F /* Profile.storyboard in Resources */,
 				FF09F5ED1F42A4EC00951F9F /* Main.storyboard in Resources */,
 				FFAE97AF1F479549009F76FF /* Authentication.storyboard in Resources */,
 			);
@@ -764,6 +779,7 @@
 				FFAE97DE1F48DA77009F76FF /* JogTableViewCell.swift in Sources */,
 				FF02D8941F4A7E8F0049DF17 /* UserTableViewCell.swift in Sources */,
 				FF09F6251F43C13800951F9F /* MDJAuth.swift in Sources */,
+				FF438DC61F4E7B4000C6EC6F /* ProfileViewController.swift in Sources */,
 				FF02D8981F4CFE640049DF17 /* MDJJogReport.swift in Sources */,
 				FFAE97D71F48D0B2009F76FF /* BaseAuthViewController.swift in Sources */,
 				FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */,
