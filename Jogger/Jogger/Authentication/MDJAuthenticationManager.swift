@@ -68,8 +68,16 @@ extension MDJDefaultAuthenticationManager: MDJAuthenticationManager {
     func createUser(withEmail email: String, password: String, role: MDJUserRole,
                     completion: @escaping (Error?) -> Void) {
         auth.createUser(withEmail: email, password: password) { [weak self] (user, error) in
-            guard let user = user else { self?.user = nil; return }
-            guard let authenticatedUser = self?.userDatabase.register(user: user, with: role) else { return }
+            guard let user = user else {
+                self?.user = nil
+                completion(error)
+                return
+            }
+            guard let authenticatedUser = self?.userDatabase.register(user: user, with: role) else {
+                self?.user = nil
+                completion(error)
+                return
+            }
 
             self?.user = authenticatedUser
 
