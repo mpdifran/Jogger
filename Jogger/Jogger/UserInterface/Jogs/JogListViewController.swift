@@ -141,7 +141,9 @@ extension JogListViewController {
         case .delete:
             let jog = jogsObserver.jogs[indexPath.row]
 
-            let _ = jogsDatabase.delete(jog: jog, forUserID: userID)
+            let _ = jogsDatabase.delete(jog: jog, forUserID: userID) { [weak self] (error) in
+                self?.handle(error: error)
+            }
         default:
             break
         }
@@ -165,6 +167,17 @@ private extension JogListViewController {
                                                     self?.userID = self?.userProvider.user?.uid
                                                 }
         }
+    }
+
+    func handle(error: Error?) {
+        guard let error = error as NSError? else { return }
+
+        let alertController = UIAlertController(title: "Error", message: error.localizedDescription,
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(okAction)
+
+        present(alertController, animated: true, completion: nil)
     }
 }
 

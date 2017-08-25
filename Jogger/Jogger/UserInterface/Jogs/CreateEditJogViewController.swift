@@ -78,6 +78,22 @@ extension CreateEditJogViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: Private Methods
+
+private extension CreateEditJogViewController {
+
+    func handle(error: Error?) {
+        guard let error = error as NSError? else { return }
+
+        let alertController = UIAlertController(title: "Error", message: error.localizedDescription,
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(okAction)
+
+        present(alertController, animated: true, completion: nil)
+    }
+}
+
 // MARK: IBAction Methods
 
 extension CreateEditJogViewController {
@@ -95,12 +111,16 @@ extension CreateEditJogViewController {
         jog.distance = distance
         jog.time = time
 
-        jogsDatabase.createOrUpdate(jog: jog, forUserID: userID)
+        jogsDatabase.createOrUpdate(jog: jog, forUserID: userID) { [weak self] (error) in
+            self?.handle(error: error)
 
-        if let presentingViewController = presentingViewController {
-            presentingViewController.dismiss(animated: true, completion: nil)
-        } else {
-            navigationController?.popViewController(animated: true)
+            guard error == nil else { return }
+
+            if let presentingViewController = self?.presentingViewController {
+                presentingViewController.dismiss(animated: true, completion: nil)
+            } else {
+                self?.navigationController?.popViewController(animated: true)
+            }
         }
     }
 }

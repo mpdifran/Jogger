@@ -18,15 +18,17 @@ protocol MDJJogsDatabase: class {
     ///
     /// - parameter jog: The jog to create or update in the database.
     /// - parameter userID: The user ID of the user to create the jog for.
-    /// - returns: `true` if the jog was recorded, `false` otherwise.
-    func createOrUpdate(jog: MDJJog, forUserID userID: String)
+    /// - parameter completion: A completion block that is called when the data has been updated.
+    /// - parameter error: An optional error, if one was encountered.
+    func createOrUpdate(jog: MDJJog, forUserID userID: String, completion: @escaping (_ error: Error?) -> Void)
 
     /// Deletes a jog from the database. 
     ///
     /// - parameter jog: The jog to delete in the database.
     /// - parameter userID: The user ID of the user to delete the jog from.
-    /// - returns: `true` if the jog is no longer in the database, `false` otherwise.
-    func delete(jog: MDJJog, forUserID userID: String)
+    /// - parameter completion: A completion block that is called when the data has been deleted.
+    /// - parameter error: An optional error, if one was encountered.
+    func delete(jog: MDJJog, forUserID userID: String, completion: @escaping (_ error: Error?) -> Void)
 }
 
 // MARK: - MDJDefaultJogsDatabase
@@ -45,23 +47,29 @@ class MDJDefaultJogsDatabase {
 
 extension MDJDefaultJogsDatabase: MDJJogsDatabase {
 
-    func createOrUpdate(jog: MDJJog, forUserID userID: String) {
+    func createOrUpdate(jog: MDJJog, forUserID userID: String, completion: @escaping (Error?) -> Void) {
         let jogData = createDictionaryRepresentation(for: jog)
 
         let path = MDJDatabaseConstants.Path.jogs(forUserID: userID)
 
         if let identifier = jog.identifier {
-            databaseReference.child(path).child(identifier).setValue(jogData)
+            databaseReference.child(path).child(identifier).setValue(jogData) { (error, _) in
+                completion(error)
+            }
         } else {
-            databaseReference.child(path).childByAutoId().setValue(jogData)
+            databaseReference.child(path).childByAutoId().setValue(jogData) { (error, _) in
+                completion(error)
+            }
         }
     }
 
-    func delete(jog: MDJJog, forUserID userID: String) {
+    func delete(jog: MDJJog, forUserID userID: String, completion: @escaping (Error?) -> Void) {
         guard let identifier = jog.identifier else { return }
 
         let path = MDJDatabaseConstants.Path.jogs(forUserID: userID)
-        databaseReference.child(path).child(identifier).removeValue()
+        databaseReference.child(path).child(identifier).removeValue() { (error, _) in
+            completion(error)
+        }
     }
 }
 
