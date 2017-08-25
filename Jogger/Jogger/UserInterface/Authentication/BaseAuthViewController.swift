@@ -49,7 +49,7 @@ extension BaseAuthViewController {
                 if error == nil {
                     self?.presentingViewController?.dismiss(animated: true, completion: nil)
                 } else {
-                    // Handle auth error
+                    self?.handle(error: error)
                 }
             }
         }
