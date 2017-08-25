@@ -53,8 +53,8 @@ private extension ProfileViewController {
 extension ProfileViewController {
 
     @IBAction func didTapLogout(_ sender: Any) {
-        if let _ = authManager.signOut() {
-            // TODO: Handle error
+        if let error = authManager.signOut() {
+            self.handle(error: error)
         }
     }
 }
