@@ -50,6 +50,7 @@
 		FF438DC41F4E7A8A00C6EC6F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF438DC31F4E7A8A00C6EC6F /* Profile.storyboard */; };
 		FF438DC61F4E7B4000C6EC6F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF438DC51F4E7B4000C6EC6F /* ProfileViewController.swift */; };
 		FF438DC81F4F909900C6EC6F /* MDJUserDeletionDatabaseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF438DC71F4F909900C6EC6F /* MDJUserDeletionDatabaseObserver.swift */; };
+		FF438DCD1F4FC09900C6EC6F /* UIViewController+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF438DCC1F4FC09900C6EC6F /* UIViewController+ErrorHandling.swift */; };
 		FF9F18371F4A26AB00238F9D /* MDJUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */; };
 		FF9F18391F4A2B2100238F9D /* MDJAuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */; };
 		FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */; };
@@ -140,6 +141,7 @@
 		FF438DC31F4E7A8A00C6EC6F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		FF438DC51F4E7B4000C6EC6F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FF438DC71F4F909900C6EC6F /* MDJUserDeletionDatabaseObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserDeletionDatabaseObserver.swift; sourceTree = "<group>"; };
+		FF438DCC1F4FC09900C6EC6F /* UIViewController+ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorHandling.swift"; sourceTree = "<group>"; };
 		FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserDatabase.swift; sourceTree = "<group>"; };
 		FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticatedUser.swift; sourceTree = "<group>"; };
 		FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDatabaseReference.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				FFAE97E01F48DB0B009F76FF /* UITableView+Dequeue.swift */,
+				FF438DCC1F4FC09900C6EC6F /* UIViewController+ErrorHandling.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				FF09F6271F43C1C700951F9F /* MDJUser.swift in Sources */,
 				FF02D8961F4CFE150049DF17 /* MDJJogReportDatabaseObserver.swift in Sources */,
 				FF09F6291F43C3C700951F9F /* MDJAuthenticationManager.swift in Sources */,
+				FF438DCD1F4FC09900C6EC6F /* UIViewController+ErrorHandling.swift in Sources */,
 				FFAE98041F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift in Sources */,
 				FFAE97A91F4545D5009F76FF /* MDJDateFormatter.swift in Sources */,
 				FFAE97EE1F48F2D9009F76FF /* MDJFirebaseApp.swift in Sources */,

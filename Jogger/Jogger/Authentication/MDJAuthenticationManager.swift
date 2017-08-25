@@ -81,15 +81,11 @@ extension MDJDefaultAuthenticationManager: MDJAuthenticationManager {
                 completion(error)
                 return
             }
-            guard let authenticatedUser = self?.userDatabase.register(user: user, with: role) else {
-                self?.user = nil
+
+            self?.userDatabase.register(user: user, with: role) { (authenticatedUser, error) in
+                self?.user = authenticatedUser
                 completion(error)
-                return
             }
-
-            self?.user = authenticatedUser
-
-            completion(error)
         }
     }
 

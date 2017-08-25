@@ -22,6 +22,8 @@ protocol MDJDatabaseReference: class {
     func setValue(_ value: Any?)
     func setValue(_ value: Any?, withCompletionBlock block: @escaping (Error?, MDJDatabaseReference) -> Void)
     func updateChildValues(_ values: [AnyHashable : Any])
+    func updateChildValues(_ values: [AnyHashable : Any],
+                           withCompletionBlock block: @escaping (Error?, MDJDatabaseReference) -> Void)
     func removeValue()
     func removeValue(completionBlock block: @escaping (Error?, MDJDatabaseReference) -> Void)
 
@@ -44,6 +46,13 @@ extension DatabaseReference: MDJDatabaseReference {
 
     func setValue(_ value: Any?, withCompletionBlock block: @escaping (Error?, MDJDatabaseReference) -> Void) {
         setValue(value, withCompletionBlock: { (error: Error?, databaseReference: DatabaseReference) in
+            block(error, databaseReference)
+        })
+    }
+
+    func updateChildValues(_ values: [AnyHashable : Any],
+                           withCompletionBlock block: @escaping (Error?, MDJDatabaseReference) -> Void) {
+        updateChildValues(values, withCompletionBlock: { (error, databaseReference) in
             block(error, databaseReference)
         })
     }

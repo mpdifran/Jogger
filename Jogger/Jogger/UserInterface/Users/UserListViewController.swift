@@ -99,7 +99,9 @@ extension UserListViewController {
         let roleChange = UITableViewRowAction(style: .normal, title: "Update Role") { [weak self] (_, _) in
 
             let updateRole = { [weak self] (role: MDJUserRole) in
-                self?.userDatabase.updateUserRole(forUserWithID: user.userID, role: role)
+                self?.userDatabase.updateUserRole(forUserWithID: user.userID, role: role) { (error) in
+                    self?.handle(error: error)
+                }
             }
 
             let alertController = UIAlertController(title: "Update Role for \(user.email)", message: nil,
@@ -115,6 +117,7 @@ extension UserListViewController {
 
             self?.present(alertController, animated: true, completion: nil)
         }
+
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] (_, indexPath) in
             guard let user = self?.usersObserver.users[indexPath.row] else { return }
 

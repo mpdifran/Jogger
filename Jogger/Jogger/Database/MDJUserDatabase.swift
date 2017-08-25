@@ -14,11 +14,11 @@ import SwinjectAutoregistration
 
 protocol MDJUserDatabase: class {
 
-    func register(user: MDJUser, with role: MDJUserRole) -> MDJAuthenticatedUser
+    func register(user: MDJUser, with role: MDJUserRole, completion: @escaping (MDJAuthenticatedUser?, Error?) -> Void)
 
     func fetchAuthenticatedUser(for user: MDJUser, completion: @escaping (MDJAuthenticatedUser?) -> Void)
 
-    func updateUserRole(forUserWithID userID: String, role: MDJUserRole)
+    func updateUserRole(forUserWithID userID: String, role: MDJUserRole, completion: @escaping (Error?) -> Void)
 
     func deleteUser(withUserID userID: String)
 }
@@ -37,17 +37,23 @@ class MDJDefaultUserDatabase {
 
 extension MDJDefaultUserDatabase: MDJUserDatabase {
 
-    func register(user: MDJUser, with role: MDJUserRole) -> MDJAuthenticatedUser {
-        let path = MDJDatabaseConstants.Path.users(forUserID: user.uid)
+    func register(user: MDJUser, with role: MDJUserRole,
+                  completion: @escaping (MDJAuthenticatedUser?, Error?) -> Void) {
 
+        let path = MDJDatabaseConstants.Path.users(forUserID: user.uid)
         let email = userEmail(from: user)
 
         let userData: [String : Any] = [MDJDatabaseConstants.Key.email : email,
                                         MDJDatabaseConstants.Key.role : role.rawValue]
 
-        databaseReference.child(path).setValue(userData)
-
-        return MDJAuthenticatedUser(user: user, role: role, email: email)
+        databaseReference.child(path).setValue(userData) { (error, _) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                let user = MDJAuthenticatedUser(user: user, role: role, email: email)
+                completion(user, nil)
+            }
+        }
     }
 
     func fetchAuthenticatedUser(for user: MDJUser, completion: @escaping (MDJAuthenticatedUser?) -> Void) {
@@ -63,10 +69,12 @@ extension MDJDefaultUserDatabase: MDJUserDatabase {
         }
     }
 
-    func updateUserRole(forUserWithID userID: String, role: MDJUserRole) {
+    func updateUserRole(forUserWithID userID: String, role: MDJUserRole, completion: @escaping (Error?) -> Void) {
         let path = MDJDatabaseConstants.Path.users(forUserID: userID)
 
-        databaseReference.child(path).child(MDJDatabaseConstants.Key.role).setValue(role.rawValue)
+        databaseReference.child(path).child(MDJDatabaseConstants.Key.role).setValue(role.rawValue) { (error, _) in
+            completion(error)
+        }
     }
 
     func deleteUser(withUserID userID: String) {

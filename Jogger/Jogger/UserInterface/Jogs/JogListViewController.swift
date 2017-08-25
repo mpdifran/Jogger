@@ -168,17 +168,6 @@ private extension JogListViewController {
                                                 }
         }
     }
-
-    func handle(error: Error?) {
-        guard let error = error as NSError? else { return }
-
-        let alertController = UIAlertController(title: "Error", message: error.localizedDescription,
-                                                preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertController.addAction(okAction)
-
-        present(alertController, animated: true, completion: nil)
-    }
 }
 
 // MARK: - JogListViewControllerAssembly
