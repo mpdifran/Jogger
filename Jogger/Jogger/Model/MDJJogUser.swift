@@ -22,3 +22,13 @@ class MDJJogUser {
         self.role = role
     }
 }
+
+// MARK: Equatable Methods
+
+extension MDJJogUser: Equatable { }
+
+func ==(lhs: MDJJogUser, rhs: MDJJogUser) -> Bool {
+    return lhs.email == rhs.email &&
+        lhs.userID == rhs.userID &&
+        lhs.role == rhs.role
+}

@@ -56,7 +56,9 @@ extension MDJDefaultUserDatabaseObserver: MDJUserDatabaseObserver {
         users.removeAll(keepingCapacity: true)
 
         let path = MDJDatabaseConstants.Path.users
-        handle = databaseReference.child(path).observe(.value, with: parse(_:))
+        handle = databaseReference.child(path).observe(.value) { [weak self] (snapshot) in
+            self?.parse(snapshot)
+        }
     }
 }
 

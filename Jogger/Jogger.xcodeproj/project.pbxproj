@@ -87,6 +87,7 @@
 		FFB840861F51CC8800AE10EB /* MDJDataSnapshotMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB840851F51CC8800AE10EB /* MDJDataSnapshotMock.swift */; };
 		FFB840881F51E25F00AE10EB /* MDJJogsFilterableDatabaseObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB840871F51E25F00AE10EB /* MDJJogsFilterableDatabaseObserverTests.swift */; };
 		FFB8408A1F51E2E300AE10EB /* MDJJogsDatabaseObserverMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB840891F51E2E300AE10EB /* MDJJogsDatabaseObserverMock.swift */; };
+		FFB8408C1F51E83D00AE10EB /* MDJUserDatabaseObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8408B1F51E83D00AE10EB /* MDJUserDatabaseObserverTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +187,7 @@
 		FFB840851F51CC8800AE10EB /* MDJDataSnapshotMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDataSnapshotMock.swift; sourceTree = "<group>"; };
 		FFB840871F51E25F00AE10EB /* MDJJogsFilterableDatabaseObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsFilterableDatabaseObserverTests.swift; sourceTree = "<group>"; };
 		FFB840891F51E2E300AE10EB /* MDJJogsDatabaseObserverMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsDatabaseObserverMock.swift; sourceTree = "<group>"; };
+		FFB8408B1F51E83D00AE10EB /* MDJUserDatabaseObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserDatabaseObserverTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -396,6 +398,7 @@
 				FF438DD71F51B1DA00C6EC6F /* MDJJogsDatabaseTests.swift */,
 				FF438DDB1F51C9EC00C6EC6F /* MDJJogsDatabaseObserverTests.swift */,
 				FFB840871F51E25F00AE10EB /* MDJJogsFilterableDatabaseObserverTests.swift */,
+				FFB8408B1F51E83D00AE10EB /* MDJUserDatabaseObserverTests.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -875,6 +878,7 @@
 				FFAE97D51F47CC53009F76FF /* MDJUserMock.swift in Sources */,
 				FFAE97F21F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift in Sources */,
 				FFAE98001F492A24009F76FF /* MDJJogTests.swift in Sources */,
+				FFB8408C1F51E83D00AE10EB /* MDJUserDatabaseObserverTests.swift in Sources */,
 				FF438DD81F51B1DA00C6EC6F /* MDJJogsDatabaseTests.swift in Sources */,
 				FFAE97F41F48F5C2009F76FF /* MDJFirebaseAppMock.swift in Sources */,
 				FFB8408A1F51E2E300AE10EB /* MDJJogsDatabaseObserverMock.swift in Sources */,
