@@ -15,7 +15,7 @@ class MDJUserProviderTests: XCTestCase {
     var authManager: MDJAuthenticationManager!
     var authMock: MDJAuthMock!
     var userDatabaseMock: MDJUserDatabaseMock!
-    var userDeletionObserverMock: MDJUserDeletionDatabaseObserverMock!
+    var currentUserObserverMock: MDJCurrentUserDatabaseObserverMock!
     var userMock: MDJUserMock!
     var authenticatedUser: MDJAuthenticatedUser!
 
@@ -29,13 +29,13 @@ class MDJUserProviderTests: XCTestCase {
 
         authMock = MDJAuthMock()
         userDatabaseMock = MDJUserDatabaseMock()
-        userDeletionObserverMock = MDJUserDeletionDatabaseObserverMock()
+        currentUserObserverMock = MDJCurrentUserDatabaseObserverMock()
         userMock = MDJUserMock()
 
         authenticatedUser = MDJAuthenticatedUser(user: userMock, role: .default, email: testEmail)
 
         let baseClass = MDJDefaultAuthenticationManager(auth: authMock, userDatabase: userDatabaseMock,
-                                                        userDeletionObserver: userDeletionObserverMock)
+                                                        currentUserObserver: currentUserObserverMock)
         authManager = baseClass
         sut = baseClass
     }
@@ -141,8 +141,8 @@ class MDJUserProviderTests: XCTestCase {
         userDatabaseMock.lastFetchAuthenticatedUserCompletion?(authenticatedUser)
 
         // Assert
-        XCTAssertTrue(userDeletionObserverMock.didBeginObserving)
-        XCTAssertEqual(userMock.uid, userDeletionObserverMock.lastUserID)
+        XCTAssertTrue(currentUserObserverMock.didBeginObservingDeletion)
+        XCTAssertEqual(userMock.uid, currentUserObserverMock.lastUserID)
     }
 
     func test_deletionObserver_deletionTriggered_userIsSetToNil() {
@@ -152,9 +152,65 @@ class MDJUserProviderTests: XCTestCase {
         userDatabaseMock.lastFetchAuthenticatedUserCompletion?(authenticatedUser)
 
         // Act
-        userDeletionObserverMock.lastOnDeletionBlock?()
+        currentUserObserverMock.lastOnDeletionBlock?()
 
         // Assert
         XCTAssertNil(sut.user)
+    }
+
+    func test_userIsSet_roleObserverIsSetup() {
+        // Arrange
+        authManager.signIn(withEmail: testEmail, password: testPassword) { (_) in }
+        authMock.lastCompletion?(userMock, nil)
+
+        // Act
+        userDatabaseMock.lastFetchAuthenticatedUserCompletion?(authenticatedUser)
+
+        // Assert
+        XCTAssertTrue(currentUserObserverMock.didBeginObservingRole)
+        XCTAssertEqual(userMock.uid, currentUserObserverMock.lastUserID)
+    }
+
+    func test_onRoleUpdatedObserver_roleUpdatedToNewValue_userIsUpdatedWithNewRole() {
+        // Arrange
+        authManager.signIn(withEmail: testEmail, password: testPassword) { (_) in }
+        authMock.lastCompletion?(userMock, nil)
+        userDatabaseMock.lastFetchAuthenticatedUserCompletion?(authenticatedUser)
+
+        // Act
+        currentUserObserverMock.lastOnRoleUpdatedBlock?(.admin)
+
+        // Assert
+        XCTAssertEqual(MDJUserRole.admin, sut.user?.role)
+    }
+
+    func test_onRoleUpdatedObserver_roleUpdatedToSameValue_notificationIsNotPosted() {
+        // Arrange
+        authManager.signIn(withEmail: testEmail, password: testPassword) { (_) in }
+        authMock.lastCompletion?(userMock, nil)
+        userDatabaseMock.lastFetchAuthenticatedUserCompletion?(authenticatedUser)
+        let notificationObserver = NotificationObserver()
+        notificationObserver.observeNotification(name: .MDJUserProviderUserUpdated, object: sut)
+
+        // Act
+        currentUserObserverMock.lastOnRoleUpdatedBlock?(.default)
+
+        // Assert
+        XCTAssertNil(notificationObserver.lastNotification)
+    }
+
+    func test_onRoleUpdatedObserver_roleUpdated_notificationIsPosted() {
+        // Arrange
+        authManager.signIn(withEmail: testEmail, password: testPassword) { (_) in }
+        authMock.lastCompletion?(userMock, nil)
+        userDatabaseMock.lastFetchAuthenticatedUserCompletion?(authenticatedUser)
+        let notificationString = Notification.Name.MDJUserProviderUserUpdated.rawValue
+        let _ = expectation(forNotification: notificationString, object: sut, handler: nil)
+
+        // Act
+        currentUserObserverMock.lastOnRoleUpdatedBlock?(.admin)
+
+        // Assert
+        waitForExpectations(timeout: 0, handler: nil)
     }
 }

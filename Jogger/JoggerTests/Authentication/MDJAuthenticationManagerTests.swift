@@ -14,7 +14,7 @@ class MDJAuthenticationManagerTests: XCTestCase {
 
     var authMock: MDJAuthMock!
     var userDatabaseMock: MDJUserDatabaseMock!
-    var userDeletionObserverMock: MDJUserDeletionDatabaseObserverMock!
+    var currentUserObserverMock: MDJCurrentUserDatabaseObserverMock!
     var userMock: MDJUserMock!
 
     let testEmail = "mark@test.com"
@@ -27,11 +27,11 @@ class MDJAuthenticationManagerTests: XCTestCase {
 
         authMock = MDJAuthMock()
         userDatabaseMock = MDJUserDatabaseMock()
-        userDeletionObserverMock = MDJUserDeletionDatabaseObserverMock()
+        currentUserObserverMock = MDJCurrentUserDatabaseObserverMock()
         userMock = MDJUserMock()
 
         sut = MDJDefaultAuthenticationManager(auth: authMock, userDatabase: userDatabaseMock,
-                                              userDeletionObserver: userDeletionObserverMock)
+                                              currentUserObserver: currentUserObserverMock)
     }
 
     // MARK: - Test Methods

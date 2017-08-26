@@ -60,9 +60,9 @@ private extension RootTabBarController {
 
         switch user.role {
         case .default:
-            setViewControllers([jogs, reports, profile], animated: false)
+            setViewControllers([jogs, reports, profile], animated: true)
         case .userManager, .admin:
-            setViewControllers([jogs, reports, users, profile], animated: false)
+            setViewControllers([jogs, reports, users, profile], animated: true)
         }
     }
 
