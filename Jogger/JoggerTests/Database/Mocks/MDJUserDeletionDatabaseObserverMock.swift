@@ -12,12 +12,10 @@ import Foundation
 // MARK: - MDJUserDeletionDatabaseObserverMock
 
 class MDJUserDeletionDatabaseObserverMock: MDJUserDeletionDatabaseObserver {
-
     var lastUserID: String?
     var lastOnDeletionBlock: (() -> Void)?
 
     var didBeginObserving = false
-
 
     func beginObservingUserDeletion(forUserWithUserID userID: String, onDeletion: @escaping () -> Void) {
         lastUserID = userID

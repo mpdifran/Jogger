@@ -131,4 +131,30 @@ class MDJUserProviderTests: XCTestCase {
         // Assert
         waitForExpectations(timeout: 0, handler: nil)
     }
+
+    func test_user_userIsSet_deletionObserverIsSetup() {
+        // Arrange
+        authManager.signIn(withEmail: testEmail, password: testPassword) { (_) in }
+        authMock.lastCompletion?(userMock, nil)
+
+        // Act
+        userDatabaseMock.lastFetchAuthenticatedUserCompletion?(authenticatedUser)
+
+        // Assert
+        XCTAssertTrue(userDeletionObserverMock.didBeginObserving)
+        XCTAssertEqual(userMock.uid, userDeletionObserverMock.lastUserID)
+    }
+
+    func test_deletionObserver_deletionTriggered_userIsSetToNil() {
+        // Arrange
+        authManager.signIn(withEmail: testEmail, password: testPassword) { (_) in }
+        authMock.lastCompletion?(userMock, nil)
+        userDatabaseMock.lastFetchAuthenticatedUserCompletion?(authenticatedUser)
+
+        // Act
+        userDeletionObserverMock.lastOnDeletionBlock?()
+
+        // Assert
+        XCTAssertNil(sut.user)
+    }
 }
