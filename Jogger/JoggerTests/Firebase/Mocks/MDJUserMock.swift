@@ -14,6 +14,7 @@ import Foundation
 class MDJUserMock: MDJUser {
     var refreshToken: String?
     var uid = "user.identifier"
+    var providerData = [MDJUserInfo]()
 
     var lastCompletion: AuthTokenCallback?
 

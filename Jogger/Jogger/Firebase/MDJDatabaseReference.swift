@@ -19,16 +19,13 @@ protocol MDJDatabaseReference: class {
     func child(_ pathString: String) -> MDJDatabaseReference
     func childByAutoId() -> MDJDatabaseReference
 
-    func setValue(_ value: Any?)
     func setValue(_ value: Any?, withCompletionBlock block: @escaping (Error?, MDJDatabaseReference) -> Void)
-    func updateChildValues(_ values: [AnyHashable : Any])
     func updateChildValues(_ values: [AnyHashable : Any],
                            withCompletionBlock block: @escaping (Error?, MDJDatabaseReference) -> Void)
-    func removeValue()
     func removeValue(completionBlock block: @escaping (Error?, MDJDatabaseReference) -> Void)
 
     func observe(_ eventType: MDJDataEventType, with block: @escaping (MDJDataSnapshot) -> Void) -> UInt
-    func observeSingleEvent(of eventType: DataEventType, with block: @escaping (MDJDataSnapshot) -> Void)
+    func observeSingleEvent(of eventType: MDJDataEventType, with block: @escaping (MDJDataSnapshot) -> Void)
     func removeObserver(withHandle handle: UInt)
 }
 
@@ -69,7 +66,7 @@ extension DatabaseReference: MDJDatabaseReference {
         }
     }
 
-    func observeSingleEvent(of eventType: DataEventType, with block: @escaping (MDJDataSnapshot) -> Void) {
+    func observeSingleEvent(of eventType: MDJDataEventType, with block: @escaping (MDJDataSnapshot) -> Void) {
         return observeSingleEvent(of: eventType) { (snapshot: DataSnapshot) in
             block(snapshot)
         }

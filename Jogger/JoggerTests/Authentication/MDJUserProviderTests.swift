@@ -14,7 +14,10 @@ class MDJUserProviderTests: XCTestCase {
 
     var authManager: MDJAuthenticationManager!
     var authMock: MDJAuthMock!
+    var userDatabaseMock: MDJUserDatabaseMock!
+    var userDeletionObserverMock: MDJUserDeletionDatabaseObserverMock!
     var userMock: MDJUserMock!
+    var authenticatedUser: MDJAuthenticatedUser!
 
     let testEmail = "mark@test.com"
     let testPassword = "password"
@@ -25,28 +28,21 @@ class MDJUserProviderTests: XCTestCase {
         super.setUp()
 
         authMock = MDJAuthMock()
+        userDatabaseMock = MDJUserDatabaseMock()
+        userDeletionObserverMock = MDJUserDeletionDatabaseObserverMock()
         userMock = MDJUserMock()
 
-        let baseClass = MDJDefaultAuthenticationManager(auth: authMock)
+        authenticatedUser = MDJAuthenticatedUser(user: userMock, role: .default, email: testEmail)
+
+        let baseClass = MDJDefaultAuthenticationManager(auth: authMock, userDatabase: userDatabaseMock,
+                                                        userDeletionObserver: userDeletionObserverMock)
         authManager = baseClass
         sut = baseClass
     }
 
     // MARK: - Test Methods
 
-    func test_user_signInUserNotNil_userPropertyIsSet() {
-        // Arrange
-        authManager.signIn(withEmail: testEmail, password: testPassword) { (_) in }
-        authMock.lastCompletion?(userMock, nil)
-
-        // Act
-        let result = sut.user
-
-        // Assert
-        XCTAssertTrue(userMock === result)
-    }
-
-    func test_user_signInUserNil_userPropertyIsSet() {
+    func test_user_signInUserNil_userPropertyIsNil() {
         // Arrange
         authManager.signIn(withEmail: testEmail, password: testPassword) { (_) in }
         authMock.lastCompletion?(nil, nil)
@@ -58,21 +54,35 @@ class MDJUserProviderTests: XCTestCase {
         XCTAssertNil(result)
     }
 
-    func test_user_createAccountUserNotNil_userPropertyIsSet() {
+    func test_user_signInUserNotNilAuthenticatedUserNil_userPropertyIsNil() {
         // Arrange
-        authManager.createUser(withEmail: testEmail, password: testPassword) { (_) in }
+        authManager.signIn(withEmail: testEmail, password: testPassword) { (_) in }
         authMock.lastCompletion?(userMock, nil)
+        userDatabaseMock.lastFetchAuthenticatedUserCompletion?(nil)
 
         // Act
         let result = sut.user
 
         // Assert
-        XCTAssertTrue(userMock === result)
+        XCTAssertNil(result)
     }
 
-    func test_user_createAccountUserNil_userPropertyIsSet() {
+    func test_user_signInUserNotNilauthenticatedUserNotNil_userPropertyIsSet() {
         // Arrange
-        authManager.createUser(withEmail: testEmail, password: testPassword) { (_) in }
+        authManager.signIn(withEmail: testEmail, password: testPassword) { (_) in }
+        authMock.lastCompletion?(userMock, nil)
+        userDatabaseMock.lastFetchAuthenticatedUserCompletion?(authenticatedUser)
+
+        // Act
+        let result = sut.user
+
+        // Assert
+        XCTAssertTrue(authenticatedUser === result)
+    }
+
+    func test_user_createAccountUserNil_userPropertyIsNil() {
+        // Arrange
+        authManager.createUser(withEmail: testEmail, password: testPassword, role: .default) { (_) in }
         authMock.lastCompletion?(nil, nil)
 
         // Act
@@ -80,6 +90,32 @@ class MDJUserProviderTests: XCTestCase {
 
         // Assert
         XCTAssertNil(result)
+    }
+
+    func test_user_createAccountUserNotNilRegistrationFails_userPropertyIsNil() {
+        // Arrange
+        authManager.createUser(withEmail: testEmail, password: testPassword, role: .default) { (_) in }
+        authMock.lastCompletion?(userMock, nil)
+        userDatabaseMock.lastRegisterCompletion?(nil, nil)
+
+        // Act
+        let result = sut.user
+
+        // Assert
+        XCTAssertNil(result)
+    }
+
+    func test_user_createAccountUserNotNilRegistrationSucceeds_userPropertyIsSet() {
+        // Arrange
+        authManager.createUser(withEmail: testEmail, password: testPassword, role: .default) { (_) in }
+        authMock.lastCompletion?(userMock, nil)
+        userDatabaseMock.lastRegisterCompletion?(authenticatedUser, nil)
+
+        // Act
+        let result = sut.user
+
+        // Assert
+        XCTAssertTrue(authenticatedUser === result)
     }
 
     func test_user_userIsSet_notificationIsPosted() {
@@ -87,9 +123,10 @@ class MDJUserProviderTests: XCTestCase {
         let notificationString = Notification.Name.MDJUserProviderUserUpdated.rawValue
         let _ = expectation(forNotification: notificationString, object: sut, handler: nil)
         authManager.signIn(withEmail: testEmail, password: testPassword) { (_) in }
+        authMock.lastCompletion?(userMock, nil)
 
         // Act
-        authMock.lastCompletion?(userMock, nil)
+        userDatabaseMock.lastFetchAuthenticatedUserCompletion?(authenticatedUser)
 
         // Assert
         waitForExpectations(timeout: 0, handler: nil)

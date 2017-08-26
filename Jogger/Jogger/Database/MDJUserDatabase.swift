@@ -20,7 +20,7 @@ protocol MDJUserDatabase: class {
 
     func updateUserRole(forUserWithID userID: String, role: MDJUserRole, completion: @escaping (Error?) -> Void)
 
-    func deleteUser(withUserID userID: String)
+    func deleteUser(withUserID userID: String, completion: @escaping (Error?) -> Void)
 }
 
 // MARK: - MDJDefaultUserDatabase
@@ -77,14 +77,16 @@ extension MDJDefaultUserDatabase: MDJUserDatabase {
         }
     }
 
-    func deleteUser(withUserID userID: String) {
+    func deleteUser(withUserID userID: String, completion: @escaping (Error?) -> Void) {
         let userPath = MDJDatabaseConstants.Path.users(forUserID: userID)
         let jogsPath = MDJDatabaseConstants.Path.jogs(forUserID: userID)
 
         let values = [userPath : NSNull(),
                       jogsPath : NSNull()]
 
-        databaseReference.updateChildValues(values)
+        databaseReference.updateChildValues(values) { (error, _) in
+            completion(error)
+        }
     }
 }
 

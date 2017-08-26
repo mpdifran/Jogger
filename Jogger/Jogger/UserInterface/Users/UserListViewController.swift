@@ -121,7 +121,9 @@ extension UserListViewController {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] (_, indexPath) in
             guard let user = self?.usersObserver.users[indexPath.row] else { return }
 
-            self?.userDatabase.deleteUser(withUserID: user.userID)
+            self?.userDatabase.deleteUser(withUserID: user.userID) { (error) in
+                self?.handle(error: error)
+            }
         }
 
         return [delete, roleChange]

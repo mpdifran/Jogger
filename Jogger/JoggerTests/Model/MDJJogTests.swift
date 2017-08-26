@@ -1,5 +1,5 @@
 //
-//  JogTests.swift
+//  MDJJogTests.swift
 //  Jogger
 //
 //  Created by Mark DiFranco on 2017-08-19.
@@ -9,15 +9,15 @@
 import XCTest
 @testable import Jogger
 
-class JogTests: XCTestCase {
-    var sut: Jog!
+class MDJJogTests: XCTestCase {
+    var sut: MDJJog!
 
     // MARK: - SetUp / TearDown
 
     override func setUp() {
         super.setUp()
 
-        sut = Jog(date: Date(), distance: 10, time: 36000)
+        sut = MDJJog(date: Date(), distance: 10, time: 36000)
     }
     
     // MARK: - Test Methods

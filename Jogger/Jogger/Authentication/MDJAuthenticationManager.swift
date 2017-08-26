@@ -16,9 +16,9 @@ extension Notification.Name {
     static let MDJUserProviderUserUpdated = Notification.Name("Notification.Name.MDJUserProviderUserUpdated")
 }
 
-// MARK: - MDJAuthenticationError
+// MARK: - MDJAuthenticationErrorCode
 
-enum MDJAuthenticationError: Error {
+enum MDJAuthenticationErrorCode: Int {
     case userDeleted
 }
 
@@ -101,7 +101,8 @@ extension MDJDefaultAuthenticationManager: MDJAuthenticationManager {
                 self?.user = authenticatedUser
 
                 if authenticatedUser == nil {
-                    completion(MDJAuthenticationError.userDeleted)
+                    let error = NSError(code: .userDeleted, description: "Your account has been deleted.")
+                    completion(error)
                 } else {
                     completion(error)
                 }
@@ -117,6 +118,18 @@ extension MDJDefaultAuthenticationManager: MDJAuthenticationManager {
         }
         user = nil
         return nil
+    }
+}
+
+// MARK: Private NSError Extension
+
+private extension NSError {
+
+    convenience init(code: MDJAuthenticationErrorCode, description: String) {
+        let userInfo = [NSLocalizedDescriptionKey : description]
+        let domain = "com.markdifranco.authenticationError"
+
+        self.init(domain: domain, code: code.rawValue, userInfo: userInfo)
     }
 }
 
