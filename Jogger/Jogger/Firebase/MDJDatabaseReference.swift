@@ -49,7 +49,7 @@ extension DatabaseReference: MDJDatabaseReference {
 
     func updateChildValues(_ values: [AnyHashable : Any],
                            withCompletionBlock block: @escaping (Error?, MDJDatabaseReference) -> Void) {
-        updateChildValues(values, withCompletionBlock: { (error, databaseReference) in
+        updateChildValues(values, withCompletionBlock: { (error: Error?, databaseReference: DatabaseReference) in
             block(error, databaseReference)
         })
     }
