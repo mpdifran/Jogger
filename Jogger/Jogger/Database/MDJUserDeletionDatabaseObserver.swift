@@ -40,7 +40,7 @@ extension MDJDefaultUserDeletionDatabaseObserver: MDJUserDeletionDatabaseObserve
         tearDownObserver()
 
         let path = MDJDatabaseConstants.Path.users(forUserID: userID)
-        handle = databaseReference.child(path).observe(.childRemoved) { (snapshot) in
+        handle = databaseReference.child(path).observe(.childRemoved) { (_) in
             onDeletion()
         }
     }
