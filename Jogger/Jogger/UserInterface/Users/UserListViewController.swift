@@ -80,16 +80,7 @@ extension UserListViewController {
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        guard let currentUser = userProvider.user else { return true }
-
-        let user = usersObserver.users[indexPath.row]
-
-        return currentUser.uid != user.userID
-    }
-
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,
-                            forRowAt indexPath: IndexPath) {
-
+        return true
     }
 
     override func tableView(_ tableView: UITableView,
