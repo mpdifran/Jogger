@@ -64,6 +64,6 @@ class MDJUserDeletionDatabaseObserverAssembly: Assembly {
 
     func assemble(container: Container) {
         container.autoregister(MDJUserDeletionDatabaseObserver.self,
-                               initializer: MDJDefaultUserDeletionDatabaseObserver.init)
+                               initializer: MDJDefaultUserDeletionDatabaseObserver.init).inObjectScope(.transient)
     }
 }

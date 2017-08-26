@@ -137,5 +137,6 @@ class MDJJogReportDatabaseObserverAssembly: Assembly {
 
     func assemble(container: Container) {
         container.autoregister(MDJJogReportDatabaseObserver.self, initializer: MDJDefaultJogReportDatabaseObserver.init)
+            .inObjectScope(.transient)
     }
 }
