@@ -53,6 +53,8 @@
 		FF438DCD1F4FC09900C6EC6F /* UIViewController+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF438DCC1F4FC09900C6EC6F /* UIViewController+ErrorHandling.swift */; };
 		FF438DD11F50CF7700C6EC6F /* MDJUserDatabaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF438DD01F50CF7700C6EC6F /* MDJUserDatabaseMock.swift */; };
 		FF438DD31F50D19900C6EC6F /* MDJUserDeletionDatabaseObserverMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF438DD21F50D19900C6EC6F /* MDJUserDeletionDatabaseObserverMock.swift */; };
+		FF438DD81F51B1DA00C6EC6F /* MDJJogsDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF438DD71F51B1DA00C6EC6F /* MDJJogsDatabaseTests.swift */; };
+		FF438DDA1F51B21E00C6EC6F /* MDJDatabaseReferenceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF438DD91F51B21E00C6EC6F /* MDJDatabaseReferenceMock.swift */; };
 		FF9F18371F4A26AB00238F9D /* MDJUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */; };
 		FF9F18391F4A2B2100238F9D /* MDJAuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */; };
 		FFAE979C1F452A38009F76FF /* MDJDatabaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */; };
@@ -146,6 +148,8 @@
 		FF438DCC1F4FC09900C6EC6F /* UIViewController+ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorHandling.swift"; sourceTree = "<group>"; };
 		FF438DD01F50CF7700C6EC6F /* MDJUserDatabaseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserDatabaseMock.swift; sourceTree = "<group>"; };
 		FF438DD21F50D19900C6EC6F /* MDJUserDeletionDatabaseObserverMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserDeletionDatabaseObserverMock.swift; sourceTree = "<group>"; };
+		FF438DD71F51B1DA00C6EC6F /* MDJJogsDatabaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsDatabaseTests.swift; sourceTree = "<group>"; };
+		FF438DD91F51B21E00C6EC6F /* MDJDatabaseReferenceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDatabaseReferenceMock.swift; sourceTree = "<group>"; };
 		FF9F18361F4A26AB00238F9D /* MDJUserDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJUserDatabase.swift; sourceTree = "<group>"; };
 		FF9F18381F4A2B2100238F9D /* MDJAuthenticatedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJAuthenticatedUser.swift; sourceTree = "<group>"; };
 		FFAE979B1F452A38009F76FF /* MDJDatabaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDatabaseReference.swift; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 				FFAE97F31F48F5C2009F76FF /* MDJFirebaseAppMock.swift */,
 				FF09F6301F43CB2100951F9F /* MDJAuthMock.swift */,
 				FFAE97D41F47CC53009F76FF /* MDJUserMock.swift */,
+				FF438DD91F51B21E00C6EC6F /* MDJDatabaseReferenceMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				FF438DCF1F50CF3C00C6EC6F /* Mocks */,
+				FF438DD71F51B1DA00C6EC6F /* MDJJogsDatabaseTests.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -857,7 +863,9 @@
 				FFAE97D51F47CC53009F76FF /* MDJUserMock.swift in Sources */,
 				FFAE97F21F48F58B009F76FF /* MDJFirebaseConfigurerTests.swift in Sources */,
 				FFAE98001F492A24009F76FF /* MDJJogTests.swift in Sources */,
+				FF438DD81F51B1DA00C6EC6F /* MDJJogsDatabaseTests.swift in Sources */,
 				FFAE97F41F48F5C2009F76FF /* MDJFirebaseAppMock.swift in Sources */,
+				FF438DDA1F51B21E00C6EC6F /* MDJDatabaseReferenceMock.swift in Sources */,
 				FF09F62D1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift in Sources */,
 				FF438DD11F50CF7700C6EC6F /* MDJUserDatabaseMock.swift in Sources */,
 				FF438DD31F50D19900C6EC6F /* MDJUserDeletionDatabaseObserverMock.swift in Sources */,
