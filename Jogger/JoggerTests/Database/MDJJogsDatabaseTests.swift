@@ -18,7 +18,6 @@ class MDJJogsDatabaseTests: XCTestCase {
     let testUserIdentifier = "TestUserIdentifier"
     let dateFormatter = MDJDateFormatter()
 
-
     // MARK: - SetUp / TearDown
 
     override func setUp() {

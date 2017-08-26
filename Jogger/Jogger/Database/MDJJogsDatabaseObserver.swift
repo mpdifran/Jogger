@@ -58,7 +58,9 @@ extension MDJDefaultJogsDatabaseObserver: MDJJogsDatabaseObserver {
         jogs.removeAll(keepingCapacity: true)
 
         let path = MDJDatabaseConstants.Path.jogs(forUserID: userID)
-        handle = databaseReference.child(path).observe(.value, with: parse(_:))
+        handle = databaseReference.child(path).observe(.value) { [weak self] (snapshot) in
+            self?.parse(snapshot)
+        }
     }
 }
 
