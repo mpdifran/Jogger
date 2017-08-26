@@ -351,7 +351,6 @@
 		FF09F62A1F43CA9C00951F9F /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				FF09F6321F43CDD500951F9F /* Mocks */,
 				FF09F62C1F43CAD200951F9F /* MDJAuthenticationManagerTests.swift */,
 				FFAE97D21F47CB4A009F76FF /* MDJUserProviderTests.swift */,
 			);
@@ -375,13 +374,6 @@
 				FFAE97D41F47CC53009F76FF /* MDJUserMock.swift */,
 				FF438DD91F51B21E00C6EC6F /* MDJDatabaseReferenceMock.swift */,
 				FFB840851F51CC8800AE10EB /* MDJDataSnapshotMock.swift */,
-			);
-			path = Mocks;
-			sourceTree = "<group>";
-		};
-		FF09F6321F43CDD500951F9F /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -415,13 +407,6 @@
 				FF438DD01F50CF7700C6EC6F /* MDJUserDatabaseMock.swift */,
 				FF438DD21F50D19900C6EC6F /* MDJUserDeletionDatabaseObserverMock.swift */,
 				FFB840891F51E2E300AE10EB /* MDJJogsDatabaseObserverMock.swift */,
-			);
-			path = Mocks;
-			sourceTree = "<group>";
-		};
-		FF438DD41F51AEEC00C6EC6F /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -520,7 +505,6 @@
 		FFAE97FE1F492A04009F76FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FF438DD41F51AEEC00C6EC6F /* Mocks */,
 				FFAE97FF1F492A24009F76FF /* MDJJogTests.swift */,
 			);
 			path = Model;
