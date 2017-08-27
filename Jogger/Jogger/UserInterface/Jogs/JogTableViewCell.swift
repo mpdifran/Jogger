@@ -21,6 +21,11 @@ class JogTableViewCell: UITableViewCell {
 
 extension JogTableViewCell {
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        prepareForReuse()
+    }
+
     override func prepareForReuse() {
         super.prepareForReuse()
 

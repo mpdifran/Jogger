@@ -20,6 +20,11 @@ class UserTableViewCell: UITableViewCell {
 
 extension UserTableViewCell {
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        prepareForReuse()
+    }
+
     override func prepareForReuse() {
         super.prepareForReuse()
 

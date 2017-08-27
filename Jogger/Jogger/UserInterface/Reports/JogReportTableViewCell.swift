@@ -15,3 +15,20 @@ class JogReportTableViewCell: UITableViewCell {
     @IBOutlet weak var averageSpeedLabel: UILabel!
     @IBOutlet weak var totalDistanceLabel: UILabel!
 }
+
+// MARK: Cell Lifecycle Methods
+
+extension JogReportTableViewCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        prepareForReuse()
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        dateLabel.text = nil
+        averageSpeedLabel.text = nil
+        totalDistanceLabel.text = nil
+    }
+}
