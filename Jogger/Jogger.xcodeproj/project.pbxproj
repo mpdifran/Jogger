@@ -85,6 +85,8 @@
 		FFAE98001F492A24009F76FF /* MDJJogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE97FF1F492A24009F76FF /* MDJJogTests.swift */; };
 		FFAE98041F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE98031F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift */; };
 		FFAE98061F493B7F009F76FF /* JogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE98051F493B7F009F76FF /* JogFilterViewController.swift */; };
+		FFB108511F524B450036DE83 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB108501F524B450036DE83 /* String+Localization.swift */; };
+		FFB108521F524F8C0036DE83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFB108541F524F8C0036DE83 /* Localizable.strings */; };
 		FFB840861F51CC8800AE10EB /* MDJDataSnapshotMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB840851F51CC8800AE10EB /* MDJDataSnapshotMock.swift */; };
 		FFB840881F51E25F00AE10EB /* MDJJogsFilterableDatabaseObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB840871F51E25F00AE10EB /* MDJJogsFilterableDatabaseObserverTests.swift */; };
 		FFB8408A1F51E2E300AE10EB /* MDJJogsDatabaseObserverMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB840891F51E2E300AE10EB /* MDJJogsDatabaseObserverMock.swift */; };
@@ -188,6 +190,8 @@
 		FFAE97FF1F492A24009F76FF /* MDJJogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogTests.swift; sourceTree = "<group>"; };
 		FFAE98031F4936C3009F76FF /* MDJJogsFilterableDatabaseObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsFilterableDatabaseObserver.swift; sourceTree = "<group>"; };
 		FFAE98051F493B7F009F76FF /* JogFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogFilterViewController.swift; sourceTree = "<group>"; };
+		FFB108501F524B450036DE83 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		FFB108531F524F8C0036DE83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FFB840851F51CC8800AE10EB /* MDJDataSnapshotMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDataSnapshotMock.swift; sourceTree = "<group>"; };
 		FFB840871F51E25F00AE10EB /* MDJJogsFilterableDatabaseObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsFilterableDatabaseObserverTests.swift; sourceTree = "<group>"; };
 		FFB840891F51E2E300AE10EB /* MDJJogsDatabaseObserverMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsDatabaseObserverMock.swift; sourceTree = "<group>"; };
@@ -304,6 +308,7 @@
 				FF09F5F31F42A4EC00951F9F /* Info.plist */,
 				FF09F6171F42A56700951F9F /* GoogleService-Info.plist */,
 				FF09F61A1F43BD7A00951F9F /* Podfile */,
+				FFB108541F524F8C0036DE83 /* Localizable.strings */,
 			);
 			path = Jogger;
 			sourceTree = "<group>";
@@ -509,6 +514,7 @@
 			children = (
 				FFAE97E01F48DB0B009F76FF /* UITableView+Dequeue.swift */,
 				FF438DCC1F4FC09900C6EC6F /* UIViewController+ErrorHandling.swift */,
+				FFB108501F524B450036DE83 /* String+Localization.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -652,6 +658,7 @@
 				FF09F5F21F42A4EC00951F9F /* LaunchScreen.storyboard in Resources */,
 				FF09F6181F42A56700951F9F /* GoogleService-Info.plist in Resources */,
 				FF09F5EF1F42A4EC00951F9F /* Assets.xcassets in Resources */,
+				FFB108521F524F8C0036DE83 /* Localizable.strings in Resources */,
 				FFAE97DC1F48D954009F76FF /* Jogs.storyboard in Resources */,
 				FF438DC41F4E7A8A00C6EC6F /* Profile.storyboard in Resources */,
 				FF09F5ED1F42A4EC00951F9F /* Main.storyboard in Resources */,
@@ -858,6 +865,7 @@
 				FFAE97AB1F454738009F76FF /* MDJDatabaseConstants.swift in Sources */,
 				FFAE97A41F453E9B009F76FF /* MDJJogsDatabaseObserver.swift in Sources */,
 				FF02D8A11F4E67740049DF17 /* MDJUserRole.swift in Sources */,
+				FFB108511F524B450036DE83 /* String+Localization.swift in Sources */,
 				FFAE97F01F48F3A4009F76FF /* MDJFirebaseConfigurer.swift in Sources */,
 				FF02D89F1F4D14780049DF17 /* JogReportTableViewCell.swift in Sources */,
 				FF02D88D1F4A77BE0049DF17 /* MDJJogUser.swift in Sources */,
@@ -938,6 +946,14 @@
 			);
 			name = LaunchScreen.storyboard;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		FFB108541F524F8C0036DE83 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFB108531F524F8C0036DE83 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

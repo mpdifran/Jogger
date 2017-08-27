@@ -14,7 +14,7 @@ import SwinjectStoryboard
 
 class LogInViewController: BaseAuthViewController {
     override var authenticatingAlertTitle: String {
-        return "Logging In"
+        return "logging_in".localized()
     }
 
     @IBOutlet weak var emailTextField: UITextField!

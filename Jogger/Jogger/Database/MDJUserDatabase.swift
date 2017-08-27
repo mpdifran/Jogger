@@ -133,7 +133,7 @@ private extension MDJDefaultUserDatabase {
                 return email
             }
         }
-        return "Unknown"
+        return "unknown".localized()
     }
 }
 

@@ -72,11 +72,12 @@ extension JogListViewController {
         super.viewWillAppear(animated)
 
         if let startDate = jogsObserver.startDate, let endDate = jogsObserver.endDate {
-            navigationItem.prompt = "\(weekDateFormatter.string(from: startDate)) to \(weekDateFormatter.string(from: endDate))"
+            navigationItem.prompt = String(format: "to_format".localized(), weekDateFormatter.string(from: startDate),
+                                           weekDateFormatter.string(from: endDate))
         } else if let startDate = jogsObserver.startDate {
-            navigationItem.prompt = "After \(weekDateFormatter.string(from: startDate))"
+            navigationItem.prompt = String(format: "after_format".localized(), weekDateFormatter.string(from: startDate))
         } else if let endDate = jogsObserver.endDate {
-            navigationItem.prompt = "Before \(weekDateFormatter.string(from: endDate))"
+            navigationItem.prompt = String(format: "before_format".localized(), weekDateFormatter.string(from: endDate))
         } else {
             navigationItem.prompt = nil
         }
@@ -124,9 +125,9 @@ extension JogListViewController {
         let jog = jogsObserver.jogs[indexPath.row]
 
         cell.dateLabel.text = dateFormatter.string(from: jog.date)
-        cell.timeLabel.text = String(format: "%.0f hours, %.0f minutes", jog.hours, jog.minutes)
-        cell.distanceLabel.text = String(format: "%.0f km", jog.distance)
-        cell.averageSpeedLabel.text = String(format: "avg %.2f km/h", jog.averageSpeed)
+        cell.timeLabel.text = String(format: "jog_time_format".localized(), jog.hours, jog.minutes)
+        cell.distanceLabel.text = String(format: "jog_distance_format".localized(), jog.distance)
+        cell.averageSpeedLabel.text = String(format: "jog_average_speed_format".localized(), jog.averageSpeed)
 
         return cell
     }

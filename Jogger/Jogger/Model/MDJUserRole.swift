@@ -18,11 +18,11 @@ enum MDJUserRole: Int {
     var name: String {
         switch self {
         case .default:
-            return "User"
+            return "user".localized()
         case .userManager:
-            return "User Manager"
+            return "user_manager".localized()
         case .admin:
-            return "Admin"
+            return "administrator".localized()
         }
     }
 

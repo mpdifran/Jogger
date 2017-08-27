@@ -130,7 +130,7 @@ extension MDJDefaultAuthenticationManager: MDJAuthenticationManager {
                 self?.user = authenticatedUser
 
                 if authenticatedUser == nil {
-                    let error = NSError(code: .userDeleted, description: "Your account has been deleted.")
+                    let error = NSError(code: .userDeleted, description: "account_deleted".localized())
                     completion(error)
                 } else {
                     completion(error)

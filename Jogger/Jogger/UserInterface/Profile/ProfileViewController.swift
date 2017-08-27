@@ -43,8 +43,8 @@ private extension ProfileViewController {
     }
 
     func updateUser() {
-        emailLabel.text = userProvider.user?.email ?? "Unknown"
-        roleLabel.text = userProvider.user?.role.name ?? "None"
+        emailLabel.text = userProvider.user?.email ?? "unknown".localized()
+        roleLabel.text = userProvider.user?.role.name ?? "none".localized()
     }
 }
 

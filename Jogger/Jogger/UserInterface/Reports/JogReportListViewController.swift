@@ -50,9 +50,9 @@ extension JogReportListViewController {
         let cell = tableView.dequeueCell(ofType: JogReportTableViewCell.self, for: indexPath)
         let jogReport = jogsReportsObserver.jogReports[indexPath.row]
 
-        cell.dateLabel.text = "Week of \(dateFormatter.string(from: jogReport.date))"
-        cell.averageSpeedLabel.text = String(format: "Average Speed: %.2f km/h", jogReport.averageSpeed)
-        cell.totalDistanceLabel.text = String(format: "Total Distance: %.0f km", jogReport.totalDistance)
+        cell.dateLabel.text = String(format: "week_of_format".localized(), dateFormatter.string(from: jogReport.date))
+        cell.averageSpeedLabel.text = String(format: "jog_average_speed_format".localized(), jogReport.averageSpeed)
+        cell.totalDistanceLabel.text = String(format: "jog_total_distance_format".localized(), jogReport.totalDistance)
 
         return cell
     }

@@ -14,7 +14,7 @@ import SwinjectStoryboard
 
 class CreateAccountViewController: BaseAuthViewController {
     override var authenticatingAlertTitle: String {
-        return "Creating Account"
+        return "creating_account".localized()
     }
 
     @IBOutlet weak var emailTextField: UITextField!

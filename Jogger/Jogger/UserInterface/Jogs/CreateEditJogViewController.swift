@@ -16,10 +16,10 @@ class CreateEditJogViewController: UITableViewController {
     var userID: String!
     var jog = MDJJog() {
         didSet {
-            createButton.title = "Update"
+            createButton.title = "update".localized()
             navigationItem.leftBarButtonItem = nil
 
-            title = "Edit Jog"
+            title = "edit_jog".localized()
         }
     }
 

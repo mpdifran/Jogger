@@ -21,7 +21,7 @@ class BaseAuthViewController: UITableViewController {
     }
 
     open var authenticatingAlertTitle: String {
-        return "Authenticating"
+        return "authenticating".localized()
     }
     final var textFields = [UITextField]()
 }
@@ -64,17 +64,17 @@ extension BaseAuthViewController {
         let message: String
         switch error {
         case .missingEmail:
-            message = "Please enter your email."
+            message = "missing_email".localized()
         case .missingPassword:
-            message = "Please enter your password."
+            message = "missing_password".localized()
         case .missingVerifyPassword:
-            message = "Please verify your password."
+            message = "missing_verify_password".localized()
         case .passwordsDoNotMatch:
-            message = "Your passwords do not match."
+            message = "passwords_do_not_match".localized()
         }
 
-        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alertController = UIAlertController(title: "error".localized(), message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok".localized(), style: .default, handler: nil)
         alertController.addAction(okAction)
 
         present(alertController, animated: true, completion: nil)

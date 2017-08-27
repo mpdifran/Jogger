@@ -61,7 +61,7 @@ extension JogFilterViewController {
 
     @IBAction func didTapFromResetButton(_ sender: Any) {
         pickedFromDate = nil
-        fromDateLabel.text = "None"
+        fromDateLabel.text = "none".localized()
         fromDatePicker.setDate(Date(), animated: true)
     }
 
@@ -73,7 +73,7 @@ extension JogFilterViewController {
 
     @IBAction func didTapToResetButton(_ sender: Any) {
         pickedToDate = nil
-        toDateLabel.text = "None"
+        toDateLabel.text = "none".localized()
         toDatePicker.setDate(Date(), animated: true)
     }
 

@@ -87,7 +87,7 @@ extension UserListViewController {
                             editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let user = usersObserver.users[indexPath.row]
 
-        let roleChange = UITableViewRowAction(style: .normal, title: "Update Role") { [weak self] (_, _) in
+        let roleChange = UITableViewRowAction(style: .normal, title: "update_role".localized()) { [weak self] (_, _) in
 
             let updateRole = { [weak self] (role: MDJUserRole) in
                 self?.userDatabase.updateUserRole(forUserWithID: user.userID, role: role) { (error) in
@@ -95,21 +95,21 @@ extension UserListViewController {
                 }
             }
 
-            let alertController = UIAlertController(title: "Update Role for \(user.email)", message: nil,
-                                                    preferredStyle: .actionSheet)
+            let alertController = UIAlertController(title: String(format: "update_role_for_format".localized(), user.email),
+                                                    message: nil, preferredStyle: .actionSheet)
             for role in MDJUserRole.allRoles {
                 let action = UIAlertAction(title: role.name, style: .default) { (_) in
                     updateRole(role)
                 }
                 alertController.addAction(action)
             }
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
 
             self?.present(alertController, animated: true, completion: nil)
         }
 
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] (_, indexPath) in
+        let delete = UITableViewRowAction(style: .destructive, title: "delete".localized()) { [weak self] (_, indexPath) in
             guard let user = self?.usersObserver.users[indexPath.row] else { return }
 
             self?.userDatabase.deleteUser(withUserID: user.userID) { (error) in
