@@ -22,6 +22,9 @@ extension Notification.Name {
 protocol MDJUserDatabaseObserver: class {
     var users: [MDJJogUser] { get }
 
+    /// Begin observing changes to the list of users.
+    ///
+    /// - note: This will fail unless the currently authenticated user is a user manager or an admin.
     func beginObservingUsers()
 }
 

@@ -22,6 +22,9 @@ extension Notification.Name {
 protocol MDJJogReportDatabaseObserver: class {
     var jogReports: [MDJJogReport] { get }
 
+    /// Begin observing changes to a specific user's jog reports.
+    ///
+    /// - parameter userID: The identifier of the user whose jog reports should be observed.
     func beginObservingJogReports(forUserWithUserID userID: String)
 }
 

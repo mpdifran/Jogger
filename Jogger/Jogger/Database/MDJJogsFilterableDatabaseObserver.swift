@@ -23,6 +23,10 @@ protocol MDJJogsFilterableDatabaseObserver: MDJJogsDatabaseObserver {
     var startDate: Date? { get }
     var endDate: Date? { get }
 
+    /// Apply a date filter to the list of jogs.
+    ///
+    /// - parameter startDate: An optional start date to filter by.
+    /// - parameter endDate: An optional end date to filter by.
     func applyFilter(startDate: Date?, endDate: Date?)
 }
 

@@ -31,11 +31,31 @@ protocol MDJUserProvider: class {
 // MARK: - MDJAuthenticationManager
 
 protocol MDJAuthenticationManager: class {
+
+    /// Create a new user with the provided email, password and role. This method will take care of validating the
+    /// email.
+    ///
+    /// - parameter email: The user's email.
+    /// - parameter password: The user's password.
+    /// - parameter role: The user's selected role.
+    /// - parameter completion: A completion block that is called when the user has been created, or an error was
+    /// encountered.
+    /// - parameter error: An optional error, if one was encountered.
     func createUser(withEmail email: String, password: String, role: MDJUserRole,
-                    completion: @escaping (Error?) -> Void)
+                    completion: @escaping (_ error: Error?) -> Void)
 
-    func signIn(withEmail email: String, password: String, completion: @escaping (Error?) -> Void)
+    /// Sign in an already registered user with the given email and password.
+    ///
+    /// - parameter email: The user's email.
+    /// - parameter password: The user's password.
+    /// - parameter completion: A completion block that is called when the user has signed in, or an error was 
+    /// encountered.
+    /// - parameter error: An optional error, if one was encountered.
+    func signIn(withEmail email: String, password: String, completion: @escaping (_ error: Error?) -> Void)
 
+    /// Sign the currently authenticated user out.
+    ///
+    /// - returns: An optional error, if one was encountered.
     func signOut() -> Error?
 }
 

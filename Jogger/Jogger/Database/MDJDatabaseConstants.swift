@@ -23,7 +23,6 @@ struct MDJDatabaseConstants {
     }
 
     struct Path {
-
         static func jogs(forUserID userID: String) -> String {
             return "jogs/\(userID)"
         }

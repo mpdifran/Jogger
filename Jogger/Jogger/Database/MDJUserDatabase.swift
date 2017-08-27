@@ -14,13 +14,46 @@ import SwinjectAutoregistration
 
 protocol MDJUserDatabase: class {
 
-    func register(user: MDJUser, with role: MDJUserRole, completion: @escaping (MDJAuthenticatedUser?, Error?) -> Void)
+    /// Register a user in the database. This is necessary in order for the user to be considered authenticated.
+    ///
+    /// - parameter user: The user to register.
+    /// - parameter role: The user's role.
+    /// - parameter completion: A completion block that is called once the user has been registered, or if an error is
+    /// encountered.
+    /// - parameter authenticatedUser: The authenticated user that has been successfully registered. Will be nil if
+    /// registration fails.
+    /// - parameter error: An optional error, if one was encountered.
+    func register(user: MDJUser, with role: MDJUserRole,
+                  completion: @escaping (_ authenticatedUser: MDJAuthenticatedUser?, _ error: Error?) -> Void)
 
-    func fetchAuthenticatedUser(for user: MDJUser, completion: @escaping (MDJAuthenticatedUser?) -> Void)
+    /// Fetch information related to the user, such as email and role.
+    ///
+    /// - parameter user: The user to fetch information for.
+    /// - parameter completion: A completion block that is called when the user information has been fetched.
+    /// - parameter authenticatedUser: The authenticated user whose information has been fetched.
+    func fetchAuthenticatedUser(for user: MDJUser,
+                                completion: @escaping (_ authenticatedUser: MDJAuthenticatedUser?) -> Void)
 
-    func updateUserRole(forUserWithID userID: String, role: MDJUserRole, completion: @escaping (Error?) -> Void)
+    /// Update a user's role.
+    ///
+    /// - note: This will fail unless the currently authenticated user is a user manager or an admin.
+    ///
+    /// - parameter userID: The user identifier of the user to change roles for.
+    /// - parameter role: The role to update the user to.
+    /// - parameter completion: A completion block that is called when the role has been updated, or an error is
+    /// encountered.
+    /// - parameter error: An optional error, if one was encountered.
+    func updateUserRole(forUserWithID userID: String, role: MDJUserRole, completion: @escaping (_ error: Error?) -> Void)
 
-    func deleteUser(withUserID userID: String, completion: @escaping (Error?) -> Void)
+    /// Delete a user.
+    ///
+    /// - note: This will fail unless the currently authenticated user is a user manager or an admin.
+    ///
+    /// - parameter userID: The identifier of the user to delete.
+    /// - parameter completion: A completion block that is called when the deletion has finished, or an error was
+    /// encountered.
+    /// - parameter error: An optional error, if one was encountered.
+    func deleteUser(withUserID userID: String, completion: @escaping (_ error: Error?) -> Void)
 }
 
 // MARK: - MDJDefaultUserDatabase

@@ -14,8 +14,21 @@ import SwinjectAutoregistration
 
 protocol MDJCurrentUserDatabaseObserver: class {
 
-    func beginObservingUserRole(forUserWithID userID: String, onRoleUpdated: @escaping (MDJUserRole) -> Void)
+    /// Begin observing changes to the role for a specific user.
+    ///
+    /// - note: This will fail unless the currently authenticated user is a user manager or an admin.
+    ///
+    /// - parameter userID: The identifier of the user to observe role changes for.
+    /// - parameter onRoleUpdated: A block that is called whenever the user's role updates.
+    /// - parameter role: The user's new role.
+    func beginObservingUserRole(forUserWithID userID: String, onRoleUpdated: @escaping (_ role: MDJUserRole) -> Void)
 
+    /// Begin observing the deletion of a specific user.
+    ///
+    /// - note: This will fail unless the currently authenticated user is a user manager or an admin.
+    ///
+    /// - parameter userID: The identifier of the user to observe deletion.
+    /// - parameter onDeletion: A block that is called when the user has been deleted.
     func beginObservingUserDeletion(forUserWithUserID userID: String, onDeletion: @escaping () -> Void)
 }
 
