@@ -16,12 +16,17 @@ target 'Jogger' do
 
     pod 'Firebase/Auth'
     pod 'Firebase/Core'
+    pod 'Firebase/Database'
 
   end
 
   target 'JoggerUITests' do
     inherit! :search_paths
-    # Pods for testing
+
+    pod 'Firebase/Auth'
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
+
   end
 
 end
