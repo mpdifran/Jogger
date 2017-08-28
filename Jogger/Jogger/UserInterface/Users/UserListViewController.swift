@@ -131,6 +131,12 @@ private extension UserListViewController {
                                                 self?.tableView.reloadData()
         }
     }
+
+    func updateAlertLabel() {
+        let message = usersObserver.users.count > 0 ? nil : "no_users".localized()
+
+        tableView.showAlert(withMessage: message)
+    }
 }
 
 // MARK: - UserListViewControllerAssembly

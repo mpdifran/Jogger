@@ -12,6 +12,9 @@
 "missing_email" = "Please enter your email.";
 "missing_password" = "Please enter your password.";
 "missing_verify_password" = "Please verify your password.";
+"no_jogs" = "There are no Jogs to display.";
+"no_jog_reports" = "There are no Jog Reports to display.";
+"no_users" = "There are no Users to display.";
 "none" = "None";
 "ok" = "OK";
 "passwords_do_not_match" = "Your passwords do not match.";

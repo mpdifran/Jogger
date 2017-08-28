@@ -70,6 +70,7 @@ private extension JogReportListViewController {
         NotificationCenter.default.addObserver(forName: .MDJJogReportDatabaseObserverJogReportsUpdated,
                                                object: jogsReportsObserver, queue: .main) { [weak self] (_) in
                                                 self?.tableView.reloadData()
+                                                self?.updateAlertLabel()
         }
     }
 
@@ -77,6 +78,12 @@ private extension JogReportListViewController {
         guard let user = userProvider.user else { return }
 
         jogsReportsObserver.beginObservingJogReports(forUserWithUserID: user.uid)
+    }
+
+    func updateAlertLabel() {
+        let message = jogsReportsObserver.jogReports.count > 0 ? nil : "no_jog_reports".localized()
+
+        tableView.showAlert(withMessage: message)
     }
 }
 

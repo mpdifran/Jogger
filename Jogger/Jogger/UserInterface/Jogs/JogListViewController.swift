@@ -159,6 +159,7 @@ private extension JogListViewController {
         NotificationCenter.default.addObserver(forName: .MDJJogsFilterableDatabaseObserverJogsUpdated, object: jogsObserver,
                                                queue: .main) { [weak self] (_) in
                                                 self?.tableView.reloadData()
+                                                self?.updateAlertLabel()
         }
         NotificationCenter.default.addObserver(forName: .MDJUserProviderUserUpdated, object: userProvider,
                                                queue: .main) { [weak self] (_) in
@@ -168,6 +169,12 @@ private extension JogListViewController {
                                                     self?.userID = self?.userProvider.user?.uid
                                                 }
         }
+    }
+
+    func updateAlertLabel() {
+        let message = jogsObserver.jogs.count > 0 ? nil : "no_jogs".localized()
+
+        tableView.showAlert(withMessage: message)
     }
 }
 

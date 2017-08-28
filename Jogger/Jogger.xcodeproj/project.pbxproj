@@ -87,6 +87,7 @@
 		FFAE98061F493B7F009F76FF /* JogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE98051F493B7F009F76FF /* JogFilterViewController.swift */; };
 		FFB108511F524B450036DE83 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB108501F524B450036DE83 /* String+Localization.swift */; };
 		FFB108521F524F8C0036DE83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFB108541F524F8C0036DE83 /* Localizable.strings */; };
+		FFB108681F54C8700036DE83 /* UITableView+AlertLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB108671F54C8700036DE83 /* UITableView+AlertLabel.swift */; };
 		FFB840861F51CC8800AE10EB /* MDJDataSnapshotMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB840851F51CC8800AE10EB /* MDJDataSnapshotMock.swift */; };
 		FFB840881F51E25F00AE10EB /* MDJJogsFilterableDatabaseObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB840871F51E25F00AE10EB /* MDJJogsFilterableDatabaseObserverTests.swift */; };
 		FFB8408A1F51E2E300AE10EB /* MDJJogsDatabaseObserverMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB840891F51E2E300AE10EB /* MDJJogsDatabaseObserverMock.swift */; };
@@ -192,6 +193,7 @@
 		FFAE98051F493B7F009F76FF /* JogFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogFilterViewController.swift; sourceTree = "<group>"; };
 		FFB108501F524B450036DE83 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		FFB108531F524F8C0036DE83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FFB108671F54C8700036DE83 /* UITableView+AlertLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+AlertLabel.swift"; sourceTree = "<group>"; };
 		FFB840851F51CC8800AE10EB /* MDJDataSnapshotMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJDataSnapshotMock.swift; sourceTree = "<group>"; };
 		FFB840871F51E25F00AE10EB /* MDJJogsFilterableDatabaseObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsFilterableDatabaseObserverTests.swift; sourceTree = "<group>"; };
 		FFB840891F51E2E300AE10EB /* MDJJogsDatabaseObserverMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDJJogsDatabaseObserverMock.swift; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				FFAE97E01F48DB0B009F76FF /* UITableView+Dequeue.swift */,
+				FFB108671F54C8700036DE83 /* UITableView+AlertLabel.swift */,
 				FF438DCC1F4FC09900C6EC6F /* UIViewController+ErrorHandling.swift */,
 				FFB108501F524B450036DE83 /* String+Localization.swift */,
 			);
@@ -873,6 +876,7 @@
 				FF02D88B1F4A777D0049DF17 /* MDJUserDatabaseObserver.swift in Sources */,
 				FFAE97DA1F48D926009F76FF /* JogListViewController.swift in Sources */,
 				FFAE97A61F454187009F76FF /* MDJDataSnapshot.swift in Sources */,
+				FFB108681F54C8700036DE83 /* UITableView+AlertLabel.swift in Sources */,
 				FF09F6211F43C09E00951F9F /* MainAssembler.swift in Sources */,
 				FFAE97A21F452D5A009F76FF /* MDJJog.swift in Sources */,
 				FF02D89D1F4D10640049DF17 /* JogReportListViewController.swift in Sources */,
